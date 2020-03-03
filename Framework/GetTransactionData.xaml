@@ -7,6 +7,7 @@
     <x:Property Name="out_TransactionField2" Type="OutArgument(x:String)" />
     <x:Property Name="out_TransactionID" Type="OutArgument(x:String)" />
     <x:Property Name="io_TransactionData" Type="InOutArgument(sd:DataTable)" />
+    <x:Property Name="in_Command" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -110,7 +111,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <If Condition="[False AndAlso in_TransactionNumber =1 AndAlso in_Config(&quot;StandaloneMode&quot;) IsNot Nothing AndAlso in_Config(&quot;StandaloneMode&quot;).ToString.ToLower = &quot;yes&quot;]" DisplayName="If &gt; Orchestrator 사용하는 조건으로 작업 " sap:VirtualizedContainerService.HintSize="484,902" sap2010:WorkflowViewState.IdRef="If_2">
+        <If Condition="[Not string.IsNullOrEmpty( in_Command)]" DisplayName="If &gt; 시작시 매개변수 지정하는 경우 " sap:VirtualizedContainerService.HintSize="484,902" sap2010:WorkflowViewState.IdRef="If_2">
           <If.Then>
             <Sequence sap:VirtualizedContainerService.HintSize="304.5,752" sap2010:WorkflowViewState.IdRef="Sequence_3">
               <sap:WorkflowViewStateService.ViewState>
@@ -139,7 +140,7 @@
                   <OutArgument x:TypeArguments="x:Object">[out_TransactionItem.SpecificContent("Command")]</OutArgument>
                 </Assign.To>
                 <Assign.Value>
-                  <InArgument x:TypeArguments="x:Object">["SEND_MESSAGE"]</InArgument>
+                  <InArgument x:TypeArguments="x:Object">[in_Command]</InArgument>
                 </Assign.Value>
               </Assign>
               <Assign DisplayName="Assign &gt; Message 등록 " sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_7">
