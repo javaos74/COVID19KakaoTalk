@@ -1,3 +1,3 @@
-# EventAppWithKakaoTalk
+# COVD19KakaoTalk
 
-마케팅 이벤트 용도 카카오톡과 연동하는 어플리케이션
+코로나19 직원 헬스체커 자동화 프로세스 
