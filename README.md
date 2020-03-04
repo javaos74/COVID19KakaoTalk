@@ -9,7 +9,7 @@
 - Docs 폴더에 보면 헬스체커 프로세스 적용 방안이 설명되어 있습니다. 
 
 # 사전 준비사항 
-- Windows PC ( Win10 권장) 1대 이상 
+- Windows PC ( Win10 메모리 8G 권장) 1대 이상 
 - 카카오톡 계정 ( 데이터 나눠쓰기, 공기계를 이용해서 별도로 번호를 하나 받으세요)
 - Microsoft 계정 ( 건강체크에 사용하는 MS Forms 생성/관리에 필요) 
 - Microsoft Store에서 카카오톡 다운로드 및 설치 
@@ -17,4 +17,4 @@
 - 설문 내용 준비 및 설문 등록 : Microsoft Forms 이용 
 - 오케스트레이터가 없으신 분들은 https://cloud.uipath.com 에서 Community Edition Orchestrator Tenant 생성 
 
-* 자세한 사용법은 COVD19헬스체커.pdf 문서를 참고고하세요.
+* 자세한 사용법은 COVD19헬스체커.pdf 문서를 참고하세요.
