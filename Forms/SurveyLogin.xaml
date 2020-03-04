@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1180,2061</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1180,2025</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FormsLogin_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -57,7 +57,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="FormsLogin" sap:VirtualizedContainerService.HintSize="1160,1961" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="FormsLogin" sap:VirtualizedContainerService.HintSize="1160,1965" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Username" />
       <Variable x:TypeArguments="ss:SecureString" Name="Password" />
@@ -68,9 +68,9 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:GetRobotCredential TimeoutMS="{x:Null}" AssetName="[in_FormsCredential]" DisplayName="Get Credential" sap:VirtualizedContainerService.HintSize="1118,22" sap2010:WorkflowViewState.IdRef="GetRobotCredential_1" Password="[Password]" Username="[Username]" />
-    <If Condition="[Not in_ChooseAccount]" sap:VirtualizedContainerService.HintSize="1118,1069" sap2010:WorkflowViewState.IdRef="If_1">
+    <If Condition="[Not in_ChooseAccount]" sap:VirtualizedContainerService.HintSize="1118,1073" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="434,518" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="7bb711d70291dec8d3006d356becefc0" Selector="&lt;html title='Microsoft Forms - *' /&gt;">
+        <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="434,518" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="3fcd4bea27eae105dc15681cfac6dd7b" Selector="&lt;html title='사용자 계정 로그인' /&gt;">
           <ui:BrowserScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -122,7 +122,7 @@
         </ui:BrowserScope>
       </If.Then>
       <If.Else>
-        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="639,921" sap2010:WorkflowViewState.IdRef="Sequence_7">
+        <Sequence DisplayName="Sequence" sap:VirtualizedContainerService.HintSize="639,923" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -136,13 +136,13 @@
               <InArgument x:TypeArguments="x:String">[char.ToUpper( Username(0)) + Username.Substring(1)]</InArgument>
             </Assign.Value>
           </Assign>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe  사용자 계정 로그인'" sap:VirtualizedContainerService.HintSize="597,729" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="e34a7d4555a0b684f0c9e169a4f0aaa7" Selector="&lt;html title='사용자 계정 로그인' /&gt;">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe  사용자 계정 로그인'" sap:VirtualizedContainerService.HintSize="597,731" sap2010:WorkflowViewState.IdRef="BrowserScope_4" InformativeScreenshot="e34a7d4555a0b684f0c9e169a4f0aaa7" Selector="&lt;html title='사용자 계정 로그인' /&gt;">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,583" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,585" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="AccountFound" />
                   </Sequence.Variables>
@@ -169,7 +169,7 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:UiElementExists>
-                  <If Condition="[AccountFound]" sap:VirtualizedContainerService.HintSize="521,345" sap2010:WorkflowViewState.IdRef="If_2">
+                  <If Condition="[AccountFound]" sap:VirtualizedContainerService.HintSize="521,347" sap2010:WorkflowViewState.IdRef="If_2">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
