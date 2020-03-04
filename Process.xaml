@@ -276,7 +276,7 @@
         <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CheckResponse workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="COVD\CheckResponse.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_AddrFile">Data\Addressbook.xlsx</InArgument>
+            <InArgument x:TypeArguments="x:String" x:Key="in_AddrFile">[in_Config("Addressbook").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_RemindMessage">[in_Config("RemindMessageFormat").ToString]</InArgument>
             <InArgument x:TypeArguments="x:Int32" x:Key="in_CheckIntervalHour">[Convert.ToInt32(in_Config("CheckIntervalHour"))]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
