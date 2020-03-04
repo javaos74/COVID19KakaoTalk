@@ -131,7 +131,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="497,828" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="570,828" sap2010:WorkflowViewState.IdRef="Switch`1_1">
       <Sequence x:Key="SEND_MESSAGE" DisplayName="Sequence &gt; 지정된 문구로 메일 보내기 " sap:VirtualizedContainerService.HintSize="704,362" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="Friends" />
@@ -202,7 +202,7 @@
             </scg:List>
           </ui:FilterDataTable.SelectColumns>
         </ui:FilterDataTable>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="662,826" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="662,861" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -258,22 +258,22 @@
         </ui:ForEachRow>
       </Sequence>
       <x:Null x:Key="READ_MESSAGE" />
-      <Sequence x:Key="CHECK_RESPONSE" sap:VirtualizedContainerService.HintSize="421,572" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence x:Key="CHECK_RESPONSE" sap:VirtualizedContainerService.HintSize="376,572" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[string.Format(&quot;응답을 체크하기 위해서 {0}에 접속합니다.&quot;, in_Config(&quot;SurveySite&quot;).ToString)]" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="[Path.Combine( in_Config(&quot;SurveySite&quot;).ToString, &quot;GenReport.xaml&quot;)]">
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[string.Format(&quot;응답을 체크하기 위해서 {0}에 접속합니다.&quot;, in_Config(&quot;SurveySite&quot;).ToString)]" />
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Forms\CheckReponse.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_Config("FormsCredential").ToString]</InArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="379,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;응답을 보내지 않은 직원에게 메세지를 다시 보낼 준비를 합니다&quot;]" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CheckResponse workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="COVD\CheckResponse.xaml">
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;응답을 보내지 않은 직원에게 메세지를 다시 보낼 준비를 합니다&quot;]" />
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CheckResponse workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="COVD\CheckResponse.xaml">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_AddrFile">Data\Addressbook.xlsx</InArgument>
