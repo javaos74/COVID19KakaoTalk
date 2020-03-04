@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1057.5,1340</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1057.5,1467</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>StartFromTaskbar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -33,7 +33,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="20">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -55,7 +55,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="StartFromTaskbar" sap:VirtualizedContainerService.HintSize="1037.5,1280" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="StartFromTaskbar" sap:VirtualizedContainerService.HintSize="1037.5,1407" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -129,6 +129,11 @@
         </sap2010:ViewStateManager>
       </sap2010:WorkflowViewState.ViewStateManager>
     </Delay>
+    <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CheckThisPCLogin workflow" sap:VirtualizedContainerService.HintSize="995.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="KakaoTalk/CheckThisPCLogin.xaml">
+      <ui:InvokeWorkflowFile.Arguments>
+        <scg:Dictionary x:TypeArguments="x:String, Argument" />
+      </ui:InvokeWorkflowFile.Arguments>
+    </ui:InvokeWorkflowFile>
     <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window &gt; 카카오톡 앱에 연결될때 까지 대기 " sap:VirtualizedContainerService.HintSize="995.5,980" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="7caa063f67b13683a93ecf1004794529" Selector="&lt;wnd app='applicationframehost.exe' appid='1CB77C17.17884BE984322_th66h09paefv0!App' title='KakaoTalk' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
