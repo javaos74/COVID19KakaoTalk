@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1321,2959</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1321,3156</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendMessage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -62,7 +62,7 @@
       <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="지정된 친구에게 메세지 보내기 &#xA;&#xA;Input &#xA;  - in_FriendName:String - 친구 이름 &#xA;  - in_Message: String - 보낼 메세지 &#xA;&#xA;Output&#xA;  - out_Error: Boolean - 오류 발생 여부 " DisplayName="SendMessage" sap:VirtualizedContainerService.HintSize="1301,2899" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="지정된 친구에게 메세지 보내기 &#xA;&#xA;Input &#xA;  - in_FriendName:String - 친구 이름 &#xA;  - in_Message: String - 보낼 메세지 &#xA;&#xA;Output&#xA;  - out_Error: Boolean - 오류 발생 여부 " DisplayName="SendMessage" sap:VirtualizedContainerService.HintSize="1301,3056" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="Buddies" />
     </Sequence.Variables>
@@ -72,13 +72,13 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window - 카카오톡에 연결 " sap:VirtualizedContainerService.HintSize="1259,2667" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="f7636df33923445ae0a9fa70b4138e14" Selector="&lt;wnd app='applicationframehost.exe' appid='1CB77C17.17884BE984322_th66h09paefv0!App' title='KakaoTalk' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window - 카카오톡에 연결 " sap:VirtualizedContainerService.HintSize="1259,2824" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="f7636df33923445ae0a9fa70b4138e14" Selector="&lt;wnd app='applicationframehost.exe' appid='1CB77C17.17884BE984322_th66h09paefv0!App' title='KakaoTalk' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1225,2521" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1225,2678" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -133,9 +133,9 @@
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="a63894412abf45413df50cc08e358dfe" Selector="&lt;uia automationid='VisibleFriendListView' cls='ListView' /&gt;" TimeoutMS="500" WaitForReady="INTERACTIVE" />
               </ui:FindChildren.Target>
             </ui:FindChildren>
-            <If Condition="[Buddies IsNot Nothing]" sap:VirtualizedContainerService.HintSize="1183,1763" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[Buddies IsNot Nothing]" sap:VirtualizedContainerService.HintSize="1183,1920" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="875.5,1614" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="875.5,1771" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -159,9 +159,9 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                   </ui:CommentOut>
-                  <If Condition="[Buddies.Count = 1]" DisplayName="If - 검색 개수가 1개인 경우 (쉬움) " sap:VirtualizedContainerService.HintSize="833.5,1430" sap2010:WorkflowViewState.IdRef="If_1">
+                  <If Condition="[Buddies.Count = 1]" DisplayName="If - 검색 개수가 1개인 경우 (쉬움) " sap:VirtualizedContainerService.HintSize="833.5,1587" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="526,1281" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                      <Sequence sap:VirtualizedContainerService.HintSize="526,1438" sap2010:WorkflowViewState.IdRef="Sequence_2">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="x:Int32" Name="Count" />
                           <Variable x:TypeArguments="x:Boolean" Name="Valid" />
@@ -187,7 +187,7 @@
                             <InArgument x:TypeArguments="x:Int32">3</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,569" sap2010:WorkflowViewState.IdRef="DoWhile_1">
+                        <DoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="484,726" sap2010:WorkflowViewState.IdRef="DoWhile_1">
                           <DoWhile.Variables>
                             <Variable x:TypeArguments="x:String" Name="TargetBuddyName" />
                           </DoWhile.Variables>
@@ -198,7 +198,7 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                           <DoWhile.Condition>[Not Valid And Count &gt; 0]</DoWhile.Condition>
-                          <Sequence sap:VirtualizedContainerService.HintSize="376,406" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                          <Sequence sap:VirtualizedContainerService.HintSize="376,563" sap2010:WorkflowViewState.IdRef="Sequence_6">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -223,6 +223,18 @@
                                 </ui:Target>
                               </ui:Click.Target>
                             </ui:Click>
+                            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey &gt; 농협케이스, 더블클릭 안되는 경우 처리하도록 보완 " sap:VirtualizedContainerService.HintSize="334,117" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="enter" KeyModifiers="None" SpecialKey="True">
+                              <ui:SendHotkey.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[Buddies.Last]">
+                                  <ui:Target.TimeoutMS>
+                                    <InArgument x:TypeArguments="x:Int32" />
+                                  </ui:Target.TimeoutMS>
+                                  <ui:Target.WaitForReady>
+                                    <InArgument x:TypeArguments="ui:WaitForReady" />
+                                  </ui:Target.WaitForReady>
+                                </ui:Target>
+                              </ui:SendHotkey.Target>
+                            </ui:SendHotkey>
                             <ui:UiElementExists DisplayName="Element Exists - 화면이 나왔는지 " Exists="[Valid]" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="UiElementExists_1">
                               <ui:UiElementExists.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="b23c54f04661f21a55e9e28ac4883886" Selector="&lt;uia automationid='chatLogView' cls='ListView' /&gt;" TimeoutMS="300" WaitForReady="INTERACTIVE" />

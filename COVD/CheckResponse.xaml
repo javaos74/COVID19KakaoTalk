@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1049,3810</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1049,3637</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckResponse_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -64,9 +64,10 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="다운로드 받은 엑셀 파일에서 응답하지 않은 사람에 대해서 체크하고 Reminder 메세지 전달하도록 구성 &#xA;&#xA;in_SavedFilePath : Forms에서 다운로드 받은 엑세 파일 경로 &#xA;in_QueueName : 응답을 보내지 않아 메세지를 제전송 할때 사용하는 QueueName &#xA;in_AddrFile : 직원 연락처가 있는 파일 &#xA;in_RemindMessage :  재전송시 보낼 메세지 포맷, Config에 저장됨 &#xA;in_CheckIntervalHour:  재전송을 보낼 조건 판단,  시간 단위 숫자 " DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,3750" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="다운로드 받은 엑셀 파일에서 응답하지 않은 사람에 대해서 체크하고 Reminder 메세지 전달하도록 구성 &#xA;&#xA;in_SavedFilePath : Forms에서 다운로드 받은 엑세 파일 경로 &#xA;in_QueueName : 응답을 보내지 않아 메세지를 제전송 할때 사용하는 QueueName &#xA;in_AddrFile : 직원 연락처가 있는 파일 &#xA;in_RemindMessage :  재전송시 보낼 메세지 포맷, Config에 저장됨 &#xA;in_CheckIntervalHour:  재전송을 보낼 조건 판단,  시간 단위 숫자 " DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,4165" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="RespDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="RecentRespDT" />
@@ -74,7 +75,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="RemindAddrDT" />
       <Variable x:TypeArguments="s:DateTime" Name="FilterDate" />
-      <Variable x:TypeArguments="ui:GenericValue" Name="FilterDateStr" />
+      <Variable x:TypeArguments="x:String" Name="FilterDateStr" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -82,41 +83,43 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope &gt; 응답결과 " sap:VirtualizedContainerService.HintSize="987,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" ReadOnly="True" Visible="False" WorkbookPath="[Path.Combine(&quot;C:\Users&quot;, Environment.UserName, &quot;Downloads&quot;, in_SavedFilePath)]">
-      <ui:ExcelApplicationScope.Body>
-        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_4">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="True" DataTable="[RespDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" PreserveFormat="True" SheetName="Sheet1" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ExcelApplicationScope.Body>
-    </ui:ExcelApplicationScope>
-    <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope &gt; 전체 주소록 체크 " sap:VirtualizedContainerService.HintSize="987,322" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" ReadOnly="True" Visible="False" WorkbookPath="[in_AddrFile]">
-      <ui:ExcelApplicationScope.Body>
-        <ActivityAction x:TypeArguments="ui:WorkbookApplication">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="376,213" sap2010:WorkflowViewState.IdRef="Sequence_6">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ExcelReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_2" SheetName="Sheet1" />
-            <ui:AddDataColumn x:TypeArguments="x:Boolean" Column="{x:Null}" MaxLength="{x:Null}" AllowDBNull="True" AutoIncrement="False" ColumnName="다시전달" DataTable="[AddrDT]" DefaultValue="True" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" Unique="False" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ExcelApplicationScope.Body>
-    </ui:ExcelApplicationScope>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="987,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="556,352" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ExcelApplicationScope Password="{x:Null}" AutoSave="False" CreateNewFile="False" DisplayName="Excel Application Scope &gt; 응답결과 " sap:VirtualizedContainerService.HintSize="514,260" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" ReadOnly="True" Visible="False" WorkbookPath="[Path.Combine(&quot;C:\Users&quot;, Environment.UserName, &quot;Downloads&quot;, in_SavedFilePath)]">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="실행" sap:VirtualizedContainerService.HintSize="376,151" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelReadRange Range="{x:Null}" AddHeaders="True" DataTable="[RespDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" PreserveFormat="True" SheetName="Sheet1" />
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[RespDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="987,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[Path.Combine(&quot;C:\Users&quot;, Environment.UserName, &quot;Downloads&quot;, in_SavedFilePath)]" />
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="987,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_AddrFile]" />
+    <ui:AddDataColumn x:TypeArguments="x:Boolean" Column="{x:Null}" MaxLength="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="다시전달" DataTable="[AddrDT]" DefaultValue="True" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="987,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" Unique="False" />
     <Assign sap:VirtualizedContainerService.HintSize="987,60" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="s:DateTime">[FilterDate]</OutArgument>
@@ -135,13 +138,13 @@
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="987,60" sap2010:WorkflowViewState.IdRef="Assign_12">
       <Assign.To>
-        <OutArgument x:TypeArguments="ui:GenericValue">[FilterDateStr]</OutArgument>
+        <OutArgument x:TypeArguments="x:String">[FilterDateStr]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="ui:GenericValue">[FilterDate.ToString("M-d-yy HH:mm:ss")]</InArgument>
+        <InArgument x:TypeArguments="x:String">[FilterDate.ToString("MM/dd/yyyy HH:mm:ss")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RespDT]" DisplayName="For Each Row &gt; 완료 날짜 기준 체크 " sap:VirtualizedContainerService.HintSize="987,52" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RespDT]" DisplayName="For Each Row &gt; 완료 날짜 기준 체크 " sap:VirtualizedContainerService.HintSize="987,451" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -170,7 +173,7 @@
       </ui:ForEachRow.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -194,13 +197,13 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RecentRespDT]" DisplayName="For Each Row &gt; 응답하지 않은 직원 체크 " sap:VirtualizedContainerService.HintSize="987,1979" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RecentRespDT]" DisplayName="For Each Row &gt; 응답하지 않은 직원 체크 " sap:VirtualizedContainerService.HintSize="987,2079" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="937,1830" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="937,1930" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="MyMatch" />
               <Variable x:TypeArguments="x:String" Name="MatchName" />
@@ -215,6 +218,14 @@
             <Assign sap:VirtualizedContainerService.HintSize="895,60" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[MatchName]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign sap:VirtualizedContainerService.HintSize="895,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">[MatchPhone]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
@@ -342,25 +353,36 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RemindAddrDT]" DisplayName="For Each Row &gt; 재발송 케이스 " sap:VirtualizedContainerService.HintSize="950,263" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RemindAddrDT]" DisplayName="For Each Row &gt; 재발송 케이스 " sap:VirtualizedContainerService.HintSize="987,433" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="478,284" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_QueueName]">
-              <ui:AddQueueItem.ItemInformation>
-                <InArgument x:TypeArguments="x:String" x:Key="Command">RESEND_MESSAGE</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Tag">[row("전화번호").ToString]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Message">[in_RemindMessage]</InArgument>
-              </ui:AddQueueItem.ItemInformation>
-            </ui:AddQueueItem>
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,192" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+              <ui:CommentOut.Body>
+                <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_QueueName]">
+                    <ui:AddQueueItem.ItemInformation>
+                      <InArgument x:TypeArguments="x:String" x:Key="Command">RESEND_MESSAGE</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Tag">[row("전화번호").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="Message">[in_RemindMessage]</InArgument>
+                    </ui:AddQueueItem.ItemInformation>
+                  </ui:AddQueueItem>
+                </Sequence>
+              </ui:CommentOut.Body>
+            </ui:CommentOut>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
