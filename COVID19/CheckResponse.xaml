@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1049,3637</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1049,4371</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckResponse_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -41,7 +41,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -64,10 +64,9 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="다운로드 받은 엑셀 파일에서 응답하지 않은 사람에 대해서 체크하고 Reminder 메세지 전달하도록 구성 &#xA;&#xA;in_SavedFilePath : Forms에서 다운로드 받은 엑세 파일 경로 &#xA;in_QueueName : 응답을 보내지 않아 메세지를 제전송 할때 사용하는 QueueName &#xA;in_AddrFile : 직원 연락처가 있는 파일 &#xA;in_RemindMessage :  재전송시 보낼 메세지 포맷, Config에 저장됨 &#xA;in_CheckIntervalHour:  재전송을 보낼 조건 판단,  시간 단위 숫자 " DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,4165" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="다운로드 받은 엑셀 파일에서 응답하지 않은 사람에 대해서 체크하고 Reminder 메세지 전달하도록 구성 &#xA;&#xA;in_SavedFilePath : Forms에서 다운로드 받은 엑세 파일 경로 &#xA;in_QueueName : 응답을 보내지 않아 메세지를 제전송 할때 사용하는 QueueName &#xA;in_AddrFile : 직원 연락처가 있는 파일 &#xA;in_RemindMessage :  재전송시 보낼 메세지 포맷, Config에 저장됨 &#xA;in_CheckIntervalHour:  재전송을 보낼 조건 판단,  시간 단위 숫자 " DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,4311" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="RespDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="RecentRespDT" />
@@ -76,6 +75,8 @@
       <Variable x:TypeArguments="sd:DataTable" Name="RemindAddrDT" />
       <Variable x:TypeArguments="s:DateTime" Name="FilterDate" />
       <Variable x:TypeArguments="x:String" Name="FilterDateStr" />
+      <Variable x:TypeArguments="sd:DataTable" Name="SortedRespDT" />
+      <Variable x:TypeArguments="x:Int32" Name="LastID" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -144,29 +145,46 @@
         <InArgument x:TypeArguments="x:String">[FilterDate.ToString("MM/dd/yyyy HH:mm:ss")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RespDT]" DisplayName="For Each Row &gt; 완료 날짜 기준 체크 " sap:VirtualizedContainerService.HintSize="987,451" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="완료 시간" DataTable="[RespDT]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="987,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[SortedRespDT]" SortOrder="Descending" />
+    <Assign sap:VirtualizedContainerService.HintSize="987,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[LastID]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[SortedRespDT.Rows.Count]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SortedRespDT]" DisplayName="For Each Row &gt; 완료 날짜 기준 체크 " sap:VirtualizedContainerService.HintSize="987,605" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,302" sap2010:WorkflowViewState.IdRef="Sequence_11">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,456" sap2010:WorkflowViewState.IdRef="Sequence_11">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[row(&quot;완료 시간&quot;).ToString &gt; FilterDateStr]" sap:VirtualizedContainerService.HintSize="484,210" sap2010:WorkflowViewState.IdRef="If_4">
-              <If.Else>
-                <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_13">
-                  <Assign.To>
-                    <OutArgument x:TypeArguments="x:Object">[row("ID")]</OutArgument>
-                  </Assign.To>
-                  <Assign.Value>
-                    <InArgument x:TypeArguments="x:Object">[0]</InArgument>
-                  </Assign.Value>
-                </Assign>
-              </If.Else>
+            <If Condition="[row(&quot;완료 시간&quot;).ToString &lt; FilterDateStr]" sap:VirtualizedContainerService.HintSize="484,364" sap2010:WorkflowViewState.IdRef="If_4">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="304.5,214" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Int32">[LastID]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(row("ID").ToString)]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:Break sap:VirtualizedContainerService.HintSize="262.5,22" sap2010:WorkflowViewState.IdRef="Break_1" />
+                </Sequence>
+              </If.Then>
             </If>
           </Sequence>
         </ActivityAction>
@@ -178,15 +196,15 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <ui:FilterDataTable DataTable="[RespDT]" DisplayName="Filter Data Table &gt; 최근 in_CheckIntervalHour 시간에 응답한 사람 제외 " FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="987,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[RecentRespDT]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[SortedRespDT]" DisplayName="Filter Data Table &gt; 최근 in_CheckIntervalHour 시간에 응답한 사람 제외 " FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="987,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[RecentRespDT]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-          <ui:FilterOperationArgument BooleanOperator="And" Operator="NOTEQ">
+          <ui:FilterOperationArgument BooleanOperator="And" Operator="GT">
             <ui:FilterOperationArgument.Column>
               <InArgument x:TypeArguments="x:String">["ID"]</InArgument>
             </ui:FilterOperationArgument.Column>
             <ui:FilterOperationArgument.Operand>
-              <InArgument x:TypeArguments="x:Int32">[0]</InArgument>
+              <InArgument x:TypeArguments="x:Int32">[LastID]</InArgument>
             </ui:FilterOperationArgument.Operand>
           </ui:FilterOperationArgument>
         </scg:List>
@@ -353,36 +371,25 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RemindAddrDT]" DisplayName="For Each Row &gt; 재발송 케이스 " sap:VirtualizedContainerService.HintSize="987,433" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RemindAddrDT]" DisplayName="For Each Row &gt; 재발송 케이스 " sap:VirtualizedContainerService.HintSize="987,263" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="478,284" sap2010:WorkflowViewState.IdRef="Sequence_10">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_10">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,192" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-              <ui:CommentOut.Body>
-                <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_14">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_QueueName]">
-                    <ui:AddQueueItem.ItemInformation>
-                      <InArgument x:TypeArguments="x:String" x:Key="Command">RESEND_MESSAGE</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Tag">[row("전화번호").ToString]</InArgument>
-                      <InArgument x:TypeArguments="x:String" x:Key="Message">[in_RemindMessage]</InArgument>
-                    </ui:AddQueueItem.ItemInformation>
-                  </ui:AddQueueItem>
-                </Sequence>
-              </ui:CommentOut.Body>
-            </ui:CommentOut>
+            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_QueueName]">
+              <ui:AddQueueItem.ItemInformation>
+                <InArgument x:TypeArguments="x:String" x:Key="Command">RESEND_MESSAGE</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Tag">[row("전화번호").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Message">[in_RemindMessage]</InArgument>
+              </ui:AddQueueItem.ItemInformation>
+            </ui:AddQueueItem>
           </Sequence>
         </ActivityAction>
       </ui:ForEachRow.Body>
