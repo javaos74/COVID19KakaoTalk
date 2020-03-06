@@ -1,4 +1,4 @@
-# COVD19KakaoTalk
+# COVID19KakaoTalk
 코로나19 직원 헬스체커 자동화 프로세스 
 
 # 최신 릴리즈는 1.0.23 입니다. 
