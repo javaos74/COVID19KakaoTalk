@@ -19,4 +19,4 @@
 - 설문 내용 준비 및 설문 등록 : Microsoft Forms 이용 
 - 오케스트레이터가 없으신 분들은 https://cloud.uipath.com 에서 Community Edition Orchestrator Tenant 생성 
 
-* 자세한 사용법은 COVD19헬스체커.pdf 문서를 참고하세요.
+* 자세한 사용법은 COVID19헬스체커.pdf 문서를 참고하세요.
