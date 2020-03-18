@@ -3,7 +3,6 @@
   "description": "코로나19대응 직원 건강상태 체크 프로세스 ",
   "main": "Main.xaml",
   "dependencies": {
-    "BalaReva.Excel.Activities": "[2019.4.0]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Database.Activities": "[1.3.7369.25200]",
     "UiPath.Excel.Activities": "[2.7.2]",
