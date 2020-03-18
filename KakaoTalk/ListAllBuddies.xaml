@@ -114,12 +114,20 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5f9c870b0926e7484d9e96fff2737cd9" Selector="&lt;uia automationid='ButtonsListView' cls='ListView' name='Menu items' /&gt;&lt;uia cls='ListViewItem' idx='1' name='KakaoTalk.Lib.ViewModel.HamburgerMenu.BadgeHamburgerItemViewModel' /&gt;" WaitForReady="INTERACTIVE" />
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5f9c870b0926e7484d9e96fff2737cd9" Selector="&lt;uia automationid='ButtonsListView' cls='ListView' name='Menu items' /&gt;&lt;uia cls='ListViewItem' idx='1' name='KakaoTalk.Lib.ViewModel.HamburgerMenu.BadgeHamburgerItemViewModel' /&gt;" WaitForReady="INTERACTIVE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
                     <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Type Into - TS(TogetherSeoul로 검색)" EmptyField="True" sap:VirtualizedContainerService.HintSize="687,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_Prefix]">
                       <ui:TypeInto.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="76708208d70b660fc5eeeefcfcf99ac2" Selector="&lt;uia automationid='SearchTextBox' cls='TextBox' name='친구 이름 검색' /&gt;" WaitForReady="INTERACTIVE" />
+                        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="76708208d70b660fc5eeeefcfcf99ac2" Selector="&lt;uia automationid='SearchTextBox' cls='TextBox' name='친구 이름 검색' /&gt;" WaitForReady="INTERACTIVE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
                       </ui:TypeInto.Target>
                     </ui:TypeInto>
                     <Assign sap:VirtualizedContainerService.HintSize="687,60" sap2010:WorkflowViewState.IdRef="Assign_1">
@@ -139,7 +147,11 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <ui:FindChildren Children="[UISearchResult]" DisplayName="Find Children" Filter="&lt;uia cls='ListViewItem' /&gt;" sap:VirtualizedContainerService.HintSize="599,68" sap2010:WorkflowViewState.IdRef="FindChildren_1" Scope="FIND_CHILDREN">
                           <ui:FindChildren.Target>
-                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" Selector="&lt;uia automationid='VisibleFriendListView' cls='ListView' /&gt;&lt;uia cls='ListViewHeaderItem' name='KakaoTalk.Lib.ViewModel.Friends.VisibleFriendGroup' /&gt;" WaitForReady="INTERACTIVE" />
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="&lt;uia automationid='VisibleFriendListView' cls='ListView' /&gt;&lt;uia cls='ListViewHeaderItem' name='KakaoTalk.Lib.ViewModel.Friends.VisibleFriendGroup' /&gt;" WaitForReady="INTERACTIVE">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                            </ui:Target>
                           </ui:FindChildren.Target>
                         </ui:FindChildren>
                         <ui:ForEach x:TypeArguments="ui:UiElement" CurrentIndex="{x:Null}" DisplayName="For Each - 계속 이동하기 " sap:VirtualizedContainerService.HintSize="599,816" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[UISearchResult]">
@@ -162,7 +174,11 @@
                                     <OutArgument x:TypeArguments="ui:GenericValue">[IsVisibile]</OutArgument>
                                   </ui:GetAttribute.Result>
                                   <ui:GetAttribute.Target>
-                                    <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[item]" WaitForReady="INTERACTIVE" />
+                                    <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[item]" WaitForReady="INTERACTIVE">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                    </ui:Target>
                                   </ui:GetAttribute.Target>
                                 </ui:GetAttribute>
                                 <If Condition="[IsVisibile = True]" sap:VirtualizedContainerService.HintSize="521,455" sap2010:WorkflowViewState.IdRef="If_1">
@@ -181,7 +197,11 @@
                                       </sap:WorkflowViewStateService.ViewState>
                                       <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="334,116" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="down" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
                                         <ui:SendHotkey.Target>
-                                          <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[item]" WaitForReady="INTERACTIVE" />
+                                          <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[item]" WaitForReady="INTERACTIVE">
+                                            <ui:Target.TimeoutMS>
+                                              <InArgument x:TypeArguments="x:Int32" />
+                                            </ui:Target.TimeoutMS>
+                                          </ui:Target>
                                         </ui:SendHotkey.Target>
                                       </ui:SendHotkey>
                                       <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_2">
@@ -219,7 +239,11 @@
                         </ui:CursorPosition>
                       </ui:Click.CursorPosition>
                       <ui:Click.Target>
-                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" Element="[LastUiElement]" WaitForReady="INTERACTIVE" />
+                        <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[LastUiElement]" WaitForReady="INTERACTIVE">
+                          <ui:Target.TimeoutMS>
+                            <InArgument x:TypeArguments="x:Int32" />
+                          </ui:Target.TimeoutMS>
+                        </ui:Target>
                       </ui:Click.Target>
                     </ui:Click>
                     <Assign sap:VirtualizedContainerService.HintSize="550,60" sap2010:WorkflowViewState.IdRef="Assign_3">

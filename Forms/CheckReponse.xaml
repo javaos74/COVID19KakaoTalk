@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1163,3842</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>763,2660</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GenReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -59,14 +59,14 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="결과가 취합된 사이트로 이동해서 응답하지 않는 사람들에 메세지를 보낼 준비를 함. &#xA;&#xA;in_ReportUrl : 결과를 볼수 있는 URL 현재는 Microsoft Forms 이용함&#xA;in_SavedFilePath : 저장될 엑셀 파일 경로 &#xA;in_FormsCredential :  Microsoft Forms에 접속시 사용할 계정 정보  " DisplayName="GenReport" sap:VirtualizedContainerService.HintSize="1143,3782" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="결과가 취합된 사이트로 이동해서 응답하지 않는 사람들에 메세지를 보낼 준비를 함. &#xA;&#xA;in_ReportUrl : 결과를 볼수 있는 URL 현재는 Microsoft Forms 이용함&#xA;in_SavedFilePath : 저장될 엑셀 파일 경로 &#xA;in_FormsCredential :  Microsoft Forms에 접속시 사용할 계정 정보  " DisplayName="GenReport" sap:VirtualizedContainerService.HintSize="518,2495" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="1101,275" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_ReportUrl]">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Open Browser" sap:VirtualizedContainerService.HintSize="476,275" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" Url="[in_ReportUrl]">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -129,16 +129,16 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <Sequence sap2010:Annotation.AnnotationText="로그인 처리 &#xA;조건에 따라 사용자이름 및 비번을 입력하는 경우와 &#xA;한번 로그인한 계정을 선택해서 로그인하는 방법으로 나뉜다. " sap:VirtualizedContainerService.HintSize="1101,1627" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence sap2010:Annotation.AnnotationText="로그인 처리 &#xA;조건에 따라 사용자이름 및 비번을 입력하는 경우와 &#xA;한번 로그인한 계정을 선택해서 로그인하는 방법으로 나뉜다. " sap:VirtualizedContainerService.HintSize="476,340" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch &gt; 사용자이름 및 비밀번호을 넣는 화면인지 우선 판단 " sap:VirtualizedContainerService.HintSize="1059,1475" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch &gt; 사용자이름 및 비밀번호을 넣는 화면인지 우선 판단 " sap:VirtualizedContainerService.HintSize="434,188" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" ContinueOnError="False" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="200,52" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="04301696efece5c372e7f543efc8b35c" Selector="&lt;html title='Microsoft Forms - *' /&gt;" TimeoutMS="10000">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" ContinueOnError="False" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="597,52" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="04301696efece5c372e7f543efc8b35c" Selector="&lt;html title='Microsoft Forms - *' /&gt;" TimeoutMS="10000">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
@@ -219,10 +219,10 @@
           </ui:BrowserScope>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1025,1309" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
@@ -333,7 +333,7 @@
         </TryCatch.Catches>
       </TryCatch>
     </Sequence>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="1101,1616" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="cb6361bdc0d7924a48c49da54a1ec944" Selector="&lt;html title='Microsoft Forms' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="476,1616" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="cb6361bdc0d7924a48c49da54a1ec944" Selector="&lt;html title='Microsoft Forms' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -476,8 +476,8 @@
                 </ui:Target>
               </ui:Click.Target>
             </ui:Click>
-            <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[Path.Combine(&quot;C:\Users&quot;, Environment.UserName, &quot;Downloads&quot;, in_SavedFilePath)]" />
-            <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[Path.Combine(&quot;C:\Users&quot;, Environment.UserName, &quot;Downloads&quot;, in_SavedFilePath)]" />
+            <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[Path.Combine( Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\Downloads&quot;), in_SavedFilePath)]" />
+            <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[Path.Combine( Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\Downloads&quot;), in_SavedFilePath)]" />
             <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'Edit'" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="v" KeyModifiers="Ctrl">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="bd09ee61fb39c04b29c96f01e4f577ef" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='다른 이름으로 저장' /&gt;&lt;wnd aaname='탐색 창' cls='DirectUIHWND' /&gt;&lt;wnd aaname='파일 이름:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
