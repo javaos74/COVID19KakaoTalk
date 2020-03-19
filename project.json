@@ -3,6 +3,7 @@
   "description": "코로나19대응 직원 건강상태 체크 프로세스 ",
   "main": "Main.xaml",
   "dependencies": {
+    "LanguageChange": "[1.0.1]",
     "UiPath.Credentials.Activities": "[1.1.6479.13204]",
     "UiPath.Database.Activities": "[1.3.7369.25200]",
     "UiPath.Excel.Activities": "[2.7.2]",
@@ -14,7 +15,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "1.0.28",
+  "projectVersion": "1.0.29",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
@@ -39,6 +40,18 @@
     "input": [
       {
         "name": "in_Command",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      },
+      {
+        "name": "in_MessengerApp",
+        "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
+        "required": false,
+        "hasDefault": false
+      },
+      {
+        "name": "in_Addressbook",
         "type": "System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089",
         "required": false,
         "hasDefault": false
