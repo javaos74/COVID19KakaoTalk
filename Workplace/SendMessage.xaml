@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>659,2329</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>659,2511</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendMessage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -35,7 +35,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -55,21 +55,22 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendMessage" sap:VirtualizedContainerService.HintSize="639,2229" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendMessage" sap:VirtualizedContainerService.HintSize="639,2291" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Workplace Chat.exe'" sap:VirtualizedContainerService.HintSize="597,2137" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="f860babd2bca3bc97f696f9cb55141e1" Selector="&lt;wnd app='workplace chat.exe' cls='Chrome_WidgetWin_1' title='Workplace *' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Workplace Chat.exe'" sap:VirtualizedContainerService.HintSize="597,2199" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="f860babd2bca3bc97f696f9cb55141e1" Selector="&lt;wnd app='workplace chat.exe' cls='Chrome_WidgetWin_1' title='Workplace *' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,1991" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,2053" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="ErrorFlag" />
             </Sequence.Variables>
@@ -217,9 +218,9 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <If Condition="[Not ErrorFlag]" sap:VirtualizedContainerService.HintSize="521,682" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[Not ErrorFlag]" sap:VirtualizedContainerService.HintSize="521,744" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,533" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,595" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="s:String[]" Name="Lines" />
                   </Sequence.Variables>
@@ -233,7 +234,53 @@
                       <l:Language id="00000409" name_en="English (United States)" />
                     </l:LanguageChangeActivity.LanguageName>
                   </l:LanguageChangeActivity>
-                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'DIV'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[in_Message]">
+                  <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+                    <TextExpression.Namespaces>
+                      <sco:Collection x:TypeArguments="x:String">
+                        <x:String>System.Activities</x:String>
+                        <x:String>System.Activities.Statements</x:String>
+                        <x:String>System.Activities.Expressions</x:String>
+                        <x:String>System.Activities.Validation</x:String>
+                        <x:String>System.Activities.XamlIntegration</x:String>
+                        <x:String>Microsoft.VisualBasic.Activities</x:String>
+                        <x:String>System</x:String>
+                        <x:String>System.Collections.Generic</x:String>
+                        <x:String>System.Data</x:String>
+                        <x:String>System.Diagnostics</x:String>
+                        <x:String>System.IO</x:String>
+                        <x:String>System.Linq</x:String>
+                        <x:String>System.Management.Automation</x:String>
+                        <x:String>System.Net.Mail</x:String>
+                        <x:String>System.Xml</x:String>
+                        <x:String>System.Xml.Linq</x:String>
+                        <x:String>UiPath.Library</x:String>
+                        <x:String>System.Windows.Markup</x:String>
+                      </sco:Collection>
+                    </TextExpression.Namespaces>
+                    <TextExpression.References>
+                      <sco:Collection x:TypeArguments="AssemblyReference">
+                        <AssemblyReference>System.Activities</AssemblyReference>
+                        <AssemblyReference>mscorlib</AssemblyReference>
+                        <AssemblyReference>System.Data</AssemblyReference>
+                        <AssemblyReference>System</AssemblyReference>
+                        <AssemblyReference>System.Core</AssemblyReference>
+                        <AssemblyReference>System.Management.Automation</AssemblyReference>
+                        <AssemblyReference>System.Xml</AssemblyReference>
+                        <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                        <AssemblyReference>UiPath.Library</AssemblyReference>
+                        <AssemblyReference>PresentationFramework</AssemblyReference>
+                        <AssemblyReference>WindowsBase</AssemblyReference>
+                        <AssemblyReference>PresentationCore</AssemblyReference>
+                        <AssemblyReference>System.Xaml</AssemblyReference>
+                      </sco:Collection>
+                    </TextExpression.References>
+                    <sap2010:WorkflowViewState.ViewStateManager>
+                      <sap2010:ViewStateManager>
+                        <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                      </sap2010:ViewStateManager>
+                    </sap2010:WorkflowViewState.ViewStateManager>
+                  </Delay>
+                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into &gt; 실제 전달한 메세지 입력 " sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[in_Message.Replace( vbNewLine, string.Empty)]">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="831eb4bc7ac7b413dd72329e16cfadfe" Selector="&lt;ctrl name='Workplace Chat' role='document' /&gt;&lt;ctrl name='대화에 참여한 사람 대화에 참여한 사람 *' role='grouping' /&gt;&lt;ctrl name='새 메시지' role='pane' /&gt;&lt;ctrl name='메시지를 입력하세요...*' role='DIV' /&gt;&lt;ctrl idx='2' role='DIV' /&gt;" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
