@@ -53,7 +53,6 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Procedure to add friends" DisplayName="CheckAndAddFriends" sap:VirtualizedContainerService.HintSize="376,216" sap2010:WorkflowViewState.IdRef="Sequence_1">
