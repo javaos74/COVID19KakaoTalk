@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1155.5,7733</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>632,1275</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -64,7 +64,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="1135.5,7673" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="612,1175" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Msg" />
       <Variable x:TypeArguments="x:String" Name="Prefix" />
@@ -80,7 +80,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Message&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Message&quot;) IsNot Nothing]" DisplayName="If &gt; QueueItem 에 없으면 Config에 있는 항목 참조 " sap:VirtualizedContainerService.HintSize="1093.5,210" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Message&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Message&quot;) IsNot Nothing]" DisplayName="If &gt; QueueItem 에 없으면 Config에 있는 항목 참조 " sap:VirtualizedContainerService.HintSize="570,210" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
         <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
@@ -102,7 +102,7 @@
         </Assign>
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="1093.5,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign sap:VirtualizedContainerService.HintSize="570,60" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[SurveyLink]</OutArgument>
       </Assign.To>
@@ -110,7 +110,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config("SurveyLink").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1093.5,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+    <Assign sap:VirtualizedContainerService.HintSize="570,60" sap2010:WorkflowViewState.IdRef="Assign_39">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[AppName]</OutArgument>
       </Assign.To>
@@ -118,7 +118,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config("MessengerApp").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1093.5,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="570,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
       <ui:CommentOut.Body>
         <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="304.5,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
           <sap:WorkflowViewStateService.ViewState>
@@ -143,8 +143,8 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:CommentOut>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="1093.5,6995" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="SEND_MESSAGE" DisplayName="지정된 문구로  메세지 보내기 " sap:VirtualizedContainerService.HintSize="1053.5,6693" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="570,481" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="SEND_MESSAGE" DisplayName="지정된 문구로  메세지 보내기 " sap:VirtualizedContainerService.HintSize="1053.5,5791" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="Friends" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -342,62 +342,17 @@
             </Sequence>
           </If.Then>
         </If>
-        <If Condition="[AppName = &quot;KakaoTalk&quot;]" sap:VirtualizedContainerService.HintSize="1011.5,240" sap2010:WorkflowViewState.IdRef="If_23">
-          <If.Then>
-            <ui:FilterDataTable sap2010:Annotation.AnnotationText="등록여부 값이 완료인 항목만 선택 " DataTable="[AddrDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[FriendsDT]" SelectColumnsMode="Keep">
-              <ui:FilterDataTable.Filters>
-                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                  <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                    <ui:FilterOperationArgument.Column>
-                      <InArgument x:TypeArguments="x:String">["등록여부"]</InArgument>
-                    </ui:FilterOperationArgument.Column>
-                    <ui:FilterOperationArgument.Operand>
-                      <InArgument x:TypeArguments="x:String">["완료"]</InArgument>
-                    </ui:FilterOperationArgument.Operand>
-                  </ui:FilterOperationArgument>
-                </scg:List>
-              </ui:FilterDataTable.Filters>
-              <ui:FilterDataTable.SelectColumns>
-                <scg:List x:TypeArguments="InArgument" Capacity="4">
-                  <InArgument x:TypeArguments="x:String">["이름"]</InArgument>
-                  <InArgument x:TypeArguments="x:String">["전화번호"]</InArgument>
-                </scg:List>
-              </ui:FilterDataTable.SelectColumns>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:FilterDataTable>
-          </If.Then>
-        </If>
-        <If Condition="[AppName = &quot;Workplace&quot;]" sap:VirtualizedContainerService.HintSize="1011.5,240" sap2010:WorkflowViewState.IdRef="If_25">
-          <If.Then>
-            <ui:FilterDataTable sap2010:Annotation.AnnotationText="아이디가 있는 항목만 선택 " DataTable="[AddrDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="FilterDataTable_3" OutputDataTable="[FriendsDT]" SelectColumnsMode="Keep">
-              <ui:FilterDataTable.Filters>
-                <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-                  <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
-                    <ui:FilterOperationArgument.Column>
-                      <InArgument x:TypeArguments="x:String">["아이디"]</InArgument>
-                    </ui:FilterOperationArgument.Column>
-                  </ui:FilterOperationArgument>
-                </scg:List>
-              </ui:FilterDataTable.Filters>
-              <ui:FilterDataTable.SelectColumns>
-                <scg:List x:TypeArguments="InArgument" Capacity="4">
-                  <InArgument x:TypeArguments="x:String">["이름"]</InArgument>
-                  <InArgument x:TypeArguments="x:String">["전화번호"]</InArgument>
-                  <InArgument x:TypeArguments="x:String">["아이디"]</InArgument>
-                </scg:List>
-              </ui:FilterDataTable.SelectColumns>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:FilterDataTable>
-          </If.Then>
-        </If>
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Filter Addressbook for each MessengerApp" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="1011.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\FilterAddressbook.xaml&quot;, AppName)]">
+          <ui:InvokeWorkflowFile.Arguments>
+            <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AddrDT">[AddrDT]</InArgument>
+            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredAddrDT">[FriendsDT]</OutArgument>
+          </ui:InvokeWorkflowFile.Arguments>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:InvokeWorkflowFile>
         <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_12">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Int32">[SuccessCount]</OutArgument>
@@ -411,13 +366,13 @@
             <InArgument x:TypeArguments="x:Int32" x:Key="NoOfEmployees">[FriendsDT.Rows.Count]</InArgument>
           </ui:AddTransactionItem.TransactionInformation>
         </ui:AddTransactionItem>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1011.5,2316" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1011.5,1816" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,2167" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,1667" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="ErrorFlag" />
                   <Variable x:TypeArguments="x:String" Name="CustMsg" />
@@ -427,11 +382,28 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[AppName = &quot;Workplace&quot; AndAlso row(&quot;아이디&quot;) isNot Nothing AndAlso Not string.IsNullOrEmpty( row(&quot;아이디&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="919.5,210" sap2010:WorkflowViewState.IdRef="If_24">
-                  <If.Else>
-                    <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
-                  </If.Else>
-                </If>
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="919.5,52" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="526,301" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If Condition="[AppName = &quot;Workplace&quot; AndAlso row(&quot;아이디&quot;) isNot Nothing AndAlso Not string.IsNullOrEmpty( row(&quot;아이디&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="484,209" sap2010:WorkflowViewState.IdRef="If_24">
+                        <If.Else>
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
                 <If Condition="[Msg.Contains(&quot;{0}&quot;)]" sap:VirtualizedContainerService.HintSize="919.5,452" sap2010:WorkflowViewState.IdRef="If_5">
                   <If.Then>
                     <Sequence sap:VirtualizedContainerService.HintSize="612,302" sap2010:WorkflowViewState.IdRef="Sequence_14">
@@ -475,30 +447,17 @@
                     </Assign>
                   </If.Else>
                 </If>
-                <If Condition="[AppName = &quot;KakaoTalk&quot;]" sap:VirtualizedContainerService.HintSize="919.5,210" sap2010:WorkflowViewState.IdRef="If_19">
-                  <If.Then>
-                    <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_40">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[FriendName]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[row("전화번호").ToString]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </If.Then>
-                </If>
-                <If Condition="[AppName = &quot;Workplace&quot;]" sap:VirtualizedContainerService.HintSize="919.5,210" sap2010:WorkflowViewState.IdRef="If_20">
-                  <If.Then>
-                    <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_41">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[FriendName]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[row("아이디").ToString]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </If.Then>
-                </If>
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="GetFriendName for Each MessengerApp " DisplayName="Invoke GetFriendName Workflow File" sap:VirtualizedContainerService.HintSize="919.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\GetFriendName.xaml&quot;, AppName)]">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">[row]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">[FriendName]</OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="919.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\SendMessage.xaml&quot;, AppName)]">
                   <ui:InvokeWorkflowFile.Arguments>
                     <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[FriendName.Trim]</InArgument>
@@ -664,7 +623,7 @@
           </ui:AddLogFields.Fields>
         </ui:AddLogFields>
       </Sequence>
-      <Sequence x:Key="RESEND_MESSAGE" DisplayName="미응답자에게 안내 메제지 재전송" sap:VirtualizedContainerService.HintSize="1053.5,2241" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence x:Key="RESEND_MESSAGE" DisplayName="미응답자에게 안내 메제지 재전송" sap:VirtualizedContainerService.HintSize="1053.5,1899" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="CustMsg" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -860,13 +819,13 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:FilterDataTable>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[MatchedAddrDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1011.5,1654" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[MatchedAddrDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1011.5,1312" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,1505" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,1163" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -915,33 +874,20 @@
                     </Assign>
                   </If.Else>
                 </If>
-                <If Condition="[AppName = &quot;KakaoTalk&quot;]" sap:VirtualizedContainerService.HintSize="919.5,210" sap2010:WorkflowViewState.IdRef="If_21">
-                  <If.Then>
-                    <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_42">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[FriendName]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[row("전화번호").ToString]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </If.Then>
-                </If>
-                <If Condition="[AppName = &quot;Workplace&quot;]" sap:VirtualizedContainerService.HintSize="919.5,210" sap2010:WorkflowViewState.IdRef="If_22">
-                  <If.Then>
-                    <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_43">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[FriendName]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[row("아이디").ToString]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </If.Then>
-                </If>
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="GetFriendName for Each MessengerApp " DisplayName="Invoke GetFriendName Workflow File" sap:VirtualizedContainerService.HintSize="919.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\GetFriendName.xaml&quot;, AppName)]">
+                  <ui:InvokeWorkflowFile.Arguments>
+                    <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">[row]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">[FriendName]</OutArgument>
+                  </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:InvokeWorkflowFile>
                 <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="919.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\SendMessage.xaml&quot;, AppName)]">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[FriendName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[FriendName.Trim]</InArgument>
                     <InArgument x:TypeArguments="x:String" x:Key="in_Message">[CustMsg]</InArgument>
                     <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
@@ -996,7 +942,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
       </Sequence>
-      <Sequence x:Key="NOTIFY_STATUS" DisplayName="진행사항 통보 " sap:VirtualizedContainerService.HintSize="385.5,243" sap2010:WorkflowViewState.IdRef="Sequence_28">
+      <Sequence x:Key="NOTIFY_STATUS" DisplayName="진행사항 통보 " sap:VirtualizedContainerService.HintSize="385.5,179" sap2010:WorkflowViewState.IdRef="Sequence_28">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="ErrorFlag" />
         </Sequence.Variables>
@@ -1012,11 +958,6 @@
             <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
-        <ui:AddLogFields DisplayName="Add Log Fields" sap:VirtualizedContainerService.HintSize="343.5,22" sap2010:WorkflowViewState.IdRef="AddLogFields_1">
-          <ui:AddLogFields.Fields>
-            <InArgument x:TypeArguments="x:String" x:Key="Command">[in_TransactionItem.SpecificContent("Command").ToString]</InArgument>
-          </ui:AddLogFields.Fields>
-        </ui:AddLogFields>
       </Sequence>
       <Sequence x:Key="LOG_ANALYTIC_DATA" DisplayName="응답 한 직원 데이터 분석을 위해서 기록 " sap:VirtualizedContainerService.HintSize="787.5,921" sap2010:WorkflowViewState.IdRef="Sequence_29">
         <Sequence.Variables>
