@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1149,5419</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1149,5379</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>KakaoTalk_AddFriend_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -230,7 +230,7 @@
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[row(&quot;등록여부&quot;).ToString  = &quot;완료&quot;]" sap:VirtualizedContainerService.HintSize="877,209" sap2010:WorkflowViewState.IdRef="If_9">
+                      <If Condition="[row(&quot;Status&quot;).ToString.ToLower  = &quot;done&quot;]" sap:VirtualizedContainerService.HintSize="877,209" sap2010:WorkflowViewState.IdRef="If_9">
                         <If.Then>
                           <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_3" />
                         </If.Then>
@@ -267,12 +267,12 @@
                           <OutArgument x:TypeArguments="x:String">[Phone]</OutArgument>
                         </Assign.To>
                         <Assign.Value>
-                          <InArgument x:TypeArguments="x:String">[row("전화번호").ToString.Trim.Replace(" ", string.Empty).Replace( "-", string.Empty)]</InArgument>
+                          <InArgument x:TypeArguments="x:String">[row("PhoneNumber").ToString.Trim.Replace(" ", string.Empty).Replace( "-", string.Empty)]</InArgument>
                         </Assign.Value>
                       </Assign>
                       <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke MakeBuddyName workflow" sap:VirtualizedContainerService.HintSize="877,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="KakaoTalk\MakeBuddyName.xaml">
                         <ui:InvokeWorkflowFile.Arguments>
-                          <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[row("이름").ToString]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_LastName">[row("Name").ToString]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_FirstName">[String.Empty]</InArgument>
                           <InArgument x:TypeArguments="x:String" x:Key="in_PhoneNumber">[Phone]</InArgument>
                           <OutArgument x:TypeArguments="x:String" x:Key="out_BuddyName">[BuddyName]</OutArgument>
@@ -341,7 +341,7 @@
                             </ui:GetAttribute>
                             <Assign sap:VirtualizedContainerService.HintSize="797,60" sap2010:WorkflowViewState.IdRef="Assign_17">
                               <Assign.To>
-                                <OutArgument x:TypeArguments="x:Object">[row("전화번호")]</OutArgument>
+                                <OutArgument x:TypeArguments="x:Object">[row("PhoneNumber")]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
                                 <InArgument x:TypeArguments="x:Object">[Phone]</InArgument>
@@ -358,10 +358,10 @@
                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[BuddyName  + &quot;: 등록 실패 &quot; + RespMsg]" />
                                   <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                                     <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("등록여부")]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">["실패"]</InArgument>
+                                      <InArgument x:TypeArguments="x:Object">["Failed"]</InArgument>
                                     </Assign.Value>
                                   </Assign>
                                 </Sequence>
@@ -376,10 +376,10 @@
                                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[BuddyName  + &quot; 등록 완료&quot;]" />
                                   <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_16">
                                     <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[row("등록여부")]</OutArgument>
+                                      <OutArgument x:TypeArguments="x:Object">[row("Status")]</OutArgument>
                                     </Assign.To>
                                     <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">["완료"]</InArgument>
+                                      <InArgument x:TypeArguments="x:Object">["Done"]</InArgument>
                                     </Assign.Value>
                                   </Assign>
                                 </Sequence>
@@ -418,7 +418,7 @@
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                               </ActivityAction.Argument>
-                              <Sequence sap:VirtualizedContainerService.HintSize="376,346" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,347" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                 <Sequence.Variables>
                                   <Variable x:TypeArguments="sd:DataRow" Name="RetryRow" />
                                 </Sequence.Variables>

@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>324.5,296</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>324.5,256</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetFriendName_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -70,7 +70,7 @@
         <OutArgument x:TypeArguments="x:String">[out_FriendName]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_DataRow("전화번호").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String">[in_DataRow("PhoneNumber").ToString]</InArgument>
       </Assign.Value>
     </Assign>
   </Sequence>

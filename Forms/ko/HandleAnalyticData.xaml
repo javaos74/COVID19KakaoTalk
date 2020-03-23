@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>763,1244</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>638,1139</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>HandleAnalyticData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -57,12 +57,13 @@
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="UiPath Insights에서 보여질수 있도록 응답한 사람들의 데이터 저장 " DisplayName="HandleAnalyticData" sap:VirtualizedContainerService.HintSize="618,1079" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Log employee's response for analytics with UiPath Insighs " DisplayName="HandleAnalyticData" sap:VirtualizedContainerService.HintSize="618,1079" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="RespDT" />
       <Variable x:TypeArguments="x:String" Name="TodayStr" />
@@ -85,7 +86,7 @@
       </Assign.Value>
     </Assign>
     <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="완료 시간" DataTable="[RespDT]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[SortedRespDT]" SortOrder="Descending" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SortedRespDT]" DisplayName="For Each Row &gt; 완료 날짜 기준 체크 " sap:VirtualizedContainerService.HintSize="576,667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[SortedRespDT]" DisplayName="For Each Row &gt; Check Date base on Finished Date" sap:VirtualizedContainerService.HintSize="576,667" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -105,7 +106,7 @@
                 <OutArgument x:TypeArguments="x:String">[FinishTime]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[row("완료 시간").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String">[row( "완료 시간").ToString]</InArgument>
               </Assign.Value>
             </Assign>
             <If Condition="[FinishTime.Contains( TodayStr)]" sap:VirtualizedContainerService.HintSize="484,326" sap2010:WorkflowViewState.IdRef="If_1">
