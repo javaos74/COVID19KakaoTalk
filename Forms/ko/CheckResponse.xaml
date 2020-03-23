@@ -5,12 +5,11 @@
     <x:Property Name="in_RemindMessage" Type="InArgument(x:String)" />
     <x:Property Name="in_CheckIntervalHour" Type="InArgument(x:Int32)" />
     <x:Property Name="in_SavedFilePath" Type="InArgument(x:String)" />
-    <x:Property Name="in_FinishTimeColunmName" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1049,4424</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1049,4384</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckResponse_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -147,7 +146,7 @@
         <InArgument x:TypeArguments="x:String">[FilterDate.ToString("MM/dd/yyyy HH:mm:ss")]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="[in_FinishTimeColunmName]" DataTable="[RespDT]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="987,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[SortedRespDT]" SortOrder="Descending" />
+    <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="완료 시간" DataTable="[RespDT]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="987,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[SortedRespDT]" SortOrder="Descending" />
     <Assign sap:VirtualizedContainerService.HintSize="987,60" sap2010:WorkflowViewState.IdRef="Assign_15">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[LastID]</OutArgument>
@@ -168,7 +167,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[row(in_FinishTimeColunmName).ToString &lt; FilterDateStr]" sap:VirtualizedContainerService.HintSize="484,364" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[row(&quot;완료 시간&quot;).ToString &lt; FilterDateStr]" sap:VirtualizedContainerService.HintSize="484,364" sap2010:WorkflowViewState.IdRef="If_4">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="304.5,214" sap2010:WorkflowViewState.IdRef="Sequence_15">
                   <sap:WorkflowViewStateService.ViewState>

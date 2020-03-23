@@ -3,7 +3,6 @@
     <x:Property Name="in_SavedFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_QueueName" Type="InArgument(x:String)" />
     <x:Property Name="in_TargetDate" Type="InArgument(s:DateTime)" />
-    <x:Property Name="in_DateColumnName" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
@@ -61,9 +60,10 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="UiPath Insights에서 보여질수 있도록 응답한 사람들의 데이터 저장 " DisplayName="HandleAnalyticData" sap:VirtualizedContainerService.HintSize="618,1079" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Log employee's response for analytics with UiPath Insighs " DisplayName="HandleAnalyticData" sap:VirtualizedContainerService.HintSize="618,1079" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="RespDT" />
       <Variable x:TypeArguments="x:String" Name="TodayStr" />
@@ -106,7 +106,7 @@
                 <OutArgument x:TypeArguments="x:String">[FinishTime]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="x:String">[row( in_DateColumnName).ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String">[row( "완료 시간").ToString]</InArgument>
               </Assign.Value>
             </Assign>
             <If Condition="[FinishTime.Contains( TodayStr)]" sap:VirtualizedContainerService.HintSize="484,326" sap2010:WorkflowViewState.IdRef="If_1">
