@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>324.5,296</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>324.5,256</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetFriendName_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -55,6 +55,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Get FriendName for Workplace which used for sending message " DisplayName="GetFriendName" sap:VirtualizedContainerService.HintSize="304.5,196" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -69,7 +70,7 @@
         <OutArgument x:TypeArguments="x:String">[out_FriendName]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[in_DataRow("아이디").ToString]</InArgument>
+        <InArgument x:TypeArguments="x:String">[in_DataRow("ID").ToString]</InArgument>
       </Assign.Value>
     </Assign>
   </Sequence>

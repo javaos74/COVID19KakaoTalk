@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>396,313</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>396,273</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>FilterAddressbook_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -53,6 +53,10 @@
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Filter Employee based on Phone Number existence" DisplayName="FilterAddressbook" sap:VirtualizedContainerService.HintSize="376,213" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -67,15 +71,15 @@
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="NOTEMPTY">
             <ui:FilterOperationArgument.Column>
-              <InArgument x:TypeArguments="x:String">["전화번호"]</InArgument>
+              <InArgument x:TypeArguments="x:String">["PhoneNumber"]</InArgument>
             </ui:FilterOperationArgument.Column>
           </ui:FilterOperationArgument>
         </scg:List>
       </ui:FilterDataTable.Filters>
       <ui:FilterDataTable.SelectColumns>
         <scg:List x:TypeArguments="InArgument" Capacity="4">
-          <InArgument x:TypeArguments="x:String">["이름"]</InArgument>
-          <InArgument x:TypeArguments="x:String">["전화번호"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["Name"]</InArgument>
+          <InArgument x:TypeArguments="x:String">["PhoneNumber"]</InArgument>
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
       <sap:WorkflowViewStateService.ViewState>

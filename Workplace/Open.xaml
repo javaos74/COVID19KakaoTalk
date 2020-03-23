@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>536,804</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>536,692</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Open_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -57,7 +57,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Workplace 로그인 하기 &#xA;실행하면 자동으로 로그인 됨 &#xA;&#xA;일단 그대로 사용. " DisplayName="Open" sap:VirtualizedContainerService.HintSize="516,664" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Run Workplace  and Login &#xA;Workplace alwasy starts with loged on status " DisplayName="Open" sap:VirtualizedContainerService.HintSize="516,632" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -66,7 +66,7 @@
     </sap:WorkflowViewStateService.ViewState>
     <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="474,496" sap2010:WorkflowViewState.IdRef="TryCatch_1">
       <TryCatch.Try>
-        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'Workplace Chat.exe'" sap:VirtualizedContainerService.HintSize="434,230" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="145f28721f19ceeca11b5512494e28d1" Selector="&lt;wnd app='workplace chat.exe' cls='Chrome_WidgetWin_1' title='Workplace *' /&gt;" TimeoutMS="3000">
+        <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" Window="{x:Null}" DisplayName="Attach Window &gt; Check Already run " sap:VirtualizedContainerService.HintSize="434,230" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="145f28721f19ceeca11b5512494e28d1" Selector="&lt;wnd app='workplace chat.exe' cls='Chrome_WidgetWin_1' title='Workplace *' /&gt;" TimeoutMS="3000">
           <ui:WindowScope.Body>
             <ActivityAction x:TypeArguments="x:Object">
               <ActivityAction.Argument>
@@ -95,7 +95,7 @@
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
             </ActivityAction.Argument>
-            <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" WorkingDirectory="{x:Null}" ContinueOnError="False" DisplayName="Open Application 'Workplace Chat.exe'" FileName="[Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\AppData\Local\Programs\Workplace\Workplace Chat.exe&quot;)]" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="a630ba7cb187e662f5f6a596acc354c7" Selector="&lt;wnd app='workplace chat.exe' cls='Chrome_WidgetWin_1' title='Workplace *' /&gt;" TimeoutMS="5000">
+            <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" WorkingDirectory="{x:Null}" ContinueOnError="False" DisplayName="Open Application &gt; Not running just starts it and wait 10 seconds" FileName="[Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\AppData\Local\Programs\Workplace\Workplace Chat.exe&quot;)]" sap:VirtualizedContainerService.HintSize="434,260" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="a630ba7cb187e662f5f6a596acc354c7" Selector="&lt;wnd app='workplace chat.exe' cls='Chrome_WidgetWin_1' title='Workplace *' /&gt;" TimeoutMS="5000">
               <ui:OpenApplication.Body>
                 <ActivityAction x:TypeArguments="x:Object">
                   <ActivityAction.Argument>

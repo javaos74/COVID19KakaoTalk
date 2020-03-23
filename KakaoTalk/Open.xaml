@@ -55,6 +55,7 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="카카오톡 실행 및 로그인 하기 &#xA;조건: 스토어에서 다운로드 후 작업표시줄에 고정된 상태여야 함 &#xA;&#xA;pre condition &#xA;  - 카카오톡을 마이크로소프트 스토어에서 다운로드 후 작업표시줄에 고정되어야 함 &#xA;&#xA;Input &#xA;  - in_CredentialName:String - 카카오톡 계정 정보 &#xA;&#xA;outcome &#xA;  - 카카오톡이 실행 되어 로그인 됨  " DisplayName="Open" sap:VirtualizedContainerService.HintSize="1142,1799" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -90,7 +91,7 @@
     </ui:InvokeWorkflowFile>
     <If Condition="[IsLogin = 3]" sap:VirtualizedContainerService.HintSize="1100,906" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence DisplayName="Sequence &gt; 로그인 이 필요 " sap:VirtualizedContainerService.HintSize="476,756" sap2010:WorkflowViewState.IdRef="Sequence_4">
+        <Sequence DisplayName="Sequence &gt; Login required " sap:VirtualizedContainerService.HintSize="476,756" sap2010:WorkflowViewState.IdRef="Sequence_4">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -161,7 +162,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <If Condition="[IsLogin = 2]" DisplayName="If &gt; 잠김상태 " sap:VirtualizedContainerService.HintSize="579,640" sap2010:WorkflowViewState.IdRef="If_1">
+        <If Condition="[IsLogin = 2]" DisplayName="If &gt; KakaoTalk locked " sap:VirtualizedContainerService.HintSize="579,640" sap2010:WorkflowViewState.IdRef="If_1">
           <If.Then>
             <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'ApplicationFrameHost.ex...'" sap:VirtualizedContainerService.HintSize="434,490" sap2010:WorkflowViewState.IdRef="WindowScope_2" InformativeScreenshot="157e0aa783653de232122c0a25cedf2f" Selector="&lt;wnd app='applicationframehost.exe' appid='1CB77C17.17884BE984322_th66h09paefv0!App' title='KakaoTalk' /&gt;">
               <ui:WindowScope.Body>
