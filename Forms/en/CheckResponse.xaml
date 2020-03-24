@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1240,4543</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1160,4743</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckResponse_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -66,7 +66,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Navigate to ReportUrl and download result and check who sent answer or not. &#xA;&#xA;in_SavedFilePath : Filename which contains result execl from ReportUrl &#xA;in_QueueName : Queue which used for re-send message to whom did not answer during given interval.&#xA;in_AddrFile : address book file path &#xA;in_RemindMessage : Reminder message format &#xA;in_CheckIntervalHour:  Time interval for re-send message&#xA;&#xA;**Please update &quot;Completion Time&quot; column name for  each locale.&#xD;&#xA;&#xD;&#xA;(en): IdenticalField is using to match the responder to address book entry (configure it to shared column between these 2 lists)" DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,4478" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Navigate to ReportUrl and download result and check who sent answer or not. &#xA;&#xA;in_SavedFilePath : Filename which contains result execl from ReportUrl &#xA;in_QueueName : Queue which used for re-send message to whom did not answer during given interval.&#xA;in_AddrFile : address book file path &#xA;in_RemindMessage : Reminder message format &#xA;in_CheckIntervalHour:  Time interval for re-send message&#xA;&#xA;**Please update &quot;Completion Time&quot; column name for  each locale.&#xA;&#xA;(en): IdenticalField is using to match the responder to address book entry (configure it to shared column between these 2 lists)" DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,4578" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="RespDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="RecentRespDT" />
@@ -78,6 +78,7 @@
       <Variable x:TypeArguments="sd:DataTable" Name="SortedRespDT" />
       <Variable x:TypeArguments="x:Int32" Name="LastID" />
       <Variable x:TypeArguments="x:String" Default="Email" Name="IdenticalField" />
+      <Variable x:TypeArguments="x:Int32" Name="HoursFromLastCheck" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -138,12 +139,20 @@
         <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
       </Assign.Value>
     </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="987,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[HoursFromLastCheck]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[Math.Min(FilterDate.Hour,in_CheckIntervalHour)]</InArgument>
+      </Assign.Value>
+    </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="987,60" sap2010:WorkflowViewState.IdRef="Assign_11">
       <Assign.To>
         <OutArgument x:TypeArguments="s:DateTime">[FilterDate]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="s:DateTime" xml:space="preserve">[FilterDate.AddHours(  0 - in_CheckIntervalHour)]</InArgument>
+        <InArgument x:TypeArguments="s:DateTime" xml:space="preserve">[FilterDate.AddHours(  0 - HoursFromLastCheck)]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign sap:VirtualizedContainerService.HintSize="987,60" sap2010:WorkflowViewState.IdRef="Assign_12">
