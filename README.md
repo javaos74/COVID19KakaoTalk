@@ -1,6 +1,12 @@
 # COVID19KakaoTalk
 코로나19 직원 헬스체커 자동화 프로세스 
 
+# 추가 및 변경 사항 
+- What'sApp 과 Faceboo Workplace 메신저가 추가되었습니다. ( 기본 설정은 KakaoTalk 입니다. Data\Config.xls의 MessengerApp 부분 참고) 
+현재 지원하는 메신저는 카카오톡(KakaoTalk), 와츠앱(Whatsapp), 워크플레이스(Workplace) 3종입니다. 
+- 실행시 메신저 종류와 주소록을 지정할수 있도록 추가했습니다. ( in_MessengerApp, in_Addressbook 인수 사용)
+- WhatsApp 사용시 카카오톡과 유사하게 태스크바에 바로가기를 추가해주세요. 
+
 # 최신 릴리즈는 1.0.26 입니다. 
 - releases 부분에서 nuget package 다운로드 받아 사용하세요. 
 - 전체 코드를 내려받아 배포하셔도 됩니다. 
