@@ -10,6 +10,7 @@
     "UiPath.Mail.Activities": "[1.7.2]",
     "UiPath.System.Activities": "[19.10.1]",
     "UiPath.UIAutomation.Activities": "[19.11.2]",
+    "UiPathTeam.ArchiveLib.Activity": "[1.1.1]",
     "UiPathTeam.WhatsGoingOn.Activities": "1.2.2"
   },
   "webServices": [],
@@ -34,7 +35,7 @@
       "includeOriginalXaml": false,
       "privateWorkflows": []
     },
-    "fileInfoCollection": []
+    "fileInfos": []
   },
   "arguments": {
     "input": [
