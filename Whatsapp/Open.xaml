@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>745,894</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1531,894</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Open_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -81,7 +81,7 @@
         <InArgument x:TypeArguments="x:String">[Files.Last]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open Application 'WhatsApp.exe  WhatsApp'" FileName="[LastWhatsapp]" sap:VirtualizedContainerService.HintSize="434,406" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="823d26ce82a8de274a1f993f44b36723" Selector="&lt;wnd app='whatsapp.exe' cls='Chrome_WidgetWin_1' title='WhatsApp' /&gt;">
+    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open Application 'WhatsApp.exe  WhatsApp'" FileName="[LastWhatsapp]" sap:VirtualizedContainerService.HintSize="434,406" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="ff74392c83fc6dff4975ba87945b67a7" Selector="&lt;wnd app='whatsapp.exe' cls='Chrome_WidgetWin_1' title='WhatsApp' /&gt;">
       <ui:OpenApplication.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
