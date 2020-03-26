@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1642,3106</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1612,3263</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendMessage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -55,25 +55,24 @@
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Send Message fo WhatsApp" DisplayName="SendMessage" sap:VirtualizedContainerService.HintSize="1622,3006" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Send Message fo WhatsApp" DisplayName="SendMessage" sap:VirtualizedContainerService.HintSize="1622,3098" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'WhatsApp.exe  WhatsApp'" sap:VirtualizedContainerService.HintSize="1580,2883" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="ebc05849588bf1a7c3f328c218bee8fd" Selector="&lt;wnd app='whatsapp.exe' cls='Chrome_WidgetWin_1' title='WhatsApp' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach Window 'WhatsApp.exe  WhatsApp'" sap:VirtualizedContainerService.HintSize="1580,2975" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="ebc05849588bf1a7c3f328c218bee8fd" Selector="&lt;wnd app='whatsapp.exe' cls='Chrome_WidgetWin_1' title='WhatsApp' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1546,2737" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1546,2829" sap2010:WorkflowViewState.IdRef="TryCatch_1">
             <TryCatch.Try>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1508,2482" sap2010:WorkflowViewState.IdRef="Sequence_2">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1508,2574" sap2010:WorkflowViewState.IdRef="Sequence_2">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="NeedClear" />
                   <Variable x:TypeArguments="x:Boolean" Name="NoContact" />
@@ -140,7 +139,7 @@
                 </If>
                 <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'DIV'" EmptyField="True" sap:VirtualizedContainerService.HintSize="1466,134" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="False" Text="[in_FriendName]">
                   <ui:TypeInto.Target>
-                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="abaa67d77bb7fd9614a7550cabef8578" Selector="&lt;ctrl name='WhatsApp Web' role='document' /&gt;&lt;ctrl name='검색 또는 새로운 대화 시작하기*' role='DIV' /&gt;&lt;ctrl name='검색 또는 새로운 대화 시작하기 ' role='DIV' /&gt;&lt;ctrl idx='2' role='DIV' /&gt;">
+                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="abaa67d77bb7fd9614a7550cabef8578" Selector="&lt;ctrl name='WhatsApp Web' role='document' /&gt;&lt;ctrl name='검색 또는 새로운 대화 시작하기*' role='DIV' /&gt;&lt;ctrl name='검색 또는 새로운 대화 시작하기*' role='DIV' /&gt;&lt;ctrl idx='2' role='DIV' /&gt;">
                       <ui:Target.TimeoutMS>
                         <InArgument x:TypeArguments="x:Int32" />
                       </ui:Target.TimeoutMS>
@@ -256,9 +255,9 @@
                     </PickBranch.Trigger>
                   </PickBranch>
                 </Pick>
-                <If Condition="[Not NoContact]" sap:VirtualizedContainerService.HintSize="1466,566" sap2010:WorkflowViewState.IdRef="If_3">
+                <If Condition="[Not NoContact]" sap:VirtualizedContainerService.HintSize="1466,658" sap2010:WorkflowViewState.IdRef="If_3">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="768,417" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                    <Sequence sap:VirtualizedContainerService.HintSize="768,509" sap2010:WorkflowViewState.IdRef="Sequence_3">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -269,13 +268,68 @@
                           <l:Language id="00000409" name_en="English (United States)" />
                         </l:LanguageChangeActivity.LanguageName>
                       </l:LanguageChangeActivity>
-                      <ui:AnchorBase AnchorPosition="Left" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="726,226" sap2010:WorkflowViewState.IdRef="AnchorBase_5">
+                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="726,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                        <ui:CommentOut.Body>
+                          <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="768,318" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:AnchorBase AnchorPosition="Left" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="726,226" sap2010:WorkflowViewState.IdRef="AnchorBase_7">
+                              <ui:AnchorBase.Action>
+                                <ActivityAction x:TypeArguments="ui:Anchor">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                                  </ActivityAction.Argument>
+                                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'DIV'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="False" Text="[in_Message+ &quot;[k(enter)]&quot;]">
+                                    <ui:TypeInto.Target>
+                                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7faf155c24aa86940a30e0ba5ab0e31e" Selector="&lt;ctrl role='DIV' /&gt;" WaitForReady="NONE">
+                                        <ui:Target.TimeoutMS>
+                                          <InArgument x:TypeArguments="x:Int32" />
+                                        </ui:Target.TimeoutMS>
+                                      </ui:Target>
+                                    </ui:TypeInto.Target>
+                                  </ui:TypeInto>
+                                </ActivityAction>
+                              </ui:AnchorBase.Action>
+                              <ui:AnchorBase.AnchorProvider>
+                                <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'push button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_6">
+                                  <ui:WaitUiElementAppear.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8aea31f159c6d353b80aa2e530662186" Selector="&lt;ctrl name='WhatsApp Web' role='document' /&gt;&lt;ctrl name='검색 또는 새로운 대화 시작하기*' role='DIV' /&gt;&lt;ctrl name='이모지 패널 열기 메시지를 입력' role='grouping' /&gt;&lt;ctrl idx='2' role='push button' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:WaitUiElementAppear.Target>
+                                </ui:WaitUiElementAppear>
+                              </ui:AnchorBase.AnchorProvider>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:AnchorBase>
+                          </Sequence>
+                        </ui:CommentOut.Body>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:CommentOut>
+                      <ui:AnchorBase AnchorPosition="Left" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="726,226" sap2010:WorkflowViewState.IdRef="AnchorBase_8">
                         <ui:AnchorBase.Action>
                           <ActivityAction x:TypeArguments="ui:Anchor">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
                             </ActivityAction.Argument>
-                            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'DIV'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="False" Text="[in_Message+ &quot;[k(enter)]&quot;]">
+                            <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into 'DIV'" EmptyField="True" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_8" SendWindowMessages="False" SimulateType="False" Text="[in_Message+ &quot;[k(enter)]&quot;]">
                               <ui:TypeInto.Target>
                                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="7faf155c24aa86940a30e0ba5ab0e31e" Selector="&lt;ctrl role='DIV' /&gt;" WaitForReady="NONE">
                                   <ui:Target.TimeoutMS>
@@ -287,9 +341,12 @@
                           </ActivityAction>
                         </ui:AnchorBase.Action>
                         <ui:AnchorBase.AnchorProvider>
-                          <ui:WaitUiElementAppear FoundElement="{x:Null}" WaitActive="{x:Null}" WaitVisible="{x:Null}" DisplayName="Find Element 'push button'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_5">
-                            <ui:WaitUiElementAppear.Target>
-                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="8aea31f159c6d353b80aa2e530662186" Selector="&lt;ctrl name='WhatsApp Web' role='document' /&gt;&lt;ctrl name='검색 또는 새로운 대화 시작하기 *' role='DIV' /&gt;&lt;ctrl name='메시지를 입력 *' role='grouping' /&gt;&lt;ctrl idx='2' role='push button' /&gt;">
+                          <ui:WaitImageAppear FoundElement="{x:Null}" DisplayName="Find Image 'WhatsApp.exe  WhatsApp'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="WaitImageAppear_2">
+                            <ui:WaitImageAppear.Image>
+                              <ui:ImageTarget Image="{x:Null}" Accuracy="0.8" InitialScalingFactor="2" Profile="Basic" TargetImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFgAAABPCAYAAABvRgIXAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAHYcAAB2HAY/l8WUAAATaSURBVHhe7ZsxU9wwEEbz80Ib2kAb2kB7tIEWaqiPlh5aqKnpqe8fOPNuZjNfxHKWfFrLJCre5AbLsvxutVoJ8mWz2QydOLrgYLrgYLrgYLrgYLrgYLrgYLrgYLrgYLrgYLrgYLrgYLrgYBYv+OXlZXh+ft7CZ6/NklmM4Le3t+Hx8WG4vr4azs5Oh8PDb8PBwVcXrtGGttzDvV6fS6C54Kenp+Hy8mKn0DG4lz7oy3tGS5oJRgZR6AmDk5Mfw+npz+Hq6mq4vb3Zwmd+xjXvHqDPJYmeXfDr6+twfr56J+bo6PtWYIkc2nIP96b98Qye5d03J7MKfnh4eJcKiEh+7rUvgT7oS/vmWTX63ofZBLMg6csTdREvT59pRPNsr+0czCKYBUhfmGkdufLT98XFr7+eyRi8ttGEC07l3t/fu+0i4Fn67BaSQwUTqfZy5MMWGwUWQs37jMlrF0WYYHKhvRS03IUhWccy58IXIpgcqFEzZ1r4CE0XjG2u3V+IYK1zWWy8Ni3QhW+ucVUXrNORcmlJ5wTpzCrZ1EylumDd/i4hNaRoqmCsXpuaVBXMQmaDJ3q9Nh7cZydj3vWPICLv7tZbSrbFuhGJXnyrCtYclxu9GlGQW6si9Pj46M99JWWgPjO6bKsq2PIb/3rXU9KcaOSUUVpjGyVTvnSsU6kmWBe33BU6rU8Njia99kp6sGN4bT10tkWmiWqCkWIDzi3kWwrWNJHzvKlUE6wvnFua1RZcMt0Zo91HX16bGlQTbL9lKM1p6dEi5FQE6/X63X2lmwfLw4zdu16DaoLtJUujgfxnLwq51QdoHuW5uTPH0FngXa9Bc8EG6aJUEBDtUxepTyl4tVq515fIfxXBLeiCg+mCg/lUgvWPQbzrCnmabS3nxjc3N9vDGvv7M6/9LljguI8+6Is+6TvnjMHGGxkU1QQjzQY8Vsd65wgpHOQgysNrnzK2m2SM1jZyYa4mWAv/sVqWqLO2RA9oLVwKmxX6sE0LfY2VfLpVZuxemxpUE6zScnZUJiOdykQWNTEggW2zYtcgnSmWpnKerzNuah2dQzXBoNvekggaSyk5lPSn5xCM2WtTi6qCiTAb+FiaAFvFWZi867kgzA7fGYPXRtF0ltN+H6oK1oWDF/baKLS33Dv1r26Qa6kh99BGfxNSY/bsoqpg0AOYnMWD/KeSx1KLghyVm3OvzrLS07cpVBesUZyzmgMllUnmX0TvWnhor+UacnMWKp0xEB29UF0waJQgwmuTwhdhOVnReji9BiW/tNQ+onOvESIYWVpRlLwMkcjU1UhLoW/6LIlA/dJz00kNQgQDolRKTlWRgkCrh0kLfJ4iRks4vricdFKLMMGgLzZV8r60HkOoYEhfkAMZr10E6X9baPEFhwuGVDKLTeQKTt9Wvhkt5MIsgoEX1IWLz0RzzcWGvugzfU4ruTCbYGBxSSPLRO8T0dybioXc+jiSWQUblEypDOBMgoPzHCl2yK5/7G3Q91x17hhNBANRp9tqD+/QXc8RPOgzMr+X0kywQd7kzCJNHSVwL33MtXkooblghchjQWL7q7+hUPgZ12hD2yVFq8eiBP+LdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMHBdMGhbIbf8T8Ghex2ImkAAAAASUVORK5CYII=" />
+                            </ui:WaitImageAppear.Image>
+                            <ui:WaitImageAppear.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
                                 <ui:Target.TimeoutMS>
                                   <InArgument x:TypeArguments="x:Int32" />
                                 </ui:Target.TimeoutMS>
@@ -297,9 +354,15 @@
                                   <InArgument x:TypeArguments="ui:WaitForReady" />
                                 </ui:Target.WaitForReady>
                               </ui:Target>
-                            </ui:WaitUiElementAppear.Target>
-                          </ui:WaitUiElementAppear>
+                            </ui:WaitImageAppear.Target>
+                          </ui:WaitImageAppear>
                         </ui:AnchorBase.AnchorProvider>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                       </ui:AnchorBase>
                     </Sequence>
                   </If.Then>
