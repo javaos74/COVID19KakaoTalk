@@ -5,7 +5,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1057.5,1467</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1531,1756</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>StartFromTaskbar_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -55,80 +55,113 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="StartFromTaskbar" sap:VirtualizedContainerService.HintSize="1037.5,1407" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="StartFromTaskbar" sap:VirtualizedContainerService.HintSize="1037.5,1591" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click &gt;카카오 버튼 누르기   " sap:VirtualizedContainerService.HintSize="995.5,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
-      <ui:Click.CursorPosition>
-        <ui:CursorPosition Position="Center">
-          <ui:CursorPosition.OffsetX>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetX>
-          <ui:CursorPosition.OffsetY>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:CursorPosition.OffsetY>
-        </ui:CursorPosition>
-      </ui:Click.CursorPosition>
-      <ui:Click.Target>
-        <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5defd0e2af5533d6b860ff2821160e1a" Selector="&lt;wnd app='explorer.exe' cls='Shell_TrayWnd' /&gt;&lt;wnd cls='MSTaskSwWClass' title='실행 중인 응용 프로그램' /&gt;&lt;wnd cls='MSTaskListWClass' title='실행 중인 응용 프로그램' /&gt;&lt;ctrl name='실행 중인 응용 프로그램' role='tool bar' /&gt;&lt;ctrl automationid='1CB77C17.17884BE984322_th66h09paefv0!App' name='KakaoTalk*' role='push button' /&gt;">
-          <ui:Target.TimeoutMS>
-            <InArgument x:TypeArguments="x:Int32" />
-          </ui:Target.TimeoutMS>
-          <ui:Target.WaitForReady>
-            <InArgument x:TypeArguments="ui:WaitForReady" />
-          </ui:Target.WaitForReady>
-        </ui:Target>
-      </ui:Click.Target>
-    </ui:Click>
-    <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 10 seconds" Duration="00:00:10" sap:VirtualizedContainerService.HintSize="995.5,22" sap2010:WorkflowViewState.IdRef="Delay_1">
-      <TextExpression.Namespaces>
-        <sco:Collection x:TypeArguments="x:String">
-          <x:String>System.Activities</x:String>
-          <x:String>System.Activities.Statements</x:String>
-          <x:String>System.Activities.Expressions</x:String>
-          <x:String>System.Activities.Validation</x:String>
-          <x:String>System.Activities.XamlIntegration</x:String>
-          <x:String>Microsoft.VisualBasic.Activities</x:String>
-          <x:String>System</x:String>
-          <x:String>System.Collections.Generic</x:String>
-          <x:String>System.Data</x:String>
-          <x:String>System.Diagnostics</x:String>
-          <x:String>System.IO</x:String>
-          <x:String>System.Linq</x:String>
-          <x:String>System.Management.Automation</x:String>
-          <x:String>System.Net.Mail</x:String>
-          <x:String>System.Xml</x:String>
-          <x:String>System.Xml.Linq</x:String>
-          <x:String>UiPath.Library</x:String>
-          <x:String>System.Windows.Markup</x:String>
-        </sco:Collection>
-      </TextExpression.Namespaces>
-      <TextExpression.References>
-        <sco:Collection x:TypeArguments="AssemblyReference">
-          <AssemblyReference>System.Activities</AssemblyReference>
-          <AssemblyReference>mscorlib</AssemblyReference>
-          <AssemblyReference>System.Data</AssemblyReference>
-          <AssemblyReference>System</AssemblyReference>
-          <AssemblyReference>System.Core</AssemblyReference>
-          <AssemblyReference>System.Management.Automation</AssemblyReference>
-          <AssemblyReference>System.Xml</AssemblyReference>
-          <AssemblyReference>System.Xml.Linq</AssemblyReference>
-          <AssemblyReference>UiPath.Library</AssemblyReference>
-          <AssemblyReference>PresentationFramework</AssemblyReference>
-          <AssemblyReference>WindowsBase</AssemblyReference>
-          <AssemblyReference>PresentationCore</AssemblyReference>
-          <AssemblyReference>System.Xaml</AssemblyReference>
-        </sco:Collection>
-      </TextExpression.References>
-      <sap2010:WorkflowViewState.ViewStateManager>
-        <sap2010:ViewStateManager>
-          <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
-        </sap2010:ViewStateManager>
-      </sap2010:WorkflowViewState.ViewStateManager>
-    </Delay>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="995.5,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click &gt;카카오 버튼 누르기   " sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT">
+            <ui:Click.CursorPosition>
+              <ui:CursorPosition Position="Center">
+                <ui:CursorPosition.OffsetX>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetX>
+                <ui:CursorPosition.OffsetY>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:CursorPosition.OffsetY>
+              </ui:CursorPosition>
+            </ui:Click.CursorPosition>
+            <ui:Click.Target>
+              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="5defd0e2af5533d6b860ff2821160e1a" Selector="&lt;wnd app='explorer.exe' cls='Shell_TrayWnd' /&gt;&lt;wnd cls='MSTaskSwWClass' title='실행 중인 응용 프로그램' /&gt;&lt;wnd cls='MSTaskListWClass' title='실행 중인 응용 프로그램' /&gt;&lt;ctrl name='실행 중인 응용 프로그램' role='tool bar' /&gt;&lt;ctrl automationid='1CB77C17.17884BE984322_th66h09paefv0!App' name='KakaoTalk*' role='push button' /&gt;">
+                <ui:Target.TimeoutMS>
+                  <InArgument x:TypeArguments="x:Int32" />
+                </ui:Target.TimeoutMS>
+                <ui:Target.WaitForReady>
+                  <InArgument x:TypeArguments="ui:WaitForReady" />
+                </ui:Target.WaitForReady>
+              </ui:Target>
+            </ui:Click.Target>
+          </ui:Click>
+        </Sequence>
+      </ui:CommentOut.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:CommentOut>
+    <ui:OpenApplication ApplicationWindow="{x:Null}" Arguments="{x:Null}" TimeoutMS="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Open Application 'ApplicationFrameHost.ex...'" FileName="1CB77C17.17884BE984322_th66h09paefv0!App" sap:VirtualizedContainerService.HintSize="995.5,260" sap2010:WorkflowViewState.IdRef="OpenApplication_1" InformativeScreenshot="6562e9dd8ce9a14b5d0ef74f980927fb" Selector="&lt;wnd app='applicationframehost.exe' appid='1CB77C17.17884BE984322_th66h09paefv0!App' title='KakaoTalk' /&gt;">
+      <ui:OpenApplication.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="242,114" sap2010:WorkflowViewState.IdRef="Sequence_5">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 3 seconds" Duration="00:00:03" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+              <TextExpression.Namespaces>
+                <sco:Collection x:TypeArguments="x:String">
+                  <x:String>System.Activities</x:String>
+                  <x:String>System.Activities.Statements</x:String>
+                  <x:String>System.Activities.Expressions</x:String>
+                  <x:String>System.Activities.Validation</x:String>
+                  <x:String>System.Activities.XamlIntegration</x:String>
+                  <x:String>Microsoft.VisualBasic.Activities</x:String>
+                  <x:String>System</x:String>
+                  <x:String>System.Collections.Generic</x:String>
+                  <x:String>System.Data</x:String>
+                  <x:String>System.Diagnostics</x:String>
+                  <x:String>System.IO</x:String>
+                  <x:String>System.Linq</x:String>
+                  <x:String>System.Management.Automation</x:String>
+                  <x:String>System.Net.Mail</x:String>
+                  <x:String>System.Xml</x:String>
+                  <x:String>System.Xml.Linq</x:String>
+                  <x:String>UiPath.Library</x:String>
+                  <x:String>System.Windows.Markup</x:String>
+                </sco:Collection>
+              </TextExpression.Namespaces>
+              <TextExpression.References>
+                <sco:Collection x:TypeArguments="AssemblyReference">
+                  <AssemblyReference>System.Activities</AssemblyReference>
+                  <AssemblyReference>mscorlib</AssemblyReference>
+                  <AssemblyReference>System.Data</AssemblyReference>
+                  <AssemblyReference>System</AssemblyReference>
+                  <AssemblyReference>System.Core</AssemblyReference>
+                  <AssemblyReference>System.Management.Automation</AssemblyReference>
+                  <AssemblyReference>System.Xml</AssemblyReference>
+                  <AssemblyReference>System.Xml.Linq</AssemblyReference>
+                  <AssemblyReference>UiPath.Library</AssemblyReference>
+                  <AssemblyReference>PresentationFramework</AssemblyReference>
+                  <AssemblyReference>WindowsBase</AssemblyReference>
+                  <AssemblyReference>PresentationCore</AssemblyReference>
+                  <AssemblyReference>System.Xaml</AssemblyReference>
+                </sco:Collection>
+              </TextExpression.References>
+              <sap2010:WorkflowViewState.ViewStateManager>
+                <sap2010:ViewStateManager>
+                  <sap2010:ViewStateData sap:VirtualizedContainerService.HintSize="200,22" Id="Delay_1" />
+                </sap2010:ViewStateManager>
+              </sap2010:WorkflowViewState.ViewStateManager>
+            </Delay>
+          </Sequence>
+        </ActivityAction>
+      </ui:OpenApplication.Body>
+    </ui:OpenApplication>
     <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CheckThisPCLogin workflow" sap:VirtualizedContainerService.HintSize="995.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="KakaoTalk/CheckThisPCLogin.xaml">
       <ui:InvokeWorkflowFile.Arguments>
         <scg:Dictionary x:TypeArguments="x:String, Argument" />
@@ -152,7 +185,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:UiElementExists DisplayName="Element Exists '텍스트  잠금 모드 상태'" Exists="[Locked]" sap:VirtualizedContainerService.HintSize="919.5,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
               <ui:UiElementExists.Target>
-                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="927411f5d77889cf26c272d8286078d0" Selector="&lt;uia cls='TextBlock' name='잠금 모드 상태' /&gt;" TimeoutMS="1000">
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="927411f5d77889cf26c272d8286078d0" Selector="&lt;uia cls='TextBlock' name='잠금 모드 상태' /&gt;" TimeoutMS="15000">
                   <ui:Target.WaitForReady>
                     <InArgument x:TypeArguments="ui:WaitForReady" />
                   </ui:Target.WaitForReady>
