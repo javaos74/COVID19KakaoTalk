@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1019,5593</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1384,5617</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckResponse_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -70,7 +70,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Navigate to ReportUrl and download result and check who sent answer or not. &#xA;&#xA;in_SavedFilePath : Filename which contains result execl from ReportUrl &#xA;in_QueueName : Queue which used for re-send message to whom did not answer during given interval.&#xA;in_AddrFile : address book file path &#xA;in_RemindMessage : Reminder message format &#xA;in_CheckIntervalHour:  Time interval for re-send message &#xD;&#xA;in_MessengerApp : Name of MessengertApp " DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,5388" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Navigate to ReportUrl and download result and check who sent answer or not. &#xD;&#xA;&#xD;&#xA;Google forms use 'Timestamp(타임스탬프)' columnname and user input starts from 2nd column &#xA;&#xA;in_SavedFilePath : Filename which contains result execl from ReportUrl &#xA;in_QueueName : Queue which used for re-send message to whom did not answer during given interval.&#xA;in_AddrFile : address book file path &#xA;in_RemindMessage : Reminder message format &#xA;in_CheckIntervalHour:  Time interval for re-send message &#xA;in_MessengerApp : Name of MessengertApp " DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,5452" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="RespDT" />
       <Variable x:TypeArguments="sd:DataTable" Name="RecentRespDT" />
@@ -306,13 +306,13 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RecentRespDT]" DisplayName="For Each Row &gt;  Check unanswered employees" sap:VirtualizedContainerService.HintSize="987,2092" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[RecentRespDT]" DisplayName="For Each Row &gt;  Check unanswered employees" sap:VirtualizedContainerService.HintSize="987,2124" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="937,1943" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="937,1975" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="MyMatch" />
               <Variable x:TypeArguments="x:String" Name="MatchName" />
@@ -340,7 +340,7 @@
                 <InArgument x:TypeArguments="x:String">[string.Empty]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:Matches sap2010:Annotation.AnnotationText="Match pattern : Name  + last 4 digit of phone number " BuilderPattern="([^0-9])+(\d*)" sap:VirtualizedContainerService.HintSize="895,103" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[row(5).ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;고급&quot;,&quot;OperationValue&quot;:&quot;([^0-9])&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;하나 이상(1개 이상)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;숫자&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;임의(0 이상)&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="([^0-9]+)\s*(\d*)" RegexOption="IgnoreCase" Result="[MyMatch]">
+            <ui:Matches sap2010:Annotation.AnnotationText="Match pattern : Name  + last 4 digit of phone number &#xD;&#xA;Specifiy which column is used for identify, 2nd column for Google forms." BuilderPattern="([^0-9])+(\d*)" sap:VirtualizedContainerService.HintSize="895,135" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[row(1).ToString]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;고급&quot;,&quot;OperationValue&quot;:&quot;([^0-9])&quot;,&quot;QuantifierFirstValue&quot;:&quot;+&quot;,&quot;QuantifierID&quot;:&quot;OOM&quot;,&quot;QuantifierName&quot;:&quot;하나 이상(1개 이상)&quot;,&quot;QuantifierSecondValue&quot;:null},{&quot;Index&quot;:1,&quot;OperationID&quot;:&quot;DIG&quot;,&quot;OperationName&quot;:&quot;숫자&quot;,&quot;OperationValue&quot;:&quot;\\d&quot;,&quot;QuantifierFirstValue&quot;:&quot;*&quot;,&quot;QuantifierID&quot;:&quot;ANY&quot;,&quot;QuantifierName&quot;:&quot;임의(0 이상)&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="([^0-9]+)\s*(\d*)" RegexOption="IgnoreCase" Result="[MyMatch]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -479,25 +479,15 @@
             </sap:WorkflowViewStateService.ViewState>
             <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\GetFriendName.xaml&quot;, in_MessengerApp)]">
               <ui:InvokeWorkflowFile.Arguments>
-                <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">
-                  <mva:VisualBasicValue x:TypeArguments="sd:DataRow" ExpressionText="row" />
-                </InArgument>
-                <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">
-                  <mva:VisualBasicReference x:TypeArguments="x:String" ExpressionText="TagName" />
-                </OutArgument>
+                <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">[row]</InArgument>
+                <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">[TagName]</OutArgument>
               </ui:InvokeWorkflowFile.Arguments>
             </ui:InvokeWorkflowFile>
             <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="379,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_QueueName]">
               <ui:AddQueueItem.ItemInformation>
-                <InArgument x:TypeArguments="x:String" x:Key="Command">
-                  <Literal x:TypeArguments="x:String">RESEND_MESSAGE</Literal>
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Tag">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TagName" />
-                </InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Message">
-                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_RemindMessage" />
-                </InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Command">RESEND_MESSAGE</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Tag">[TagName]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="Message">[in_RemindMessage]</InArgument>
               </ui:AddQueueItem.ItemInformation>
             </ui:AddQueueItem>
           </Sequence>
