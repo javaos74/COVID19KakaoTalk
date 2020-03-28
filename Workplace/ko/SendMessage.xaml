@@ -7,7 +7,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>659,2443</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>978,2778</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>SendMessage_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -57,19 +57,19 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="SendMessage" sap:VirtualizedContainerService.HintSize="639,2383" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="SendMessage" sap:VirtualizedContainerService.HintSize="741,2613" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" sap2010:Annotation.AnnotationText="Send message to buddy &#xD;&#xA;&#xD;&#xA;in_FriendName : buddy name which used for search unique buddy &#xD;&#xA;in_message : message will be sent.&#xD;&#xA;out_Error: flag when it faced error or not." DisplayName="Attach Window 'Workplace Chat.exe'" sap:VirtualizedContainerService.HintSize="597,2291" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="f860babd2bca3bc97f696f9cb55141e1" Selector="&lt;wnd app='workplace chat.exe' cls='Chrome_WidgetWin_1' title='Workplace *' /&gt;">
+    <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" sap2010:Annotation.AnnotationText="Send message to buddy &#xA;&#xA;in_FriendName : buddy name which used for search unique buddy &#xA;in_message : message will be sent.&#xA;out_Error: flag when it faced error or not." DisplayName="Attach Window 'Workplace Chat.exe'" sap:VirtualizedContainerService.HintSize="699,2521" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="f860babd2bca3bc97f696f9cb55141e1" Selector="&lt;wnd app='workplace chat.exe' cls='Chrome_WidgetWin_1' title='Workplace *' /&gt;">
       <ui:WindowScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,2053" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="665,2283" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="ErrorFlag" />
             </Sequence.Variables>
@@ -78,7 +78,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="623,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[ErrorFlag]</OutArgument>
               </Assign.To>
@@ -86,7 +86,7 @@
                 <InArgument x:TypeArguments="x:Boolean">False</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="521,117" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="K" KeyModifiers="Ctrl">
+            <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="623,117" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="K" KeyModifiers="Ctrl">
               <ui:SendHotkey.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}">
                   <ui:Target.TimeoutMS>
@@ -98,7 +98,7 @@
                 </ui:Target>
               </ui:SendHotkey.Target>
             </ui:SendHotkey>
-            <ui:TypeInto DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBetweenKeys="100" DisplayName="Type Into 'editable text'" EmptyField="True" sap:VirtualizedContainerService.HintSize="521,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_FriendName]">
+            <ui:TypeInto DelayBefore="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBetweenKeys="100" DisplayName="Type Into 'editable text'" EmptyField="True" sap:VirtualizedContainerService.HintSize="623,134" sap2010:WorkflowViewState.IdRef="TypeInto_1" SendWindowMessages="False" SimulateType="True" Text="[in_FriendName]">
               <ui:TypeInto.Target>
                 <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="d956775fb07b96e01163e8e76faf1f43" Selector="&lt;ctrl name='Workplace Chat' role='document' /&gt;&lt;ctrl name='Workchat 검색' role='editable text' /&gt;" WaitForReady="INTERACTIVE">
                   <ui:Target.TimeoutMS>
@@ -107,7 +107,7 @@
                 </ui:Target>
               </ui:TypeInto.Target>
             </ui:TypeInto>
-            <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="521,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+            <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="623,22" sap2010:WorkflowViewState.IdRef="Delay_1">
               <TextExpression.Namespaces>
                 <sco:Collection x:TypeArguments="x:String">
                   <x:String>System.Activities</x:String>
@@ -153,7 +153,7 @@
                 </sap2010:ViewStateManager>
               </sap2010:WorkflowViewState.ViewStateManager>
             </Delay>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="521,584" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="623,584" sap2010:WorkflowViewState.IdRef="TryCatch_1">
               <TryCatch.Try>
                 <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="384,352" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
                   <ui:AnchorBase.Action>
@@ -217,9 +217,9 @@
                 </Catch>
               </TryCatch.Catches>
             </TryCatch>
-            <If Condition="[Not ErrorFlag]" sap:VirtualizedContainerService.HintSize="521,744" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[Not ErrorFlag]" sap:VirtualizedContainerService.HintSize="623,974" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="376,595" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap:VirtualizedContainerService.HintSize="478,825" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="s:String[]" Name="Lines" />
                   </Sequence.Variables>
@@ -228,12 +228,12 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <l:LanguageChangeActivity DisplayName="Language change activity" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="LanguageChangeActivity_1">
+                  <l:LanguageChangeActivity DisplayName="Language change activity" sap:VirtualizedContainerService.HintSize="436,59" sap2010:WorkflowViewState.IdRef="LanguageChangeActivity_1">
                     <l:LanguageChangeActivity.LanguageName>
                       <l:Language id="00000409" name_en="English (United States)" />
                     </l:LanguageChangeActivity.LanguageName>
                   </l:LanguageChangeActivity>
-                  <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+                  <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="Delay_1">
                     <TextExpression.Namespaces>
                       <sco:Collection x:TypeArguments="x:String">
                         <x:String>System.Activities</x:String>
@@ -279,7 +279,7 @@
                       </sap2010:ViewStateManager>
                     </sap2010:WorkflowViewState.ViewStateManager>
                   </Delay>
-                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" ClickBeforeTyping="True" DisplayName="Type Into &gt; 실제 전달한 메세지 입력 " sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[in_Message.Replace( vbNewLine, string.Empty)]">
+                  <ui:TypeInto DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" Activate="True" sap2010:Annotation.AnnotationText="입력 후 엔터키로 보내도록 수정, 링크를 로딩한다고 시간이 걸려서 아래 보내기 버튼이 눌러지지 않는 경우 발생 함. " ClickBeforeTyping="True" DisplayName="Type Into &gt; 실제 전달한 메세지 입력 " sap:VirtualizedContainerService.HintSize="436,194" sap2010:WorkflowViewState.IdRef="TypeInto_2" SendWindowMessages="False" SimulateType="False" Text="[in_Message.Replace( vbNewLine, string.Empty)+ &quot;[k(enter)]&quot;]">
                     <ui:TypeInto.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="831eb4bc7ac7b413dd72329e16cfadfe" Selector="&lt;ctrl name='Workplace Chat' role='document' /&gt;&lt;ctrl name='대화에 참여한 사람 대화에 참여한 사람 *' role='grouping' /&gt;&lt;ctrl name='새 메시지' role='pane' /&gt;&lt;ctrl name='메시지를 입력하세요...*' role='DIV' /&gt;&lt;ctrl idx='2' role='DIV' /&gt;" WaitForReady="COMPLETE">
                         <ui:Target.TimeoutMS>
@@ -287,8 +287,13 @@
                         </ui:Target.TimeoutMS>
                       </ui:Target>
                     </ui:TypeInto.Target>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:TypeInto>
-                  <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delay_1">
+                  <Delay mva:VisualBasic.Settings="{x:Null}" DisplayName="Delay 1 second" Duration="00:00:01" sap:VirtualizedContainerService.HintSize="436,22" sap2010:WorkflowViewState.IdRef="Delay_1">
                     <TextExpression.Namespaces>
                       <sco:Collection x:TypeArguments="x:String">
                         <x:String>System.Activities</x:String>
@@ -334,32 +339,43 @@
                       </sap2010:ViewStateManager>
                     </sap2010:WorkflowViewState.ViewStateManager>
                   </Delay>
-                  <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'graphic'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
-                    <ui:Click.CursorPosition>
-                      <ui:CursorPosition Position="Center">
-                        <ui:CursorPosition.OffsetX>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetX>
-                        <ui:CursorPosition.OffsetY>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:CursorPosition.OffsetY>
-                      </ui:CursorPosition>
-                    </ui:Click.CursorPosition>
-                    <ui:Click.Target>
-                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0dc03ad86aedab3d03a210d42d9619f2" Selector="&lt;ctrl name='Workplace Chat' role='document' /&gt;&lt;ctrl name='대화에 참여한 사람 대화에 참여한 사람 *' role='grouping' /&gt;&lt;ctrl name='새 메시지' role='pane' /&gt;&lt;ctrl name='보내기' role='push button' /&gt;&lt;ctrl role='graphic' /&gt;">
-                        <ui:Target.TimeoutMS>
-                          <InArgument x:TypeArguments="x:Int32" />
-                        </ui:Target.TimeoutMS>
-                        <ui:Target.WaitForReady>
-                          <InArgument x:TypeArguments="ui:WaitForReady" />
-                        </ui:Target.WaitForReady>
-                      </ui:Target>
-                    </ui:Click.Target>
-                  </ui:Click>
+                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="436,276" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                    <ui:CommentOut.Body>
+                      <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="376,198" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'graphic'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_5" KeyModifiers="None" MouseButton="BTN_LEFT">
+                          <ui:Click.CursorPosition>
+                            <ui:CursorPosition Position="Center">
+                              <ui:CursorPosition.OffsetX>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetX>
+                              <ui:CursorPosition.OffsetY>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:CursorPosition.OffsetY>
+                            </ui:CursorPosition>
+                          </ui:Click.CursorPosition>
+                          <ui:Click.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="0dc03ad86aedab3d03a210d42d9619f2" Selector="&lt;ctrl name='Workplace Chat' role='document' /&gt;&lt;ctrl name='대화에 참여한 사람 대화에 참여한 사람 *' role='grouping' /&gt;&lt;ctrl name='새 메시지' role='pane' /&gt;&lt;ctrl name='보내기' role='push button' /&gt;&lt;ctrl role='graphic' /&gt;">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:Click.Target>
+                        </ui:Click>
+                      </Sequence>
+                    </ui:CommentOut.Body>
+                  </ui:CommentOut>
                 </Sequence>
               </If.Then>
             </If>
-            <Assign sap:VirtualizedContainerService.HintSize="521,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+            <Assign sap:VirtualizedContainerService.HintSize="623,60" sap2010:WorkflowViewState.IdRef="Assign_3">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:Boolean">[out_Error]</OutArgument>
               </Assign.To>
