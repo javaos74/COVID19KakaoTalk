@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>632,887</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>999,2733</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -61,16 +61,19 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="612,827" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="967.5,2528" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Msg" />
       <Variable x:TypeArguments="x:String" Name="Prefix" />
       <Variable x:TypeArguments="x:String" Name="SurveyLink" />
       <Variable x:TypeArguments="x:Int32" Name="SuccessCount" />
       <Variable x:TypeArguments="x:String" Name="SentDate" />
+      <Variable x:TypeArguments="x:String" Name="AppName" />
+      <Variable x:TypeArguments="x:String" Name="FriendName" />
+      <Variable x:TypeArguments="x:String" Name="Locale" />
+      <Variable x:TypeArguments="x:String" Name="SurveySite" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -78,9 +81,9 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Message&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Message&quot;) IsNot Nothing]" DisplayName="If &gt; QueueItem 에 없으면 Config에 있는 항목 참조 " sap:VirtualizedContainerService.HintSize="570,210" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Message&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Message&quot;) IsNot Nothing]" DisplayName="If &gt; Reference value in Config if there is no value in QueueItem " sap:VirtualizedContainerService.HintSize="925.5,210" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
-        <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[Msg]</OutArgument>
           </Assign.To>
@@ -90,7 +93,7 @@
         </Assign>
       </If.Then>
       <If.Else>
-        <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+        <Assign sap:VirtualizedContainerService.HintSize="262,60" sap2010:WorkflowViewState.IdRef="Assign_6">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[Msg]</OutArgument>
           </Assign.To>
@@ -100,7 +103,7 @@
         </Assign>
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="570,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign sap:VirtualizedContainerService.HintSize="925.5,60" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[SurveyLink]</OutArgument>
       </Assign.To>
@@ -108,33 +111,32 @@
         <InArgument x:TypeArguments="x:String">[in_Config("SurveyLink").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="570,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-      <ui:CommentOut.Body>
-        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="304.5,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-          <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-            <Assign.To>
-              <OutArgument x:TypeArguments="x:String">[Prefix]</OutArgument>
-            </Assign.To>
-            <Assign.Value>
-              <InArgument x:TypeArguments="x:String">[in_Config("Prefix").ToString]</InArgument>
-            </Assign.Value>
-          </Assign>
-        </Sequence>
-      </ui:CommentOut.Body>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-    </ui:CommentOut>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="570,233" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="SEND_MESSAGE" DisplayName="Sequence &gt; 지정된 문구로 메일 보내기 " sap:VirtualizedContainerService.HintSize="1053.5,5861" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Assign sap:VirtualizedContainerService.HintSize="925.5,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[AppName]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_Config("MessengerApp").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="925.5,60" sap2010:WorkflowViewState.IdRef="Assign_40">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[Locale]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_Config("Locale").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap:VirtualizedContainerService.HintSize="925.5,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[SurveySite]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[in_Config("SurveySite").ToString]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="925.5,1742" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="SEND_MESSAGE" DisplayName="Send message with pre-define format " sap:VirtualizedContainerService.HintSize="873.5,3615" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="Friends" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -152,51 +154,15 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1011.5,52" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-          <ui:CommentOut.Body>
-            <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="526,393" sap2010:WorkflowViewState.IdRef="Sequence_8">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Tag&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Tag&quot;) IsNot Nothing]" DisplayName="If &gt; 일부직원 선택시 , 재전송시 " sap:VirtualizedContainerService.HintSize="484,301" sap2010:WorkflowViewState.IdRef="If_2">
-                <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="304.5,152" sap2010:WorkflowViewState.IdRef="Sequence_4">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_3">
-                      <Assign.To>
-                        <OutArgument x:TypeArguments="x:String">[Prefix]</OutArgument>
-                      </Assign.To>
-                      <Assign.Value>
-                        <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Tag").ToString]</InArgument>
-                      </Assign.Value>
-                    </Assign>
-                  </Sequence>
-                </If.Then>
-              </If>
-            </Sequence>
-          </ui:CommentOut.Body>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:CommentOut>
-        <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="1011.5,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New" QueueName="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Result="[Remains]" />
-        <If Condition="[Remains IsNot Nothing]" sap:VirtualizedContainerService.HintSize="1011.5,210" sap2010:WorkflowViewState.IdRef="If_9">
+        <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="831.5,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New" QueueName="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Result="[Remains]" />
+        <If Condition="[Remains IsNot Nothing]" sap:VirtualizedContainerService.HintSize="831.5,210" sap2010:WorkflowViewState.IdRef="If_9">
           <If.Then>
             <ui:DeleteQueueItems TimeoutMS="{x:Null}" DisplayName="Delete Queue Items" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DeleteQueueItems_1" QueueItems="[Remains]" />
           </If.Then>
         </If>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1011.5,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;전체 직원에게 지정된 메세지 보내기 &quot;]" />
-        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; 주소록 읽어 오기 " sap:VirtualizedContainerService.HintSize="1011.5,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
-        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="831.5,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Send message to every employees&quot;]" />
+        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; Read Addressbook" sap:VirtualizedContainerService.HintSize="831.5,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
+        <Assign sap:VirtualizedContainerService.HintSize="831.5,60" sap2010:WorkflowViewState.IdRef="Assign_13">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[SentDate]</OutArgument>
           </Assign.To>
@@ -204,7 +170,7 @@
             <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy-MM-dd")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign sap:VirtualizedContainerService.HintSize="831.5,60" sap2010:WorkflowViewState.IdRef="Assign_21">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[ColFound]</OutArgument>
           </Assign.To>
@@ -212,7 +178,7 @@
             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+        <Assign sap:VirtualizedContainerService.HintSize="831.5,60" sap2010:WorkflowViewState.IdRef="Assign_29">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Int32">[NewColIndex]</OutArgument>
           </Assign.To>
@@ -220,7 +186,7 @@
             <InArgument x:TypeArguments="x:Int32">[AddrDT.Columns.Count -1]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="[RowIndex]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1011.5,1115" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[AddrDT.Columns]">
+        <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="[RowIndex]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="831.5,1115" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[AddrDT.Columns]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="sd:DataColumn">
               <ActivityAction.Argument>
@@ -248,7 +214,7 @@
                           <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse( col.ColumnName)]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <If Condition="[ColDateName.ToString(&quot;yyyy-MM-dd&quot;) = SentDate]" DisplayName="If &gt; 컬럼이 있는지 체크 " sap:VirtualizedContainerService.HintSize="484,464" sap2010:WorkflowViewState.IdRef="If_15">
+                      <If Condition="[ColDateName.ToString(&quot;yyyy-MM-dd&quot;) = SentDate]" DisplayName="If &gt; Check column exist or not " sap:VirtualizedContainerService.HintSize="484,464" sap2010:WorkflowViewState.IdRef="If_15">
                         <If.Then>
                           <Sequence sap:VirtualizedContainerService.HintSize="304.5,314" sap2010:WorkflowViewState.IdRef="Sequence_16">
                             <sap:WorkflowViewStateService.ViewState>
@@ -312,7 +278,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEach>
-        <If Condition="[Not ColFound]" DisplayName="If &gt; 발송 일자 컬럼 추가하기 " sap:VirtualizedContainerService.HintSize="1011.5,364" sap2010:WorkflowViewState.IdRef="If_11">
+        <If Condition="[Not ColFound]" DisplayName="If &gt; Add new column with sent date (yyyy-MM-dd) " sap:VirtualizedContainerService.HintSize="831.5,364" sap2010:WorkflowViewState.IdRef="If_11">
           <If.Then>
             <Sequence sap:VirtualizedContainerService.HintSize="304.5,214" sap2010:WorkflowViewState.IdRef="Sequence_20">
               <sap:WorkflowViewStateService.ViewState>
@@ -332,27 +298,47 @@
             </Sequence>
           </If.Then>
         </If>
-        <ui:FilterDataTable DataTable="[AddrDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1011.5,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[FriendsDT]" SelectColumnsMode="Keep">
-          <ui:FilterDataTable.Filters>
-            <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
-              <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
-                <ui:FilterOperationArgument.Column>
-                  <InArgument x:TypeArguments="x:String">["등록여부"]</InArgument>
-                </ui:FilterOperationArgument.Column>
-                <ui:FilterOperationArgument.Operand>
-                  <InArgument x:TypeArguments="x:String">["완료"]</InArgument>
-                </ui:FilterOperationArgument.Operand>
-              </ui:FilterOperationArgument>
-            </scg:List>
-          </ui:FilterDataTable.Filters>
-          <ui:FilterDataTable.SelectColumns>
-            <scg:List x:TypeArguments="InArgument" Capacity="4">
-              <InArgument x:TypeArguments="x:String">["이름"]</InArgument>
-              <InArgument x:TypeArguments="x:String">["전화번호"]</InArgument>
-            </scg:List>
-          </ui:FilterDataTable.SelectColumns>
-        </ui:FilterDataTable>
-        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="831.5,521" sap2010:WorkflowViewState.IdRef="Sequence_31">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="789.5,90" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[string.Format(&quot;{0}\{1}\FilterAddressbook.xaml&quot;, AppName, Locale)]" PathType="File" />
+          <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="789.5,268" sap2010:WorkflowViewState.IdRef="If_25">
+            <If.Then>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Filter Addressbook for each MessengerApp" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_9" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\FilterAddressbook.xaml&quot;, AppName, locale)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AddrDT">[AddrDT]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredAddrDT">[FriendsDT]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+            <If.Else>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Filter Addressbook for each MessengerApp" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="365.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_12" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\FilterAddressbook.xaml&quot;, AppName)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AddrDT">[AddrDT]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredAddrDT">[FriendsDT]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Else>
+          </If>
+        </Sequence>
+        <Assign sap:VirtualizedContainerService.HintSize="831.5,60" sap2010:WorkflowViewState.IdRef="Assign_12">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Int32">[SuccessCount]</OutArgument>
           </Assign.To>
@@ -360,18 +346,18 @@
             <InArgument x:TypeArguments="x:Int32">0</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:AddTransactionItem TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Add Transaction Item" sap:VirtualizedContainerService.HintSize="1011.5,22" sap2010:WorkflowViewState.IdRef="AddTransactionItem_2" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" TransactionItem="[MyQueue]">
+        <ui:AddTransactionItem TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Add Transaction Item" sap:VirtualizedContainerService.HintSize="831.5,22" sap2010:WorkflowViewState.IdRef="AddTransactionItem_2" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" TransactionItem="[MyQueue]">
           <ui:AddTransactionItem.TransactionInformation>
             <InArgument x:TypeArguments="x:Int32" x:Key="NoOfEmployees">[FriendsDT.Rows.Count]</InArgument>
           </ui:AddTransactionItem.TransactionInformation>
         </ui:AddTransactionItem>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1011.5,1566" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="831.5,52" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,1417" sap2010:WorkflowViewState.IdRef="Sequence_5">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,1895" sap2010:WorkflowViewState.IdRef="Sequence_5">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:Boolean" Name="ErrorFlag" />
                   <Variable x:TypeArguments="x:String" Name="CustMsg" />
@@ -381,22 +367,49 @@
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[Msg.Contains(&quot;{0}&quot;)]" sap:VirtualizedContainerService.HintSize="919.5,452" sap2010:WorkflowViewState.IdRef="If_5">
-                  <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="612,302" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="919.5,52" sap2010:WorkflowViewState.IdRef="CommentOut_5">
+                  <ui:CommentOut.Body>
+                    <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="526,301" sap2010:WorkflowViewState.IdRef="Sequence_30">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[Msg.Contains(&quot;{3}&quot;)]" DisplayName="If &gt; 개행문자 추가할 수 있도록 수정, {3} 4번째 항목 " sap:VirtualizedContainerService.HintSize="570,210" sap2010:WorkflowViewState.IdRef="If_13">
+                      <If Condition="[AppName = &quot;Workplace&quot; AndAlso row(&quot;아이디&quot;) isNot Nothing AndAlso Not string.IsNullOrEmpty( row(&quot;아이디&quot;).ToString)]" sap:VirtualizedContainerService.HintSize="484,209" sap2010:WorkflowViewState.IdRef="If_24">
+                        <If.Else>
+                          <ui:Continue sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="Continue_1" />
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ui:CommentOut.Body>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                </ui:CommentOut>
+                <If Condition="[Msg.Contains(&quot;{0}&quot;)]" sap:VirtualizedContainerService.HintSize="919.5,528" sap2010:WorkflowViewState.IdRef="If_5">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="612,378" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If sap2010:Annotation.AnnotationText="{}{0} for Name, &#xA;{1} data (yyyy-MM-dd) &#xA;{2} survey link &#xA;{3} newline ( optional) " Condition="[Msg.Contains(&quot;{3}&quot;)]" DisplayName="If &gt; Add formatting string , {3} for newline " sap:VirtualizedContainerService.HintSize="570,286" sap2010:WorkflowViewState.IdRef="If_13">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
                           <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_19">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[CustMsg]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("이름").ToString,  DateTime.Now.ToString("20년 MM월 dd일"), SurveyLink, vbNewLine)]</InArgument>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("Name").ToString,  DateTime.Now.ToString("yyyy-MM-dd"), SurveyLink, vbNewLine)]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </If.Then>
@@ -406,7 +419,7 @@
                               <OutArgument x:TypeArguments="x:String">[CustMsg]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("이름").ToString,  DateTime.Now.ToString("20년 MM월 dd일"), SurveyLink)]</InArgument>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("Name").ToString,  DateTime.Now.ToString("yyyy-MM-dd"), SurveyLink)]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </If.Else>
@@ -424,16 +437,87 @@
                     </Assign>
                   </If.Else>
                 </If>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="919.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="KakaoTalk\SendMessage.xaml">
-                  <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[row("전화번호").ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Message">[CustMsg]</InArgument>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
-                  </ui:InvokeWorkflowFile.Arguments>
-                </ui:InvokeWorkflowFile>
-                <If Condition="[ErrorFlag]" DisplayName="If &gt; 전송 성공시 카운트 증가 " sap:VirtualizedContainerService.HintSize="919.5,706" sap2010:WorkflowViewState.IdRef="If_4">
+                <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="919.5,521" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="778,90" sap2010:WorkflowViewState.IdRef="PathExists_3" Path="[string.Format(&quot;{0}\{1}\GetFriendName.xaml&quot;, AppName, Locale)]" PathType="File" />
+                  <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="778,268" sap2010:WorkflowViewState.IdRef="If_26">
+                    <If.Then>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="GetFriendName for Each MessengerApp " DisplayName="Invoke GetFriendName Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_13" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\GetFriendName.xaml&quot;, AppName, Locale)]">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">[row]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">[FriendName]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </If.Then>
+                    <If.Else>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="GetFriendName for Each MessengerApp " DisplayName="Invoke GetFriendName Workflow File" sap:VirtualizedContainerService.HintSize="354,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_10" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\GetFriendName.xaml&quot;, AppName)]">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">[row]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">[FriendName]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </If.Else>
+                  </If>
+                </Sequence>
+                <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="919.5,490" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="767.5,90" sap2010:WorkflowViewState.IdRef="PathExists_4" Path="[string.Format(&quot;{0}\{1}\SendMessage.xaml&quot;, AppName, Locale)]" PathType="File" />
+                  <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="767.5,237" sap2010:WorkflowViewState.IdRef="If_27">
+                    <If.Then>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_14" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\SendMessage.xaml&quot;, AppName, Locale)]">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[FriendName.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Message">[CustMsg]</InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </If.Then>
+                    <If.Else>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="343.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_15" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\SendMessage.xaml&quot;, AppName)]">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[FriendName.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Message">[CustMsg]</InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </If.Else>
+                  </If>
+                </Sequence>
+                <If Condition="[ErrorFlag]" DisplayName="If &gt; increase sent message count when it succeeded" sap:VirtualizedContainerService.HintSize="919.5,52" sap2010:WorkflowViewState.IdRef="If_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                   <If.Then>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[string.Format(&quot;직원 {0}님 {1}에 메세지 전송이 실패했습니다.&quot;, row(&quot;이름&quot;).ToString, row(&quot;전화번호&quot;).ToString)]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Warn" Message="[string.Format(&quot;Message delivery failed on {1} for {0}.&quot;, row(&quot;Name&quot;).ToString, row(&quot;PhoneNumber&quot;).ToString)]" />
                   </If.Then>
                   <If.Else>
                     <Sequence sap:VirtualizedContainerService.HintSize="526,556" sap2010:WorkflowViewState.IdRef="Sequence_11">
@@ -453,7 +537,7 @@
                           <InArgument x:TypeArguments="x:Int32">[SuccessCount + 1]</InArgument>
                         </Assign.Value>
                       </Assign>
-                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[AddrDT]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="전화번호" LookupValue="[row(&quot;전화번호&quot;).ToString]" RowIndex="[FoundRow]" />
+                      <ui:LookupDataTable CellValue="{x:Null}" LookupColumnIndex="{x:Null}" LookupDataColumn="{x:Null}" TargetColumnIndex="{x:Null}" TargetColumnName="{x:Null}" TargetDataColumn="{x:Null}" DataTable="[AddrDT]" DisplayName="Lookup Data Table" sap:VirtualizedContainerService.HintSize="484,22" sap2010:WorkflowViewState.IdRef="LookupDataTable_1" LookupColumnName="PhoneNumber" LookupValue="[row(&quot;PhoneNumber&quot;).ToString]" RowIndex="[FoundRow]" />
                       <If Condition="[FoundRow &gt;= 0]" sap:VirtualizedContainerService.HintSize="484,302" sap2010:WorkflowViewState.IdRef="If_12">
                         <If.Then>
                           <Sequence sap:VirtualizedContainerService.HintSize="304.5,152" sap2010:WorkflowViewState.IdRef="Sequence_12">
@@ -481,13 +565,13 @@
           </ui:ForEachRow.Body>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
-        <ui:WriteRange AddHeaders="True" DataTable="[AddrDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="1011.5,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
-        <ui:SetTransactionStatus Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="1011.5,22" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_2" Status="Successful" TransactionItem="[MyQueue]">
+        <ui:WriteRange AddHeaders="True" DataTable="[AddrDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="831.5,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
+        <ui:SetTransactionStatus Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="831.5,22" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_2" Status="Successful" TransactionItem="[MyQueue]">
           <ui:SetTransactionStatus.Analytics>
             <InArgument x:TypeArguments="x:Int32" x:Key="SendMessageCount">[SuccessCount]</InArgument>
             <InArgument x:TypeArguments="x:Int32" x:Key="NoOfEmployees">[FriendsDT.Rows.Count]</InArgument>
@@ -497,13 +581,14 @@
             <scg:Dictionary x:TypeArguments="x:String, InArgument" />
           </ui:SetTransactionStatus.Output>
         </ui:SetTransactionStatus>
-        <Sequence DisplayName="Sequence &gt; 지정된 사람에 진행상황 문자로 보내기 " sap:VirtualizedContainerService.HintSize="535.5,783" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence DisplayName="Sequence &gt; Send progress status message to designated persion (if exists)" sap:VirtualizedContainerService.HintSize="831.5,68" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
             <Variable x:TypeArguments="s:String[]" Name="Numbers" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
           <If Condition="[in_Config.ContainsKey( &quot;ProgressNotifyNumbers&quot;) AndAlso in_Config(&quot;ProgressNotifyNumbers&quot;) isNot Nothing]" sap:VirtualizedContainerService.HintSize="493.5,691" sap2010:WorkflowViewState.IdRef="If_17">
@@ -559,32 +644,130 @@
         </Sequence>
       </Sequence>
       <x:Null x:Key="READ_MESSAGE" />
-      <Sequence x:Key="CHECK_RESPONSE" sap:VirtualizedContainerService.HintSize="376,572" sap2010:WorkflowViewState.IdRef="Sequence_6">
+      <Sequence x:Key="CHECK_RESPONSE" DisplayName="Check response and prepared reminder message for unanswerd employees" sap:VirtualizedContainerService.HintSize="885.5,1440" sap2010:WorkflowViewState.IdRef="Sequence_6">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[string.Format(&quot;응답을 체크하기 위해서 {0}에 접속합니다.&quot;, in_Config(&quot;SurveySite&quot;).ToString)]" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Forms\CheckReponse.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_Config("FormsCredential").ToString]</InArgument>
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;응답을 보내지 않은 직원에게 메세지를 다시 보낼 준비를 합니다&quot;]" />
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke CheckResponse workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="COVID19\CheckResponse.xaml">
-          <ui:InvokeWorkflowFile.Arguments>
-            <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_AddrFile">[in_Config("Addressbook").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_RemindMessage">[in_Config("RemindMessageFormat").ToString]</InArgument>
-            <InArgument x:TypeArguments="x:Int32" x:Key="in_CheckIntervalHour">[Convert.ToInt32(in_Config("CheckIntervalHour"))]</InArgument>
-            <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
-          </ui:InvokeWorkflowFile.Arguments>
-        </ui:InvokeWorkflowFile>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="843.5,93" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[string.Format(&quot;Moving to {0} for checking response...&quot;, in_Config(&quot;SurveySite&quot;).ToString)]" />
+        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="843.5,521" sap2010:WorkflowViewState.IdRef="Sequence_34">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="801.5,90" sap2010:WorkflowViewState.IdRef="PathExists_5" Path="[string.Format(&quot;{0}\{1}\DownloadResponse.xaml&quot;, SurveySite,  Locale)]" PathType="File" />
+          <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="801.5,268" sap2010:WorkflowViewState.IdRef="If_28">
+            <If.Then>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Forms and get download results" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_16" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\DownloadResponse.xaml&quot;, SurveySite, Locale)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_Config("FormsCredential").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+            <If.Else>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Forms and get download results" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="377.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_17" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\DownloadResponse.xaml&quot;, SurveySite)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_Config("FormsCredential").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Else>
+          </If>
+        </Sequence>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="843.5,93" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[&quot;Preparing to send reminder message fo unanswered employees.&quot;]" />
+        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="843.5,521" sap2010:WorkflowViewState.IdRef="Sequence_35">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="779.5,90" sap2010:WorkflowViewState.IdRef="PathExists_6" Path="[string.Format(&quot;{0}\{1}\CheckResponse.xaml&quot;,  SurveySite, Locale)]" PathType="File" />
+          <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="779.5,268" sap2010:WorkflowViewState.IdRef="If_29">
+            <If.Then>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="check who answered and prepare to re-send  message " DisplayName="Invoke CheckResponse workflow" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_20" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\CheckResponse.xaml&quot;, SurveySite, Locale)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AddrFile">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Addressbook&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_RemindMessage">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;RemindMessageFormat&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_CheckIntervalHour">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(in_Config(&quot;CheckIntervalHour&quot;))" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ReportPath&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_MessengerApp">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AppName" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+            <If.Else>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="check who answered and prepare to re-send  message " DisplayName="Invoke CheckResponse workflow" sap:VirtualizedContainerService.HintSize="355.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_21" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\CheckResponse.xaml&quot;, SurveySite)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;OrchestratorQueueName&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AddrFile">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;Addressbook&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_RemindMessage">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;RemindMessageFormat&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:Int32" x:Key="in_CheckIntervalHour">
+                    <mva:VisualBasicValue x:TypeArguments="x:Int32" ExpressionText="Convert.ToInt32(in_Config(&quot;CheckIntervalHour&quot;))" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_Config(&quot;ReportPath&quot;).ToString" />
+                  </InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_MessengerApp">
+                    <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="AppName" />
+                  </InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Else>
+          </If>
+        </Sequence>
       </Sequence>
-      <Sequence x:Key="RESEND_MESSAGE" DisplayName="Sequence &gt; 재전송 케이스 " sap:VirtualizedContainerService.HintSize="1053.5,1697" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence x:Key="RESEND_MESSAGE" DisplayName="Re-send message to unanswered employees" sap:VirtualizedContainerService.HintSize="1054,2281" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="CustMsg" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -599,161 +782,22 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1011.5,93" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;미응답한 직원에게 메세지를 재전송 합니다.&quot;]" />
-        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; 주소록 읽어 오기 " sap:VirtualizedContainerService.HintSize="1011.5,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
-        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="1011.5,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-          <ui:CommentOut.Body>
-            <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="526,693" sap2010:WorkflowViewState.IdRef="Sequence_26">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_17">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:String">[SentDate]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy-Mm-dd")]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_23">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Boolean">[ColFound]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                </Assign.Value>
-              </Assign>
-              <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_32">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Int32">[NewColIndex]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="x:Int32">[AddrDT.Columns.Count -1]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="[RowIndex]" DisplayName="For Each &gt; 컬럼이름이 중복되는지 체크 " sap:VirtualizedContainerService.HintSize="484,52" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[AddrDT.Columns]">
-                <ui:ForEach.Body>
-                  <ActivityAction x:TypeArguments="sd:DataColumn">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="col" />
-                    </ActivityAction.Argument>
-                    <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="606,979" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                      <Sequence.Variables>
-                        <Variable x:TypeArguments="s:DateTime" Name="ColDateName" />
-                      </Sequence.Variables>
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="564,887" sap2010:WorkflowViewState.IdRef="TryCatch_2">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <TryCatch.Try>
-                          <Sequence sap:VirtualizedContainerService.HintSize="526,655" sap2010:WorkflowViewState.IdRef="Sequence_22">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_27">
-                              <Assign.To>
-                                <OutArgument x:TypeArguments="s:DateTime">[ColDateName]</OutArgument>
-                              </Assign.To>
-                              <Assign.Value>
-                                <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse( col.ColumnName)]</InArgument>
-                              </Assign.Value>
-                            </Assign>
-                            <If Condition="[ColDateName.ToString(&quot;yyyy-MM-dd&quot;) = SentDate]" DisplayName="If &gt; 컬럼이 있는지 체크 " sap:VirtualizedContainerService.HintSize="484,463" sap2010:WorkflowViewState.IdRef="If_16">
-                              <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="304.5,314" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_24">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Boolean">[ColFound]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                  <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_33">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Int32">[NewColIndex]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Int32">[RowIndex]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                  <ui:Break sap:VirtualizedContainerService.HintSize="262.5,22" sap2010:WorkflowViewState.IdRef="Break_2" />
-                                </Sequence>
-                              </If.Then>
-                            </If>
-                          </Sequence>
-                        </TryCatch.Try>
-                        <TryCatch.Catches>
-                          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="530,22" sap2010:WorkflowViewState.IdRef="Catch`1_2">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ActivityAction x:TypeArguments="s:Exception">
-                              <ActivityAction.Argument>
-                                <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                              </ActivityAction.Argument>
-                              <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_28">
-                                <Assign.To>
-                                  <OutArgument x:TypeArguments="s:DateTime">[ColDateName]</OutArgument>
-                                </Assign.To>
-                                <Assign.Value>
-                                  <InArgument x:TypeArguments="s:DateTime">[DateTime.Now.AddYears(-1)]</InArgument>
-                                </Assign.Value>
-                              </Assign>
-                            </ActivityAction>
-                          </Catch>
-                        </TryCatch.Catches>
-                      </TryCatch>
-                    </Sequence>
-                  </ActivityAction>
-                </ui:ForEach.Body>
-                <sap:WorkflowViewStateService.ViewState>
-                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                  </scg:Dictionary>
-                </sap:WorkflowViewStateService.ViewState>
-              </ui:ForEach>
-              <If Condition="[Not ColFound]" DisplayName="If &gt; 발송 일자 컬럼 추가하기 " sap:VirtualizedContainerService.HintSize="484,209" sap2010:WorkflowViewState.IdRef="If_10">
-                <If.Then>
-                  <ui:AddDataColumn x:TypeArguments="x:Boolean" Column="{x:Null}" MaxLength="{x:Null}" AllowDBNull="False" AutoIncrement="False" ColumnName="[SentDate]" DataTable="[AddrDT]" DefaultValue="False" DisplayName="Add Data Column" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" Unique="False" />
-                </If.Then>
-              </If>
-            </Sequence>
-          </ui:CommentOut.Body>
-          <sap:WorkflowViewStateService.ViewState>
-            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-            </scg:Dictionary>
-          </sap:WorkflowViewStateService.ViewState>
-        </ui:CommentOut>
-        <ui:FilterDataTable DataTable="[AddrDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1011.5,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[MatchedAddrDT]" SelectColumnsMode="Keep">
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1012,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[&quot;Sending reminder message to unanswered employees.&quot;]" />
+        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; Get Address book" sap:VirtualizedContainerService.HintSize="1012,87" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
+        <ui:FilterDataTable sap2010:Annotation.AnnotationText="Filtering candidate employee list based on matching Tag with PhoneNumber or ID field from addressbook." DataTable="[AddrDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="1012,101" sap2010:WorkflowViewState.IdRef="FilterDataTable_2" OutputDataTable="[MatchedAddrDT]" SelectColumnsMode="Keep">
           <ui:FilterDataTable.Filters>
             <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
               <ui:FilterOperationArgument BooleanOperator="And" Operator="EQ">
                 <ui:FilterOperationArgument.Column>
-                  <InArgument x:TypeArguments="x:String">["전화번호"]</InArgument>
+                  <InArgument x:TypeArguments="x:String">["PhoneNumber"]</InArgument>
+                </ui:FilterOperationArgument.Column>
+                <ui:FilterOperationArgument.Operand>
+                  <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Tag").ToString]</InArgument>
+                </ui:FilterOperationArgument.Operand>
+              </ui:FilterOperationArgument>
+              <ui:FilterOperationArgument BooleanOperator="Or" Operator="EQ">
+                <ui:FilterOperationArgument.Column>
+                  <InArgument x:TypeArguments="x:String">["ID"]</InArgument>
                 </ui:FilterOperationArgument.Column>
                 <ui:FilterOperationArgument.Operand>
                   <InArgument x:TypeArguments="x:String">[in_TransactionItem.SpecificContent("Tag").ToString]</InArgument>
@@ -766,35 +810,45 @@
               <x:Null />
             </scg:List>
           </ui:FilterDataTable.SelectColumns>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
         </ui:FilterDataTable>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[MatchedAddrDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1011.5,1154" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[MatchedAddrDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1012,1790" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,1005" sap2010:WorkflowViewState.IdRef="Sequence_9">
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,1642" sap2010:WorkflowViewState.IdRef="Sequence_9">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <If Condition="[Msg.Contains(&quot;{0}&quot;)]" sap:VirtualizedContainerService.HintSize="919.5,452" sap2010:WorkflowViewState.IdRef="If_7">
+                <If Condition="[Msg.Contains(&quot;{0}&quot;)]" sap:VirtualizedContainerService.HintSize="919.5,528" sap2010:WorkflowViewState.IdRef="If_7">
                   <If.Then>
-                    <Sequence sap:VirtualizedContainerService.HintSize="612,302" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                    <Sequence sap:VirtualizedContainerService.HintSize="612,378" sap2010:WorkflowViewState.IdRef="Sequence_15">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
-                      <If Condition="[Msg.Contains(&quot;{3}&quot;)]" DisplayName="If &gt; 개행문자 추가할 수 있도록 수정, {3} 4번째 항목  " sap:VirtualizedContainerService.HintSize="570,210" sap2010:WorkflowViewState.IdRef="If_14">
+                      <If sap2010:Annotation.AnnotationText="{}{0} for Name, &#xA;{1} data (yyyy-MM-dd) &#xA;{2} survey link &#xA;{3} newline ( optional) " Condition="[Msg.Contains(&quot;{3}&quot;)]" DisplayName="If &gt; Add formatting string , {3} for newline " sap:VirtualizedContainerService.HintSize="570,286" sap2010:WorkflowViewState.IdRef="If_14">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
                         <If.Then>
                           <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_20">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:String">[CustMsg]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("이름").ToString,  DateTime.Now.ToString("20년 MM월 dd일"), SurveyLink, vbNewLine)]</InArgument>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("Name").ToString,  DateTime.Now.ToString("yyyy-MM-dd"), SurveyLink, vbNewLine)]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </If.Then>
@@ -804,7 +858,7 @@
                               <OutArgument x:TypeArguments="x:String">[CustMsg]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("이름").ToString,  DateTime.Now.ToString("20년 MM월 dd일"), SurveyLink)]</InArgument>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("Name").ToString,  DateTime.Now.ToString("yyyy-MM-dd"), SurveyLink)]</InArgument>
                             </Assign.Value>
                           </Assign>
                         </If.Else>
@@ -822,16 +876,52 @@
                     </Assign>
                   </If.Else>
                 </If>
-                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="919.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_5" UnSafe="False" WorkflowFileName="KakaoTalk\SendMessage.xaml">
+                <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="GetFriendName for Each MessengerApp " DisplayName="Invoke GetFriendName Workflow File" sap:VirtualizedContainerService.HintSize="919.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_11" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\GetFriendName.xaml&quot;, AppName)]">
                   <ui:InvokeWorkflowFile.Arguments>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[row("전화번호").ToString]</InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="in_Message">[CustMsg]</InArgument>
-                    <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
+                    <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">[row]</InArgument>
+                    <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">[FriendName]</OutArgument>
                   </ui:InvokeWorkflowFile.Arguments>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
                 </ui:InvokeWorkflowFile>
-                <If Condition="[ErrorFlag]" DisplayName="If &gt; 오류 메세지 로그 " sap:VirtualizedContainerService.HintSize="919.5,294" sap2010:WorkflowViewState.IdRef="If_8">
+                <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="919.5,490" sap2010:WorkflowViewState.IdRef="Sequence_36">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="767.5,90" sap2010:WorkflowViewState.IdRef="PathExists_7" Path="[string.Format(&quot;{0}\{1}\SendMessage.xaml&quot;, AppName, Locale)]" PathType="File" />
+                  <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="767.5,237" sap2010:WorkflowViewState.IdRef="If_30">
+                    <If.Then>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_22" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\SendMessage.xaml&quot;, AppName, Locale)]">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[FriendName.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Message">[CustMsg]</InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </If.Then>
+                    <If.Else>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="343.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_23" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\SendMessage.xaml&quot;, AppName)]">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[FriendName.Trim]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="in_Message">[CustMsg]</InArgument>
+                          <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                      </ui:InvokeWorkflowFile>
+                    </If.Else>
+                  </If>
+                </Sequence>
+                <If Condition="[ErrorFlag]" DisplayName="If &gt; Log error message " sap:VirtualizedContainerService.HintSize="919.5,294" sap2010:WorkflowViewState.IdRef="If_8">
                   <If.Then>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[string.Format(&quot;직원 {0}님 {1}에 메세지 재전송이 실패했습니다.&quot;, row(&quot;이름&quot;).ToString, row(&quot;전화번호&quot;).ToString)]" />
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[string.Format(&quot;Message delivery was failed on {0}.&quot;, row(&quot;Name&quot;).ToString)]" />
                   </If.Then>
                   <If.Else>
                     <Sequence sap:VirtualizedContainerService.HintSize="242,144" sap2010:WorkflowViewState.IdRef="Sequence_13">
@@ -879,7 +969,7 @@
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
       </Sequence>
-      <Sequence x:Key="NOTIFY_STATUS" DisplayName="Sequence &gt; 진행사항 통보 " sap:VirtualizedContainerService.HintSize="376,181" sap2010:WorkflowViewState.IdRef="Sequence_28">
+      <Sequence x:Key="NOTIFY_STATUS" DisplayName="진행사항 통보 " sap:VirtualizedContainerService.HintSize="385.5,179" sap2010:WorkflowViewState.IdRef="Sequence_28">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:Boolean" Name="ErrorFlag" />
         </Sequence.Variables>
@@ -888,13 +978,192 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="KakaoTalk\SendMessage.xaml">
+        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="342,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\SendMessage.xaml&quot;, AppName)]">
           <ui:InvokeWorkflowFile.Arguments>
             <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[in_TransactionItem.SpecificContent("Tag").ToString]</InArgument>
             <InArgument x:TypeArguments="x:String" x:Key="in_Message">[in_TransactionItem.SpecificContent("Message").ToString]</InArgument>
             <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
+      </Sequence>
+      <Sequence x:Key="LOG_ANALYTIC_DATA" DisplayName="Log  response data for Analytics with Insights  " sap:VirtualizedContainerService.HintSize="886,66" sap2010:WorkflowViewState.IdRef="Sequence_29">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="s:DateTime" Name="TargetDate" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="844,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[string.Format(&quot;Log extra information for Insighs Dashboard&quot;)]" />
+        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="844,518" sap2010:WorkflowViewState.IdRef="Sequence_37">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="802,89" sap2010:WorkflowViewState.IdRef="PathExists_8" Path="[string.Format(&quot;{0}\{1}\CheckReponse.xaml&quot;, SurveySite,  Locale)]" PathType="File" />
+          <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="802,266" sap2010:WorkflowViewState.IdRef="If_31">
+            <If.Then>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Forms and get download results" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_24" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\CheckReponse.xaml&quot;, SurveySite,  Locale)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_Config("FormsCredential").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+            <If.Else>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Forms and get download results" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="377.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_25" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\DownloadResponse.xaml&quot;, SurveySite)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_Config("FormsCredential").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Else>
+          </If>
+        </Sequence>
+        <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;TargetDate&quot;) AndAlso Not string.IsNullOrEmpty(in_TransactionItem.SpecificContent(&quot;TargetDate&quot;).ToString)]" DisplayName="If &gt; Check given TargetDate exists or not" sap:VirtualizedContainerService.HintSize="843.5,442" sap2010:WorkflowViewState.IdRef="If_18">
+          <If.Then>
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,292" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+              <TryCatch.Try>
+                <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_36">
+                  <Assign.To>
+                    <OutArgument x:TypeArguments="s:DateTime">[TargetDate]</OutArgument>
+                  </Assign.To>
+                  <Assign.Value>
+                    <InArgument x:TypeArguments="s:DateTime">[DateTime.Parse( in_TransactionItem.SpecificContent("TargetDate").ToString)]</InArgument>
+                  </Assign.Value>
+                </Assign>
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                    <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_37">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="s:DateTime">[TargetDate]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
+          </If.Then>
+          <If.Else>
+            <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_38">
+              <Assign.To>
+                <OutArgument x:TypeArguments="s:DateTime">[TargetDate]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </If.Else>
+        </If>
+        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="843.5,490" sap2010:WorkflowViewState.IdRef="Sequence_38">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="800.5,90" sap2010:WorkflowViewState.IdRef="PathExists_9" Path="[string.Format(&quot;{0}\{1}\HandleAnalyticData.xaml&quot;, SurveySite, Locale)]" PathType="File" />
+          <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="800.5,237" sap2010:WorkflowViewState.IdRef="If_32">
+            <If.Then>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke HandleAnalyticData workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_26" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\HandleAnalyticData.xaml&quot;, SurveySite, Locale)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="in_TargetDate">[TargetDate]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+            <If.Else>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke HandleAnalyticData workflow" sap:VirtualizedContainerService.HintSize="376.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_27" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\HandleAnalyticData.xaml&quot;, SurveySite)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_QueueName">[in_Config("OrchestratorQueueName").ToString]</InArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="in_TargetDate">[TargetDate]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </If.Else>
+          </If>
+        </Sequence>
+      </Sequence>
+      <Sequence x:Key="SUMMARY_REPORTS" sap:VirtualizedContainerService.HintSize="563,789" sap2010:WorkflowViewState.IdRef="Sequence_39">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:String" Name="summaryReport" />
+          <Variable x:TypeArguments="x:String" Name="nonRespondantReport" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <If Condition="[in_Config(&quot;Locale&quot;).ToString.ToLower.Equals(&quot;en&quot;)]" sap:VirtualizedContainerService.HintSize="521,697" sap2010:WorkflowViewState.IdRef="If_33">
+          <If.Then>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,549" sap2010:WorkflowViewState.IdRef="Sequence_40">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke PopulateSummaryReport workflow" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_28" UnSafe="False" WorkflowFileName="Reports\PopulateSummaryReport.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ResponseResultFile">C:\Users\Hoang Duong\Downloads\ResponseReport_sample.xlsx</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_AddressBook">C:\Users\Hoang Duong\Documents\Addressbook.xlsx</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_SummaryReportFilePath">[summaryReport]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="out_NonRespondantReportFilePath">[nonRespondantReport]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi, &quot;+Environment.NewLine +&quot;Here is the Health Screening Report for &quot;+DateTime.Now.ToShortDateString + &quot; .&quot;]" DisplayName="Send Outlook Mail Message for Summary" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="End of Day - Health Screening Summary Report" To="[in_Config(&quot;SummaryReportEmail&quot;).ToString]">
+                <ui:SendOutlookMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                    <InArgument x:TypeArguments="x:String">[summaryReport]</InArgument>
+                  </scg:List>
+                </ui:SendOutlookMail.Files>
+              </ui:SendOutlookMail>
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi, &quot;+Environment.NewLine +&quot;Here is the Health Screening Report for &quot;+DateTime.Now.ToShortDateString + &quot; . The employee who have not responded are highlighted.&quot;]" DisplayName="Send Outlook Mail Message for Non-Respondant" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="[&quot;Non-Respondant Report - &quot;+DateTime.Now.ToShortDateString]" To="[in_Config(&quot;SummaryReportEmail&quot;).ToString]">
+                <ui:SendOutlookMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                    <InArgument x:TypeArguments="x:String">[nonRespondantReport]</InArgument>
+                  </scg:List>
+                </ui:SendOutlookMail.Files>
+              </ui:SendOutlookMail>
+            </Sequence>
+          </If.Then>
+        </If>
       </Sequence>
     </Switch>
   </Sequence>
