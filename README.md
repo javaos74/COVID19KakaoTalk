@@ -9,7 +9,7 @@
 - WhatsApp Desktop은 whatsapp 사이트에서 다운로드 받아서 사용하세요.
 - Workplace Desktop은 workplace 사이트에서 Workplace Chat을 다운로드 받아서 사용하세요. 
 
-# 최신 릴리즈는 1.0.47 입니다. 
+# 최신 릴리즈는 1.0.48 입니다. 
 - releases 부분에서 nuget package 다운로드 받아 사용하세요. 
 - 전체 코드를 내려받아 배포하셔도 됩니다. 
 - 패키지버전과 release 버전을 통일하도록 변경했습니다. 
