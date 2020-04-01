@@ -17,7 +17,7 @@
   "webServices": [],
   "schemaVersion": "4.0",
   "studioVersion": "19.10.1.0",
-  "projectVersion": "1.0.47",
+  "projectVersion": "1.0.49",
   "runtimeOptions": {
     "autoDispose": false,
     "isPausable": true,
