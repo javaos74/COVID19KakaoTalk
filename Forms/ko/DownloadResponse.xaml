@@ -1,14 +1,13 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GenReport" this:GenReport.in_ReportUrl="https://forms.office.com/Pages/DesignPage.aspx#Analysis=true&amp;FormId=Kj012FOxF02IJ5AsUfcjVwOSqHZk7aJJuw6_gLE1TgJUQlJGOFhLTlA0UE9FNDJQWENBVTBQSlFSQy4u" this:GenReport.in_SavedFilePath="C:\Users\Hoang Duong\Downloads\ResponseReport.xlsx" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GenReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_ReportUrl" Type="InArgument(x:String)" />
     <x:Property Name="in_SavedFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_FormsCredential" Type="InArgument(x:String)" />
-    <x:Property Name="in_Locale" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1051,3380</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1081,4470</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GenReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="23">
@@ -38,7 +37,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="19">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="38">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,9 +57,10 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Move to Report site and get result download and prepare to re-send message to who unanswered. &#xA;&#xA;in_ReportUrl : Report Url which can download result.&#xA;in_SavedFilePath : Filename which contains result execl from ReportUrl.&#xA;in_FormsCredential :  Credential form Microsoft Forms  &#xA;" DisplayName="GenReport" sap:VirtualizedContainerService.HintSize="1061,3215" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Move to Report site and get result download and prepare to re-send message to who unanswered. &#xA;&#xA;in_ReportUrl : Report Url which can download result.&#xA;in_SavedFilePath : Filename which contains result execl from ReportUrl.&#xA;in_FormsCredential :  Credential form Microsoft Forms  &#xA;" DisplayName="GenReport" sap:VirtualizedContainerService.HintSize="1061,4370" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -130,23 +130,23 @@
         </ActivityAction>
       </ui:OpenBrowser.Body>
     </ui:OpenBrowser>
-    <Sequence sap2010:Annotation.AnnotationText="Implements login to Microsoft Forms" sap:VirtualizedContainerService.HintSize="1019,108" sap2010:WorkflowViewState.IdRef="Sequence_16">
+    <Sequence sap2010:Annotation.AnnotationText="Implements login to Microsoft Forms" sap:VirtualizedContainerService.HintSize="1019,1244" sap2010:WorkflowViewState.IdRef="Sequence_16">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <TryCatch DisplayName="Try Catch &gt; Check page requires Username and password" sap:VirtualizedContainerService.HintSize="1101,1513" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch DisplayName="Try Catch &gt; Check page requires Username and password" sap:VirtualizedContainerService.HintSize="635,1121" sap2010:WorkflowViewState.IdRef="TryCatch_1">
         <TryCatch.Try>
-          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" ContinueOnError="False" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="1063,1286" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="04301696efece5c372e7f543efc8b35c" Selector="&lt;html title='Microsoft Forms - *' /&gt;" TimeoutMS="10000">
+          <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" ContinueOnError="False" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="597,889" sap2010:WorkflowViewState.IdRef="BrowserScope_7" InformativeScreenshot="04301696efece5c372e7f543efc8b35c" Selector="&lt;html title='Microsoft Forms - *' /&gt;" TimeoutMS="10000">
             <ui:BrowserScope.Body>
               <ActivityAction x:TypeArguments="x:Object">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1029,1140" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="563,743" sap2010:WorkflowViewState.IdRef="Sequence_14">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="RequireLogin" />
                   </Sequence.Variables>
@@ -155,7 +155,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[RequireLogin]" sap:VirtualizedContainerService.HintSize="987,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
+                  <ui:UiElementExists DisplayName="Element Exists 'DIV'" Exists="[RequireLogin]" sap:VirtualizedContainerService.HintSize="521,106" sap2010:WorkflowViewState.IdRef="UiElementExists_4">
                     <ui:UiElementExists.Target>
                       <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="4f76c111695c80eb8bd1ae95cab240de" Selector="&lt;webctrl isleaf='1' parentid='meControl' tag='DIV' /&gt;" TimeoutMS="5000">
                         <ui:Target.WaitForReady>
@@ -164,7 +164,7 @@
                       </ui:Target>
                     </ui:UiElementExists.Target>
                   </ui:UiElementExists>
-                  <If Condition="[RequireLogin]" DisplayName="If &gt; 로그인 여부 체크 " sap:VirtualizedContainerService.HintSize="987,902" sap2010:WorkflowViewState.IdRef="If_4">
+                  <If Condition="[RequireLogin]" DisplayName="If &gt; 로그인 여부 체크 " sap:VirtualizedContainerService.HintSize="521,505" sap2010:WorkflowViewState.IdRef="If_4">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -172,13 +172,13 @@
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="842,755" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,356" sap2010:WorkflowViewState.IdRef="Sequence_13">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="800,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
+                        <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" SendWindowMessages="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'DIV'" sap:VirtualizedContainerService.HintSize="334,106" sap2010:WorkflowViewState.IdRef="Click_11" KeyModifiers="None" MouseButton="BTN_LEFT" SimulateClick="True">
                           <ui:Click.CursorPosition>
                             <ui:CursorPosition Position="Center">
                               <ui:CursorPosition.OffsetX>
@@ -200,46 +200,17 @@
                             </ui:Target>
                           </ui:Click.Target>
                         </ui:Click>
-                        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="800,517" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
-                          </Sequence.Variables>
+                        <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Login  to Microsoft Forms " DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Forms\ko\SurveyLogin.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <InArgument x:TypeArguments="x:Boolean" x:Key="in_ChooseAccount">False</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_FormsCredential]</InArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="758,89" sap2010:WorkflowViewState.IdRef="PathExists_1" Path="[string.Format(&quot;{0}\{1}\SurveyLogin.xaml&quot;, &quot;Forms&quot;, in_Locale)]" PathType="File" />
-                          <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="758,265" sap2010:WorkflowViewState.IdRef="If_7">
-                            <If.Then>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Login  to Microsoft Forms " DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\SurveyLogin.xaml&quot;, &quot;Forms&quot;, in_Locale)]">
-                                <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_ChooseAccount">False</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_FormsCredential]</InArgument>
-                                </ui:InvokeWorkflowFile.Arguments>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:InvokeWorkflowFile>
-                            </If.Then>
-                            <If.Else>
-                              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Login  to Microsoft Forms " DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="334,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="Forms\SurveyLogin.xaml">
-                                <ui:InvokeWorkflowFile.Arguments>
-                                  <InArgument x:TypeArguments="x:Boolean" x:Key="in_ChooseAccount">False</InArgument>
-                                  <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_FormsCredential]</InArgument>
-                                </ui:InvokeWorkflowFile.Arguments>
-                                <sap:WorkflowViewStateService.ViewState>
-                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                  </scg:Dictionary>
-                                </sap:WorkflowViewStateService.ViewState>
-                              </ui:InvokeWorkflowFile>
-                            </If.Else>
-                          </If>
-                        </Sequence>
+                        </ui:InvokeWorkflowFile>
                       </Sequence>
                     </If.Then>
                   </If>
@@ -255,7 +226,7 @@
           </ui:BrowserScope>
         </TryCatch.Try>
         <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="1067,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="601,22" sap2010:WorkflowViewState.IdRef="Catch`1_1">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -266,9 +237,9 @@
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
               </ActivityAction.Argument>
-              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1019,1235" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1019,1237" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                 <TryCatch.Try>
-                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe  사용자 계정 로그인'" sap:VirtualizedContainerService.HintSize="981,1005" sap2010:WorkflowViewState.IdRef="BrowserScope_8" InformativeScreenshot="0a2804b6baa2d81d3213bf22dd46f1ca" Selector="&lt;html title='사용자 계정 로그인' /&gt;" TimeoutMS="10000">
+                  <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe  사용자 계정 로그인'" sap:VirtualizedContainerService.HintSize="981,1003" sap2010:WorkflowViewState.IdRef="BrowserScope_8" InformativeScreenshot="0a2804b6baa2d81d3213bf22dd46f1ca" Selector="&lt;html title='사용자 계정 로그인' /&gt;" TimeoutMS="10000">
                     <ui:BrowserScope.Body>
                       <ActivityAction x:TypeArguments="x:Object">
                         <ActivityAction.Argument>
@@ -369,15 +340,15 @@
         </TryCatch.Catches>
       </TryCatch>
     </Sequence>
-    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="1019,2558" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="cb6361bdc0d7924a48c49da54a1ec944" Selector="&lt;html title='Microsoft Forms' /&gt;">
+    <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" BrowserType="IE" DisplayName="Attach Browser 'iexplore.exe Microsoft'" sap:VirtualizedContainerService.HintSize="1019,2571" sap2010:WorkflowViewState.IdRef="BrowserScope_3" InformativeScreenshot="cb6361bdc0d7924a48c49da54a1ec944" Selector="&lt;html title='Microsoft Forms' /&gt;">
       <ui:BrowserScope.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="985,2412" sap2010:WorkflowViewState.IdRef="TryCatch_3">
+          <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="985,2425" sap2010:WorkflowViewState.IdRef="TryCatch_3">
             <TryCatch.Try>
-              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="947,2185" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="947,2193" sap2010:WorkflowViewState.IdRef="Sequence_7">
                 <Sequence.Variables>
                   <Variable x:TypeArguments="x:String" Name="tempFilePath" />
                 </Sequence.Variables>
@@ -517,7 +488,7 @@
                     </ui:Target>
                   </ui:Click.Target>
                 </ui:Click>
-                <Sequence DisplayName="Download new response to temp file" sap:VirtualizedContainerService.HintSize="905,66" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                <Sequence DisplayName="Download new response to temp file" sap:VirtualizedContainerService.HintSize="905,68" sap2010:WorkflowViewState.IdRef="Sequence_19">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -588,9 +559,9 @@
                     </ui:Click.Target>
                   </ui:Click>
                 </Sequence>
-                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="905,51" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="905,52" sap2010:WorkflowViewState.IdRef="CommentOut_1">
                   <ui:CommentOut.Body>
-                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,699" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="376,700" sap2010:WorkflowViewState.IdRef="Sequence_20">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -598,7 +569,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:SetToClipboard DisplayName="Set To Clipboard" sap:VirtualizedContainerService.HintSize="334,59" sap2010:WorkflowViewState.IdRef="SetToClipboard_1" Text="[Path.Combine( Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\Downloads&quot;), in_SavedFilePath)]" />
                       <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[Path.Combine( Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\Downloads&quot;), in_SavedFilePath)]" />
-                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'Edit'" sap:VirtualizedContainerService.HintSize="334,154" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="v" KeyModifiers="Ctrl">
+                      <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" SpecialKey="{x:Null}" Activate="True" DisplayName="Send Hotkey 'Edit'" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="v" KeyModifiers="Ctrl">
                         <ui:SendHotkey.Target>
                           <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="bd09ee61fb39c04b29c96f01e4f577ef" Selector="&lt;wnd app='iexplore.exe' cls='#32770' title='다른 이름으로 저장' /&gt;&lt;wnd aaname='탐색 창' cls='DirectUIHWND' /&gt;&lt;wnd aaname='파일 이름:' cls='ComboBox' /&gt;&lt;wnd ctrlid='1001' /&gt;">
                             <ui:Target.TimeoutMS>
@@ -706,7 +677,7 @@
                     </sap2010:ViewStateManager>
                   </sap2010:WorkflowViewState.ViewStateManager>
                 </Delay>
-                <Sequence DisplayName="Merge new responses to SavedFilePath" sap:VirtualizedContainerService.HintSize="905,1082" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                <Sequence DisplayName="Merge new responses to SavedFilePath" sap:VirtualizedContainerService.HintSize="905,1085" sap2010:WorkflowViewState.IdRef="Sequence_22">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="dt_Temp" />
                     <Variable x:TypeArguments="sd:DataTable" Name="dt_Result" />
@@ -734,8 +705,8 @@
                       </InArgument>
                     </ui:ReadRange.Range>
                   </ui:ReadRange>
-                  <ui:PathExists DisplayName="Path Exists" Exists="[isExisted]" sap:VirtualizedContainerService.HintSize="863,89" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[in_SavedFilePath]" PathType="File" />
-                  <If Condition="[isExisted]" sap:VirtualizedContainerService.HintSize="863,634" sap2010:WorkflowViewState.IdRef="If_9">
+                  <ui:PathExists DisplayName="Path Exists" Exists="[isExisted]" sap:VirtualizedContainerService.HintSize="863,90" sap2010:WorkflowViewState.IdRef="PathExists_2" Path="[in_SavedFilePath]" PathType="File" />
+                  <If Condition="[isExisted]" sap:VirtualizedContainerService.HintSize="863,636" sap2010:WorkflowViewState.IdRef="If_9">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -786,11 +757,11 @@
                       </ui:ExcelApplicationScope>
                     </If.Then>
                     <If.Else>
-                      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_SavedFilePath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,157" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[tempFilePath]" />
+                      <ui:MoveFile ContinueOnError="{x:Null}" Destination="[in_SavedFilePath]" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="384,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="False" Path="[tempFilePath]" />
                     </If.Else>
                   </If>
                 </Sequence>
-                <Sequence DisplayName="Delete all responses" sap:VirtualizedContainerService.HintSize="905,66" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                <Sequence DisplayName="Delete all responses" sap:VirtualizedContainerService.HintSize="905,68" sap2010:WorkflowViewState.IdRef="Sequence_23">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -867,7 +838,7 @@
               </Sequence>
             </TryCatch.Try>
             <TryCatch.Catches>
-              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="951,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="951,22" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -878,7 +849,7 @@
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                   </ActivityAction.Argument>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;No response found! Continue notifying employees&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Warn" Message="[&quot;No response found! Continue notifying employees&quot;]" />
                 </ActivityAction>
               </Catch>
             </TryCatch.Catches>

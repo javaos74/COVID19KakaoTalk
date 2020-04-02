@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1019,4804</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1049,4739</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckResponse_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -65,7 +65,6 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Navigate to ReportUrl and download result and check who sent answer or not. &#xA;&#xA;in_SavedFilePath : Filename which contains result execl from ReportUrl &#xA;in_QueueName : Queue which used for re-send message to whom did not answer during given interval.&#xA;in_AddrFile : address book file path &#xA;in_RemindMessage : Reminder message format &#xA;in_CheckIntervalHour:  Time interval for re-send message " DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,4639" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -398,15 +397,9 @@
               <If.Then>
                 <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_QueueName]" Reference="[DateTime.Now.ToString(&quot;yyyy-MM-dd&quot;)]">
                   <ui:AddQueueItem.ItemInformation>
-                    <InArgument x:TypeArguments="x:String" x:Key="Command">
-                      <Literal x:TypeArguments="x:String">RESEND_MESSAGE</Literal>
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="Tag">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="TagName" />
-                    </InArgument>
-                    <InArgument x:TypeArguments="x:String" x:Key="Message">
-                      <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="in_RemindMessage" />
-                    </InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Command">RESEND_MESSAGE</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Tag">[TagName]</InArgument>
+                    <InArgument x:TypeArguments="x:String" x:Key="Message">[in_RemindMessage]</InArgument>
                   </ui:AddQueueItem.ItemInformation>
                 </ui:AddQueueItem>
               </If.Then>

@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>967,3034</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1408,2749</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -64,7 +64,7 @@
       <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="967.5,2869" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="1388,2609" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Msg" />
       <Variable x:TypeArguments="x:String" Name="Prefix" />
@@ -82,7 +82,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Message&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Message&quot;) IsNot Nothing]" DisplayName="If &gt; Reference value in Config if there is no value in QueueItem " sap:VirtualizedContainerService.HintSize="925.5,210" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Message&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Message&quot;) IsNot Nothing]" DisplayName="If &gt; Reference value in Config if there is no value in QueueItem " sap:VirtualizedContainerService.HintSize="1346,210" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
         <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
@@ -104,7 +104,7 @@
         </Assign>
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="925.5,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign sap:VirtualizedContainerService.HintSize="1346,60" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[SurveyLink]</OutArgument>
       </Assign.To>
@@ -112,7 +112,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config("SurveyLink").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="925.5,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+    <Assign sap:VirtualizedContainerService.HintSize="1346,60" sap2010:WorkflowViewState.IdRef="Assign_39">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[AppName]</OutArgument>
       </Assign.To>
@@ -120,7 +120,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config("MessengerApp").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="925.5,60" sap2010:WorkflowViewState.IdRef="Assign_40">
+    <Assign sap:VirtualizedContainerService.HintSize="1346,60" sap2010:WorkflowViewState.IdRef="Assign_40">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Locale]</OutArgument>
       </Assign.To>
@@ -128,7 +128,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config("Locale").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="925.5,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+    <Assign sap:VirtualizedContainerService.HintSize="1346,60" sap2010:WorkflowViewState.IdRef="Assign_41">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[SurveySite]</OutArgument>
       </Assign.To>
@@ -136,8 +136,8 @@
         <InArgument x:TypeArguments="x:String">[in_Config("SurveySite").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="925.5,2083" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="SEND_MESSAGE" DisplayName="Send message with pre-define format " sap:VirtualizedContainerService.HintSize="873.5,3619" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="1346,1836" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="SEND_MESSAGE" DisplayName="Send message with pre-define format " sap:VirtualizedContainerService.HintSize="873.5,3623" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="Friends" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -744,7 +744,7 @@
           </If>
         </Sequence>
       </Sequence>
-      <Sequence x:Key="RESEND_MESSAGE" DisplayName="Re-send message to unanswered employees" sap:VirtualizedContainerService.HintSize="1054,300" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence x:Key="RESEND_MESSAGE" DisplayName="Re-send message to unanswered employees" sap:VirtualizedContainerService.HintSize="1053.5,300" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="CustMsg" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -1098,7 +1098,7 @@
           </If>
         </Sequence>
       </Sequence>
-      <Sequence x:Key="SUMMARY_REPORTS" sap:VirtualizedContainerService.HintSize="563,789" sap2010:WorkflowViewState.IdRef="Sequence_39">
+      <Sequence x:Key="SUMMARY_REPORTS" sap:VirtualizedContainerService.HintSize="1306,1511" sap2010:WorkflowViewState.IdRef="Sequence_39">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="summaryReport" />
           <Variable x:TypeArguments="x:String" Name="nonRespondantReport" />
@@ -1108,9 +1108,51 @@
             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <If Condition="[in_Config(&quot;Locale&quot;).ToString.ToLower.Equals(&quot;en&quot;)]" sap:VirtualizedContainerService.HintSize="521,697" sap2010:WorkflowViewState.IdRef="If_33">
+        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="1264,521" sap2010:WorkflowViewState.IdRef="Sequence_41">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="801.5,90" sap2010:WorkflowViewState.IdRef="PathExists_10" Path="[string.Format(&quot;{0}\{1}\DownloadResponse.xaml&quot;, SurveySite,  Locale)]" PathType="File" />
+          <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="801.5,268" sap2010:WorkflowViewState.IdRef="If_34">
+            <If.Then>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Forms and get download results" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_29" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\DownloadResponse.xaml&quot;, SurveySite,  Locale)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_Config("FormsCredential").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+            <If.Else>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Forms and get download results" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="377.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_30" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\DownloadResponse.xaml&quot;, SurveySite)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_ReportUrl">[in_Config("ReportUrl").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="in_FormsCredential">[in_Config("FormsCredential").ToString]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Else>
+          </If>
+        </Sequence>
+        <If Condition="[in_Config(&quot;Locale&quot;).ToString.ToLower.Equals(&quot;en&quot;)]" sap:VirtualizedContainerService.HintSize="1264,858" sap2010:WorkflowViewState.IdRef="If_33">
           <If.Then>
-            <Sequence sap:VirtualizedContainerService.HintSize="376,549" sap2010:WorkflowViewState.IdRef="Sequence_40">
+            <Sequence sap:VirtualizedContainerService.HintSize="376,553" sap2010:WorkflowViewState.IdRef="Sequence_40">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -1124,14 +1166,14 @@
                   <OutArgument x:TypeArguments="x:String" x:Key="out_NonRespondantReportFilePath">[nonRespondantReport]</OutArgument>
                 </ui:InvokeWorkflowFile.Arguments>
               </ui:InvokeWorkflowFile>
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi, &quot;+Environment.NewLine +&quot;Here is the Health Screening Report for &quot;+DateTime.Now.ToShortDateString + &quot; .&quot;]" DisplayName="Send Outlook Mail Message for Summary" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="End of Day - Health Screening Summary Report" To="[in_Config(&quot;SummaryReportEmail&quot;).ToString]">
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi, &quot;+Environment.NewLine +&quot;Here is the Health Screening Report for &quot;+DateTime.Now.ToShortDateString + &quot; .&quot;]" DisplayName="Send Outlook Mail Message for Summary" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_1" IsBodyHtml="False" IsDraft="False" Subject="End of Day - Health Screening Summary Report" To="[in_Config(&quot;SummaryReportEmail&quot;).ToString]">
                 <ui:SendOutlookMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                     <InArgument x:TypeArguments="x:String">[summaryReport]</InArgument>
                   </scg:List>
                 </ui:SendOutlookMail.Files>
               </ui:SendOutlookMail>
-              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi, &quot;+Environment.NewLine +&quot;Here is the Health Screening Report for &quot;+DateTime.Now.ToShortDateString + &quot; . The employee who have not responded are highlighted.&quot;]" DisplayName="Send Outlook Mail Message for Non-Respondant" sap:VirtualizedContainerService.HintSize="334,145" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="[&quot;Non-Respondant Report - &quot;+DateTime.Now.ToShortDateString]" To="[in_Config(&quot;SummaryReportEmail&quot;).ToString]">
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[&quot;Hi, &quot;+Environment.NewLine +&quot;Here is the Health Screening Report for &quot;+DateTime.Now.ToShortDateString + &quot; . The employee who have not responded are highlighted.&quot;]" DisplayName="Send Outlook Mail Message for Non-Respondant" sap:VirtualizedContainerService.HintSize="334,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_2" IsBodyHtml="False" IsDraft="False" Subject="[&quot;Non-Respondant Report - &quot;+DateTime.Now.ToShortDateString]" To="[in_Config(&quot;SummaryReportEmail&quot;).ToString]">
                 <ui:SendOutlookMail.Files>
                   <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
                     <InArgument x:TypeArguments="x:String">[nonRespondantReport]</InArgument>
@@ -1140,6 +1182,62 @@
               </ui:SendOutlookMail>
             </Sequence>
           </If.Then>
+          <If.Else>
+            <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="843,708" sap2010:WorkflowViewState.IdRef="Sequence_42">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+                <Variable x:TypeArguments="x:String" Name="ReportBody" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="801,90" sap2010:WorkflowViewState.IdRef="PathExists_11" Path="[string.Format(&quot;{0}\{1}\GetSummaryReport.xaml&quot;, SurveySite,  Locale)]" PathType="File" />
+              <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="801,268" sap2010:WorkflowViewState.IdRef="If_35">
+                <If.Then>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Forms/Google  and get download results" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_31" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\GetSummaryReport.xaml&quot;, SurveySite,  Locale)]">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Addressbook">[in_Config("Addressbook").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_EmployeeNumber">[Convert.ToInt32( in_Config("EmployeeNumber").ToString)]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SummaryReportFormat">[in_Config("SummaryReportFormat").ToString]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_SummaryReport">[ReportBody]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </If.Then>
+                <If.Else>
+                  <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Navigate to Forms/Google and get download results" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="377,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_32" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\GetSummaryReport.xaml&quot;, SurveySite)]">
+                    <ui:InvokeWorkflowFile.Arguments>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SavedFilePath">[in_Config("ReportPath").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_Addressbook">[in_Config("Addressbook").ToString]</InArgument>
+                      <InArgument x:TypeArguments="x:Int32" x:Key="in_EmployeeNumber">[Convert.ToInt32(in_Config("EmployeeNumber").ToString)]</InArgument>
+                      <InArgument x:TypeArguments="x:String" x:Key="in_SummaryReportFormat">[in_Config("SummaryReportFormat").ToString]</InArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="out_SummaryReport">[ReportBody]</OutArgument>
+                    </ui:InvokeWorkflowFile.Arguments>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                  </ui:InvokeWorkflowFile>
+                </If.Else>
+              </If>
+              <ui:SendOutlookMail Account="{x:Null}" Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" TimeoutMS="{x:Null}" Body="[ReportBody]" DisplayName="Send Outlook Mail Message for Summary" sap:VirtualizedContainerService.HintSize="801,147" sap2010:WorkflowViewState.IdRef="SendOutlookMail_3" IsBodyHtml="False" IsDraft="False" Subject="[DateTime.Now.AddDays(-1).ToString(&quot;yyyy년 MM월 dd일 헬스체크 결과&quot;)]" To="[in_Config(&quot;SummaryReportEmail&quot;).ToString]">
+                <ui:SendOutlookMail.Files>
+                  <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
+                    <InArgument x:TypeArguments="x:String">[summaryReport]</InArgument>
+                  </scg:List>
+                </ui:SendOutlookMail.Files>
+              </ui:SendOutlookMail>
+            </Sequence>
+          </If.Else>
         </If>
       </Sequence>
     </Switch>
