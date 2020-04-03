@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1019,6372</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1049,6307</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>CheckResponse_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="27">
@@ -67,7 +67,6 @@
       <AssemblyReference>System.ServiceModel</AssemblyReference>
       <AssemblyReference>System.ValueTuple</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence sap2010:Annotation.AnnotationText="Navigate to ReportUrl and download result and check who sent answer or not. &#xA;&#xA;Google forms use 'Timestamp(타임스탬프)' columnname and user input starts from 2nd column &#xA;&#xA;in_SavedFilePath : Filename which contains result execl from ReportUrl &#xA;in_QueueName : Queue which used for re-send message to whom did not answer during given interval.&#xA;in_AddrFile : address book file path &#xA;in_RemindMessage : Reminder message format &#xA;in_CheckIntervalHour:  Time interval for re-send message &#xA;in_MessengerApp : Name of MessengertApp " DisplayName="CheckResponse" sap:VirtualizedContainerService.HintSize="1029,6207" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -103,7 +102,7 @@
       </Assign.Value>
     </Assign>
     <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="987,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[TargetDir]" />
-    <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="987,85" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[Path.Combine( Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\Downloads&quot;), Path.GetFileNameWithoutExtension( in_SavedFilePath))]" />
+    <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="987,85" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[TargetDir]" />
     <a:Expand_Archive LiteralPath="{x:Null}" DestinationPath="[TargetDir]" DisplayName="Expand Archive" ErrorMessage="[ErrorMsg]" Force="True" sap:VirtualizedContainerService.HintSize="987,22" sap2010:WorkflowViewState.IdRef="Expand_Archive_1" Path="[Path.Combine( Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\Downloads&quot;), Path.GetFileNameWithoutExtension( in_SavedFilePath) + &quot;.zip&quot;)]" Success="[UnzipSuccess]" />
     <If Condition="[UnzipSuccess]" sap:VirtualizedContainerService.HintSize="987,497" sap2010:WorkflowViewState.IdRef="If_5">
       <If.Then>

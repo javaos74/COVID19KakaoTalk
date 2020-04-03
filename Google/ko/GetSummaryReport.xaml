@@ -1,18 +1,17 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetSummaryReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetSummaryReport" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:a="clr-namespace:ArchiveLib;assembly=ArchiveLib" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_SavedFilePath" Type="InArgument(x:String)" />
     <x:Property Name="in_Addressbook" Type="InArgument(x:String)" />
-    <x:Property Name="in_EmployeeNumber" Type="InArgument(x:Int32)" />
     <x:Property Name="out_SummaryReport" Type="OutArgument(x:String)" />
     <x:Property Name="in_SummaryReportFormat" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>438,1161</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>638,3586</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetSummaryReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
-    <scg:List x:TypeArguments="x:String" Capacity="23">
+    <scg:List x:TypeArguments="x:String" Capacity="24">
       <x:String>System.Activities</x:String>
       <x:String>System.Activities.Statements</x:String>
       <x:String>System.Activities.Expressions</x:String>
@@ -36,10 +35,11 @@
       <x:String>System.Windows.Markup</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Excel</x:String>
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="16">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -56,9 +56,11 @@
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities</AssemblyReference>
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetSummaryReport" sap:VirtualizedContainerService.HintSize="418,1061" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetSummaryReport" sap:VirtualizedContainerService.HintSize="618,3446" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="TargetDir" />
       <Variable x:TypeArguments="x:String" Name="YesterdayStr" />
@@ -67,13 +69,18 @@
       <Variable x:TypeArguments="x:Int32" Name="Responders" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new  List( of string)]" Name="HighTemps" />
       <Variable x:TypeArguments="scg:List(x:String)" Default="[new list( of string)]" Name="ExtraSyms" />
+      <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
+      <Variable x:TypeArguments="sd:DataRow[]" Name="Emps" />
+      <Variable x:TypeArguments="x:String" Name="ErrorMsg" />
+      <Variable x:TypeArguments="x:Boolean" Name="UnzipSucess" />
+      <Variable x:TypeArguments="x:Int32" Name="EmployeeCount" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+    <Assign sap:VirtualizedContainerService.HintSize="576,60" sap2010:WorkflowViewState.IdRef="Assign_1">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[TargetDir]</OutArgument>
       </Assign.To>
@@ -81,26 +88,61 @@
         <InArgument x:TypeArguments="x:String">[Path.Combine( Environment.ExpandEnvironmentVariables("%USERPROFILE%\Downloads"), Path.GetFileNameWithoutExtension( in_SavedFilePath))]</InArgument>
       </Assign.Value>
     </Assign>
-    <Sequence sap:VirtualizedContainerService.HintSize="376,347" sap2010:WorkflowViewState.IdRef="Sequence_2">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="s:String[]" Name="Files" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-        <Assign.To>
-          <OutArgument x:TypeArguments="s:String[]">[Files]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="s:String[]">[System.io.Directory.GetFiles( TargetDir, "*.csv")]</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:ReadCsvFile DataTable="[RespDT]" Delimitator="Comma" DisplayName="Read CSV" Encoding="UTF-8" FilePath="[Files(0)]" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
-    </Sequence>
-    <Assign sap2010:Annotation.AnnotationText="구글은 yyyy/MM/dd 포맷 " sap:VirtualizedContainerService.HintSize="376,91" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <ui:Delete ContinueOnError="True" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="Delete_1" Path="[TargetDir]" />
+    <ui:CreateDirectory ContinueOnError="True" DisplayName="Create Folder" sap:VirtualizedContainerService.HintSize="576,85" sap2010:WorkflowViewState.IdRef="CreateDirectory_1" Path="[TargetDir]" />
+    <a:Expand_Archive LiteralPath="{x:Null}" DestinationPath="[TargetDir]" DisplayName="Expand Archive" ErrorMessage="[ErrorMsg]" Force="True" sap:VirtualizedContainerService.HintSize="576,22" sap2010:WorkflowViewState.IdRef="Expand_Archive_1" Path="[Path.Combine( Environment.ExpandEnvironmentVariables(&quot;%USERPROFILE%\Downloads&quot;), Path.GetFileNameWithoutExtension( in_SavedFilePath) + &quot;.zip&quot;)]" Success="[UnzipSucess]" />
+    <If Condition="[UnzipSucess]" sap:VirtualizedContainerService.HintSize="576,497" sap2010:WorkflowViewState.IdRef="If_4">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="376,347" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="s:String[]" Name="Files" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="s:String[]">[Files]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="s:String[]">[System.io.Directory.GetFiles( TargetDir, "*.csv")]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <ui:ReadCsvFile DataTable="[RespDT]" Delimitator="Comma" DisplayName="Read CSV" Encoding="UTF-8" FilePath="[Files(0)]" sap:VirtualizedContainerService.HintSize="334,155" sap2010:WorkflowViewState.IdRef="ReadCsvFile_1" />
+        </Sequence>
+      </If.Then>
+    </If>
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="576,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_Addressbook]" />
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="576,230" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="무시된 액티비티" sap:VirtualizedContainerService.HintSize="304.5,152" sap2010:WorkflowViewState.IdRef="Sequence_7">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+            <Assign.To>
+              <OutArgument x:TypeArguments="sd:DataRow[]">[Emps]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="sd:DataRow[]">[AddrDT.Select("Status = 'Done' Or Status = 'done'")]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <Assign sap:VirtualizedContainerService.HintSize="576,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:Int32">[EmployeeCount]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:Int32">[Emps.Count]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <Assign sap2010:Annotation.AnnotationText="구글은 yyyy/MM/dd 포맷 " sap:VirtualizedContainerService.HintSize="576,91" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[YesterdayStr]</OutArgument>
       </Assign.To>
@@ -113,7 +155,7 @@
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </Assign>
-    <ui:FilterDataTable DataTable="[RespDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="376,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[YesterdayRespDT]" SelectColumnsMode="Keep">
+    <ui:FilterDataTable DataTable="[RespDT]" DisplayName="Filter Data Table" FilterRowsMode="Keep" sap:VirtualizedContainerService.HintSize="576,59" sap2010:WorkflowViewState.IdRef="FilterDataTable_1" OutputDataTable="[YesterdayRespDT]" SelectColumnsMode="Keep">
       <ui:FilterDataTable.Filters>
         <scg:List x:TypeArguments="ui:FilterOperationArgument" Capacity="4">
           <ui:FilterOperationArgument BooleanOperator="And" Operator="STARTSWITH">
@@ -132,7 +174,7 @@
         </scg:List>
       </ui:FilterDataTable.SelectColumns>
     </ui:FilterDataTable>
-    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+    <Assign sap:VirtualizedContainerService.HintSize="576,60" sap2010:WorkflowViewState.IdRef="Assign_4">
       <Assign.To>
         <OutArgument x:TypeArguments="x:Int32">[Responders]</OutArgument>
       </Assign.To>
@@ -140,7 +182,7 @@
         <InArgument x:TypeArguments="x:Int32">[YesterdayRespDT.Rows.Count]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[YesterdayRespDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="376,52" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[YesterdayRespDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="576,1541" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
@@ -231,7 +273,7 @@
                       <OutArgument x:TypeArguments="s:String[]">[Items]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="s:String[]">[row(3).ToString.Split(",".ToCharArray)]</InArgument>
+                      <InArgument x:TypeArguments="s:String[]">[row(3).ToString.Split(";,".ToCharArray)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_9">
@@ -278,17 +320,17 @@
       </ui:ForEachRow.Body>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:ForEachRow>
-    <Assign sap:VirtualizedContainerService.HintSize="376,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+    <Assign sap:VirtualizedContainerService.HintSize="576,60" sap2010:WorkflowViewState.IdRef="Assign_10">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[out_SummaryReport]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format( in_SummaryReportFormat, DateTime.Now.AddDays(-1).ToString("yyyy년 MM월 dd일"), in_EmployeeNumber, YesterdayRespDT.Rows.Count,  HighTemps.Count, string.Join( vbNewLine, HighTemps),  ExtraSyms.Count, string.join( vbNewLine, ExtraSyms))]</InArgument>
+        <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format( in_SummaryReportFormat, DateTime.Now.AddDays(-1).ToString("yyyy년 MM월 dd일"), EmployeeCount, YesterdayRespDT.Rows.Count,  HighTemps.Count, string.Join( vbNewLine, HighTemps),  ExtraSyms.Count, string.join( vbNewLine, ExtraSyms))]</InArgument>
       </Assign.Value>
     </Assign>
   </Sequence>
