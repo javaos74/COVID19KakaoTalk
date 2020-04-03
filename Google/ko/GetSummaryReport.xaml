@@ -8,7 +8,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>638,3586</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>638,3506</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetSummaryReport_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -39,7 +39,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="18">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="36">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -58,6 +58,7 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.Entity</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
   <Sequence DisplayName="GetSummaryReport" sap:VirtualizedContainerService.HintSize="618,3446" sap2010:WorkflowViewState.IdRef="Sequence_1">
@@ -139,7 +140,7 @@
         <OutArgument x:TypeArguments="x:Int32">[EmployeeCount]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:Int32">[Emps.Count]</InArgument>
+        <InArgument x:TypeArguments="x:Int32">[AddrDT.Rows.Count]</InArgument>
       </Assign.Value>
     </Assign>
     <Assign sap2010:Annotation.AnnotationText="구글은 yyyy/MM/dd 포맷 " sap:VirtualizedContainerService.HintSize="576,91" sap2010:WorkflowViewState.IdRef="Assign_3">
