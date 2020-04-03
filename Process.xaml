@@ -6,7 +6,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1408,2749</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1155.5,3964</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ProcessTransaction_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="24">
@@ -37,7 +37,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="24">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="23">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -61,10 +61,9 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
       <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
       <AssemblyReference>System.Data.Entity</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="1388,2609" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Description: In this file all other process specific files will be invoked. If an application exception occurs, the current transaction can be retried. If a BRE is thrown, the transaction will be skipped. Can be a flowchart or sequence. " DisplayName="ProcessTransaction" sap:VirtualizedContainerService.HintSize="1135.5,3904" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Msg" />
       <Variable x:TypeArguments="x:String" Name="Prefix" />
@@ -82,7 +81,7 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Message&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Message&quot;) IsNot Nothing]" DisplayName="If &gt; Reference value in Config if there is no value in QueueItem " sap:VirtualizedContainerService.HintSize="1346,210" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;Message&quot;) AndAlso in_TransactionItem.SpecificContent(&quot;Message&quot;) IsNot Nothing]" DisplayName="If &gt; Reference value in Config if there is no value in QueueItem " sap:VirtualizedContainerService.HintSize="1093.5,210" sap2010:WorkflowViewState.IdRef="If_6">
       <If.Then>
         <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_1">
           <Assign.To>
@@ -104,7 +103,7 @@
         </Assign>
       </If.Else>
     </If>
-    <Assign sap:VirtualizedContainerService.HintSize="1346,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+    <Assign sap:VirtualizedContainerService.HintSize="1093.5,60" sap2010:WorkflowViewState.IdRef="Assign_9">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[SurveyLink]</OutArgument>
       </Assign.To>
@@ -112,7 +111,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config("SurveyLink").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1346,60" sap2010:WorkflowViewState.IdRef="Assign_39">
+    <Assign sap:VirtualizedContainerService.HintSize="1093.5,60" sap2010:WorkflowViewState.IdRef="Assign_39">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[AppName]</OutArgument>
       </Assign.To>
@@ -120,7 +119,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config("MessengerApp").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1346,60" sap2010:WorkflowViewState.IdRef="Assign_40">
+    <Assign sap:VirtualizedContainerService.HintSize="1093.5,60" sap2010:WorkflowViewState.IdRef="Assign_40">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[Locale]</OutArgument>
       </Assign.To>
@@ -128,7 +127,7 @@
         <InArgument x:TypeArguments="x:String">[in_Config("Locale").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Assign sap:VirtualizedContainerService.HintSize="1346,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+    <Assign sap:VirtualizedContainerService.HintSize="1093.5,60" sap2010:WorkflowViewState.IdRef="Assign_41">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[SurveySite]</OutArgument>
       </Assign.To>
@@ -136,8 +135,8 @@
         <InArgument x:TypeArguments="x:String">[in_Config("SurveySite").ToString]</InArgument>
       </Assign.Value>
     </Assign>
-    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="1346,1836" sap2010:WorkflowViewState.IdRef="Switch`1_1">
-      <Sequence x:Key="SEND_MESSAGE" DisplayName="Send message with pre-define format " sap:VirtualizedContainerService.HintSize="873.5,3623" sap2010:WorkflowViewState.IdRef="Sequence_3">
+    <Switch x:TypeArguments="x:String" DisplayName="Switch" Expression="[in_TransactionItem.SpecificContent(&quot;Command&quot;).ToString]" sap:VirtualizedContainerService.HintSize="1093.5,3118" sap2010:WorkflowViewState.IdRef="Switch`1_1">
+      <Sequence x:Key="SEND_MESSAGE" DisplayName="Send message with pre-define format " sap:VirtualizedContainerService.HintSize="1053.5,6477" sap2010:WorkflowViewState.IdRef="Sequence_3">
         <Sequence.Variables>
           <Variable x:TypeArguments="scg:List(x:String)" Name="Friends" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -155,15 +154,34 @@
             <x:Boolean x:Key="IsPinned">False</x:Boolean>
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
-        <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="831.5,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New" QueueName="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Result="[Remains]" />
-        <If Condition="[Remains IsNot Nothing]" sap:VirtualizedContainerService.HintSize="831.5,210" sap2010:WorkflowViewState.IdRef="If_9">
+        <ui:GetQueueItems Duration="{x:Null}" From="{x:Null}" Priority="{x:Null}" Reference="{x:Null}" Skip="{x:Null}" TimeoutMS="{x:Null}" To="{x:Null}" Top="{x:Null}" DisplayName="Get Queue Items" FilterStrategy="StartsWith" sap:VirtualizedContainerService.HintSize="1011.5,22" sap2010:WorkflowViewState.IdRef="GetQueueItems_1" QueueItemStates="New" QueueName="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Result="[Remains]" />
+        <If Condition="[Remains IsNot Nothing]" sap:VirtualizedContainerService.HintSize="1011.5,442" sap2010:WorkflowViewState.IdRef="If_9">
           <If.Then>
-            <ui:DeleteQueueItems TimeoutMS="{x:Null}" DisplayName="Delete Queue Items" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DeleteQueueItems_1" QueueItems="[Remains]" />
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,292" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+              <TryCatch.Try>
+                <ui:DeleteQueueItems TimeoutMS="{x:Null}" DisplayName="Delete Queue Items" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="DeleteQueueItems_1" QueueItems="[Remains]" />
+              </TryCatch.Try>
+              <TryCatch.Catches>
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,22" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ActivityAction x:TypeArguments="s:Exception">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                    </ActivityAction.Argument>
+                  </ActivityAction>
+                </Catch>
+              </TryCatch.Catches>
+            </TryCatch>
           </If.Then>
         </If>
-        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="831.5,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Send message to every employees&quot;]" />
-        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; Read Addressbook" sap:VirtualizedContainerService.HintSize="831.5,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
-        <Assign sap:VirtualizedContainerService.HintSize="831.5,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1011.5,93" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Send message to every employees&quot;]" />
+        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; Read Addressbook" sap:VirtualizedContainerService.HintSize="1011.5,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
+        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_13">
           <Assign.To>
             <OutArgument x:TypeArguments="x:String">[SentDate]</OutArgument>
           </Assign.To>
@@ -171,7 +189,7 @@
             <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("yyyy-MM-dd")]</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="831.5,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_21">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Boolean">[ColFound]</OutArgument>
           </Assign.To>
@@ -179,7 +197,7 @@
             <InArgument x:TypeArguments="x:Boolean">False</InArgument>
           </Assign.Value>
         </Assign>
-        <Assign sap:VirtualizedContainerService.HintSize="831.5,60" sap2010:WorkflowViewState.IdRef="Assign_29">
+        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_29">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Int32">[NewColIndex]</OutArgument>
           </Assign.To>
@@ -187,13 +205,13 @@
             <InArgument x:TypeArguments="x:Int32">[AddrDT.Columns.Count -1]</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="[RowIndex]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="831.5,1115" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[AddrDT.Columns]">
+        <ui:ForEach x:TypeArguments="sd:DataColumn" CurrentIndex="[RowIndex]" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="1011.5,1074" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[AddrDT.Columns]">
           <ui:ForEach.Body>
             <ActivityAction x:TypeArguments="sd:DataColumn">
               <ActivityAction.Argument>
                 <DelegateInArgument x:TypeArguments="sd:DataColumn" Name="col" />
               </ActivityAction.Argument>
-              <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="606,980" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <Sequence DisplayName="본문" sap:VirtualizedContainerService.HintSize="606,940" sap2010:WorkflowViewState.IdRef="Sequence_17">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -279,7 +297,7 @@
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEach>
-        <If Condition="[Not ColFound]" DisplayName="If &gt; Add new column with sent date (yyyy-MM-dd) " sap:VirtualizedContainerService.HintSize="831.5,364" sap2010:WorkflowViewState.IdRef="If_11">
+        <If Condition="[Not ColFound]" DisplayName="If &gt; Add new column with sent date (yyyy-MM-dd) " sap:VirtualizedContainerService.HintSize="1011.5,364" sap2010:WorkflowViewState.IdRef="If_11">
           <If.Then>
             <Sequence sap:VirtualizedContainerService.HintSize="304.5,214" sap2010:WorkflowViewState.IdRef="Sequence_20">
               <sap:WorkflowViewStateService.ViewState>
@@ -299,7 +317,7 @@
             </Sequence>
           </If.Then>
         </If>
-        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="831.5,521" sap2010:WorkflowViewState.IdRef="Sequence_31">
+        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="1011.5,521" sap2010:WorkflowViewState.IdRef="Sequence_31">
           <Sequence.Variables>
             <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
           </Sequence.Variables>
@@ -339,7 +357,7 @@
             </If.Else>
           </If>
         </Sequence>
-        <Assign sap:VirtualizedContainerService.HintSize="831.5,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_12">
           <Assign.To>
             <OutArgument x:TypeArguments="x:Int32">[SuccessCount]</OutArgument>
           </Assign.To>
@@ -347,12 +365,12 @@
             <InArgument x:TypeArguments="x:Int32">0</InArgument>
           </Assign.Value>
         </Assign>
-        <ui:AddTransactionItem TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Add Transaction Item" sap:VirtualizedContainerService.HintSize="831.5,22" sap2010:WorkflowViewState.IdRef="AddTransactionItem_2" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" TransactionItem="[MyQueue]">
+        <ui:AddTransactionItem TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Add Transaction Item" sap:VirtualizedContainerService.HintSize="1011.5,22" sap2010:WorkflowViewState.IdRef="AddTransactionItem_2" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" TransactionItem="[MyQueue]">
           <ui:AddTransactionItem.TransactionInformation>
             <InArgument x:TypeArguments="x:Int32" x:Key="NoOfEmployees">[FriendsDT.Rows.Count]</InArgument>
           </ui:AddTransactionItem.TransactionInformation>
         </ui:AddTransactionItem>
-        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="831.5,52" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1011.5,2044" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
           <ui:ForEachRow.Body>
             <ActivityAction x:TypeArguments="sd:DataRow">
               <ActivityAction.Argument>
@@ -566,13 +584,13 @@
           </ui:ForEachRow.Body>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
         </ui:ForEachRow>
-        <ui:WriteRange AddHeaders="True" DataTable="[AddrDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="831.5,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
-        <ui:SetTransactionStatus Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="831.5,22" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_2" Status="Successful" TransactionItem="[MyQueue]">
+        <ui:WriteRange AddHeaders="True" DataTable="[AddrDT]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="1011.5,115" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" StartingCell="A1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
+        <ui:SetTransactionStatus Reason="{x:Null}" ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" ContinueOnError="True" DisplayName="Set Transaction Status" ErrorType="Business" sap:VirtualizedContainerService.HintSize="1011.5,22" sap2010:WorkflowViewState.IdRef="SetTransactionStatus_2" Status="Successful" TransactionItem="[MyQueue]">
           <ui:SetTransactionStatus.Analytics>
             <InArgument x:TypeArguments="x:Int32" x:Key="SendMessageCount">[SuccessCount]</InArgument>
             <InArgument x:TypeArguments="x:Int32" x:Key="NoOfEmployees">[FriendsDT.Rows.Count]</InArgument>
@@ -582,13 +600,13 @@
             <scg:Dictionary x:TypeArguments="x:String, InArgument" />
           </ui:SetTransactionStatus.Output>
         </ui:SetTransactionStatus>
-        <Sequence DisplayName="Sequence &gt; Send progress status message to designated persion (if exists)" sap:VirtualizedContainerService.HintSize="831.5,68" sap2010:WorkflowViewState.IdRef="Sequence_25">
+        <Sequence DisplayName="Sequence &gt; Send progress status message to designated persion (if exists)" sap:VirtualizedContainerService.HintSize="1011.5,783" sap2010:WorkflowViewState.IdRef="Sequence_25">
           <Sequence.Variables>
             <Variable x:TypeArguments="s:String[]" Name="Numbers" />
           </Sequence.Variables>
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               <x:Boolean x:Key="IsPinned">False</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
@@ -628,7 +646,7 @@
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]">
+                        <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[DateTime.Now.ToString(&quot;yyyy-MM-dd&quot;)]">
                           <ui:AddQueueItem.ItemInformation>
                             <InArgument x:TypeArguments="x:String" x:Key="Command">NOTIFY_STATUS</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="Tag">[phone]</InArgument>
@@ -744,7 +762,7 @@
           </If>
         </Sequence>
       </Sequence>
-      <Sequence x:Key="RESEND_MESSAGE" DisplayName="Re-send message to unanswered employees" sap:VirtualizedContainerService.HintSize="1053.5,300" sap2010:WorkflowViewState.IdRef="Sequence_10">
+      <Sequence x:Key="RESEND_MESSAGE" DisplayName="Re-send message to unanswered employees" sap:VirtualizedContainerService.HintSize="1053.5,2286" sap2010:WorkflowViewState.IdRef="Sequence_10">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="CustMsg" />
           <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
@@ -963,7 +981,7 @@
           </ui:InvokeWorkflowFile.Arguments>
         </ui:InvokeWorkflowFile>
       </Sequence>
-      <Sequence x:Key="LOG_ANALYTIC_DATA" DisplayName="Log  response data for Analytics with Insights  " sap:VirtualizedContainerService.HintSize="885.5,1758" sap2010:WorkflowViewState.IdRef="Sequence_29">
+      <Sequence x:Key="LOG_ANALYTIC_DATA" DisplayName="Log  response data for Analytics with Insights  " sap:VirtualizedContainerService.HintSize="885.5,1718" sap2010:WorkflowViewState.IdRef="Sequence_29">
         <Sequence.Variables>
           <Variable x:TypeArguments="s:DateTime" Name="TargetDate" />
         </Sequence.Variables>
@@ -1016,7 +1034,7 @@
             </If.Else>
           </If>
         </Sequence>
-        <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;TargetDate&quot;) AndAlso Not string.IsNullOrEmpty(in_TransactionItem.SpecificContent(&quot;TargetDate&quot;).ToString)]" DisplayName="If &gt; Check given TargetDate exists or not" sap:VirtualizedContainerService.HintSize="843.5,442" sap2010:WorkflowViewState.IdRef="If_18">
+        <If Condition="[in_TransactionItem.SpecificContent.ContainsKey(&quot;TargetDate&quot;) AndAlso Not string.IsNullOrEmpty(in_TransactionItem.SpecificContent(&quot;TargetDate&quot;).ToString)]" DisplayName="If &gt; Check given TargetDate exists or not" sap:VirtualizedContainerService.HintSize="843.5,402" sap2010:WorkflowViewState.IdRef="If_18">
           <If.Then>
             <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,292" sap2010:WorkflowViewState.IdRef="TryCatch_3">
               <TryCatch.Try>
@@ -1098,7 +1116,7 @@
           </If>
         </Sequence>
       </Sequence>
-      <Sequence x:Key="SUMMARY_REPORTS" sap:VirtualizedContainerService.HintSize="1306,1511" sap2010:WorkflowViewState.IdRef="Sequence_39">
+      <Sequence x:Key="SUMMARY_REPORTS" sap:VirtualizedContainerService.HintSize="1306,1449" sap2010:WorkflowViewState.IdRef="Sequence_39">
         <Sequence.Variables>
           <Variable x:TypeArguments="x:String" Name="summaryReport" />
           <Variable x:TypeArguments="x:String" Name="nonRespondantReport" />
@@ -1150,7 +1168,7 @@
             </If.Else>
           </If>
         </Sequence>
-        <If Condition="[in_Config(&quot;Locale&quot;).ToString.ToLower.Equals(&quot;en&quot;)]" sap:VirtualizedContainerService.HintSize="1264,858" sap2010:WorkflowViewState.IdRef="If_33">
+        <If Condition="[in_Config(&quot;Locale&quot;).ToString.ToLower.Equals(&quot;en&quot;)]" sap:VirtualizedContainerService.HintSize="1264,827" sap2010:WorkflowViewState.IdRef="If_33">
           <If.Then>
             <Sequence sap:VirtualizedContainerService.HintSize="376,553" sap2010:WorkflowViewState.IdRef="Sequence_40">
               <sap:WorkflowViewStateService.ViewState>
@@ -1239,6 +1257,248 @@
             </Sequence>
           </If.Else>
         </If>
+      </Sequence>
+      <Sequence x:Key="SEND_MESSAGE_FROM_QUEUE" sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="809.5,490" sap2010:WorkflowViewState.IdRef="Sequence_43">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+          <Variable x:TypeArguments="x:Boolean" Name="ErrorFlag" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="767.5,90" sap2010:WorkflowViewState.IdRef="PathExists_12" Path="[string.Format(&quot;{0}\{1}\SendMessage.xaml&quot;, AppName, Locale)]" PathType="File" />
+        <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="767.5,237" sap2010:WorkflowViewState.IdRef="If_36">
+          <If.Then>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="379,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_33" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\SendMessage.xaml&quot;, AppName, Locale)]">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[in_TransactionItem.SpecificContent("Tag").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Message">[in_TransactionItem.SpecificContent("Message").ToString]</InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </If.Then>
+          <If.Else>
+            <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke SendMessage workflow" sap:VirtualizedContainerService.HintSize="343.5,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_34" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\SendMessage.xaml&quot;, AppName)]">
+              <ui:InvokeWorkflowFile.Arguments>
+                <InArgument x:TypeArguments="x:String" x:Key="in_FriendName">[in_TransactionItem.SpecificContent("Tag").ToString]</InArgument>
+                <InArgument x:TypeArguments="x:String" x:Key="in_Message">[in_TransactionItem.SpecificContent("Message").ToString]</InArgument>
+                <OutArgument x:TypeArguments="x:Boolean" x:Key="out_Error">[ErrorFlag]</OutArgument>
+              </ui:InvokeWorkflowFile.Arguments>
+            </ui:InvokeWorkflowFile>
+          </If.Else>
+        </If>
+      </Sequence>
+      <Sequence x:Key="SEND_MESSAGE_V2" DisplayName="Send message with pre-define format " sap:VirtualizedContainerService.HintSize="1053.5,2747" sap2010:WorkflowViewState.IdRef="Sequence_48">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="scg:List(x:String)" Name="Friends" />
+          <Variable x:TypeArguments="sd:DataTable" Name="AddrDT" />
+          <Variable x:TypeArguments="sd:DataTable" Name="FriendsDT" />
+          <Variable x:TypeArguments="scg:IEnumerable(ui:QueueItem)" Name="Remains" />
+          <Variable x:TypeArguments="ui:QueueItem" Name="MyQueue" />
+          <Variable x:TypeArguments="x:Boolean" Name="ColFound" />
+          <Variable x:TypeArguments="s:DateTime" Name="ColDateName" />
+          <Variable x:TypeArguments="x:Int32" Name="NewColIndex" />
+          <Variable x:TypeArguments="x:Int32" Name="RowIndex" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1011.5,93" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[&quot;Send message to every employees&quot;]" />
+        <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[AddrDT]" DisplayName="Read Range &gt; Read Addressbook" sap:VirtualizedContainerService.HintSize="1011.5,87" sap2010:WorkflowViewState.IdRef="ReadRange_3" SheetName="Sheet1" WorkbookPath="[in_Config(&quot;Addressbook&quot;).ToString]" />
+        <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="1011.5,521" sap2010:WorkflowViewState.IdRef="Sequence_44">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="789.5,90" sap2010:WorkflowViewState.IdRef="PathExists_13" Path="[string.Format(&quot;{0}\{1}\FilterAddressbook.xaml&quot;, AppName, Locale)]" PathType="File" />
+          <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="789.5,268" sap2010:WorkflowViewState.IdRef="If_37">
+            <If.Then>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Filter Addressbook for each MessengerApp" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_35" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\FilterAddressbook.xaml&quot;, AppName, locale)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AddrDT">[AddrDT]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredAddrDT">[FriendsDT]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Then>
+            <If.Else>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="Filter Addressbook for each MessengerApp" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="365.5,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_36" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\FilterAddressbook.xaml&quot;, AppName)]">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="sd:DataTable" x:Key="in_AddrDT">[AddrDT]</InArgument>
+                  <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_FilteredAddrDT">[FriendsDT]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+              </ui:InvokeWorkflowFile>
+            </If.Else>
+          </If>
+        </Sequence>
+        <Assign sap:VirtualizedContainerService.HintSize="1011.5,60" sap2010:WorkflowViewState.IdRef="Assign_42">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:Int32">[SuccessCount]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[FriendsDT]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="1011.5,1734" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+          <ui:ForEachRow.Body>
+            <ActivityAction x:TypeArguments="sd:DataRow">
+              <ActivityAction.Argument>
+                <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+              </ActivityAction.Argument>
+              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="961.5,1585" sap2010:WorkflowViewState.IdRef="Sequence_47">
+                <Sequence.Variables>
+                  <Variable x:TypeArguments="x:Boolean" Name="ErrorFlag" />
+                  <Variable x:TypeArguments="x:String" Name="CustMsg" />
+                </Sequence.Variables>
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <If Condition="[Msg.Contains(&quot;{0}&quot;)]" sap:VirtualizedContainerService.HintSize="919.5,528" sap2010:WorkflowViewState.IdRef="If_39">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="612,378" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <If sap2010:Annotation.AnnotationText="{}{0} for Name, &#xA;{1} data (yyyy-MM-dd) &#xA;{2} survey link &#xA;{3} newline ( optional) " Condition="[Msg.Contains(&quot;{3}&quot;)]" DisplayName="If &gt; Add formatting string , {3} for newline " sap:VirtualizedContainerService.HintSize="570,286" sap2010:WorkflowViewState.IdRef="If_38">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <If.Then>
+                          <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[CustMsg]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("Name").ToString,  DateTime.Now.ToString("yyyy-MM-dd"), SurveyLink, vbNewLine)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Then>
+                        <If.Else>
+                          <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_44">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:String">[CustMsg]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:String" xml:space="preserve">[string.Format(Msg, row("Name").ToString,  DateTime.Now.ToString("yyyy-MM-dd"), SurveyLink)]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </If.Then>
+                  <If.Else>
+                    <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[CustMsg]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[Msg]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </If.Else>
+                </If>
+                <Sequence sap2010:Annotation.AnnotationText="Workflow invoke with locale depednecy check  first " DisplayName="Invoke Locale Aware Workflow File" sap:VirtualizedContainerService.HintSize="919.5,521" sap2010:WorkflowViewState.IdRef="Sequence_46">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="LocaleFileExists" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:PathExists DisplayName="Path Exists" Exists="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="778,90" sap2010:WorkflowViewState.IdRef="PathExists_14" Path="[string.Format(&quot;{0}\{1}\GetFriendName.xaml&quot;, AppName, Locale)]" PathType="File" />
+                  <If Condition="[LocaleFileExists]" sap:VirtualizedContainerService.HintSize="778,268" sap2010:WorkflowViewState.IdRef="If_40">
+                    <If.Then>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="GetFriendName for Each MessengerApp " DisplayName="Invoke GetFriendName Workflow File" sap:VirtualizedContainerService.HintSize="379,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_37" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\{1}\GetFriendName.xaml&quot;, AppName, Locale)]">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">[row]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">[FriendName]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </If.Then>
+                    <If.Else>
+                      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" sap2010:Annotation.AnnotationText="GetFriendName for Each MessengerApp " DisplayName="Invoke GetFriendName Workflow File" sap:VirtualizedContainerService.HintSize="354,118" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_38" UnSafe="False" WorkflowFileName="[string.Format(&quot;{0}\GetFriendName.xaml&quot;, AppName)]">
+                        <ui:InvokeWorkflowFile.Arguments>
+                          <InArgument x:TypeArguments="sd:DataRow" x:Key="in_DataRow">[row]</InArgument>
+                          <OutArgument x:TypeArguments="x:String" x:Key="out_FriendName">[FriendName]</OutArgument>
+                        </ui:InvokeWorkflowFile.Arguments>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </ui:InvokeWorkflowFile>
+                    </If.Else>
+                  </If>
+                </Sequence>
+                <If Condition="[Not string.IsNullOrEmpty( FriendName)]" sap:VirtualizedContainerService.HintSize="919.5,364" sap2010:WorkflowViewState.IdRef="If_41">
+                  <If.Then>
+                    <Sequence sap:VirtualizedContainerService.HintSize="304.5,214" sap2010:WorkflowViewState.IdRef="Sequence_49">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" sap:VirtualizedContainerService.HintSize="262.5,22" sap2010:WorkflowViewState.IdRef="AddQueueItem_2" Priority="Normal" QueueType="[in_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[DateTime.Now.ToString(&quot;yyyy-MM-dd&quot;)]">
+                        <ui:AddQueueItem.ItemInformation>
+                          <InArgument x:TypeArguments="x:String" x:Key="Message">[CustMsg]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Tag">[FriendName]</InArgument>
+                          <InArgument x:TypeArguments="x:String" x:Key="Command">SEND_MESSAGE_FROM_QUEUE</InArgument>
+                        </ui:AddQueueItem.ItemInformation>
+                      </ui:AddQueueItem>
+                      <Assign sap:VirtualizedContainerService.HintSize="262.5,60" sap2010:WorkflowViewState.IdRef="Assign_46">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Int32">[SuccessCount]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:Int32">[SuccessCount + 1]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                    </Sequence>
+                  </If.Then>
+                </If>
+              </Sequence>
+            </ActivityAction>
+          </ui:ForEachRow.Body>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+        </ui:ForEachRow>
       </Sequence>
     </Switch>
   </Sequence>
